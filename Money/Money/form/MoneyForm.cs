@@ -27,7 +27,6 @@ namespace Money.form
 
         double[] x = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 };
         double[] x_water = { 1, 3, 5, 7, 9, 11 };
-        bool isInitialize = true;
         Random randRGB = null;
 #if DEBUG
         System.Diagnostics.Stopwatch sw = null;
@@ -120,8 +119,6 @@ namespace Money.form
             
             // set date
             SetDispDate();
-
-            isInitialize = false;
         }
         #endregion
 
@@ -569,18 +566,15 @@ namespace Money.form
 
         public void SetChart()
         {
-            if (!isInitialize)
-            {
-                int sub_id = Convert.ToInt32(((ListItem)tcbChart.SelectedItem).ID);
-                string sub_name = ((ListItem)tcbChart.SelectedItem).Name;
+            int sub_id = Convert.ToInt32(((ListItem)tcbChart.SelectedItem).ID);
+            string sub_name = ((ListItem)tcbChart.SelectedItem).Name;
 
-                BillDB edb = new BillDB();
-                Hashtable ht = edb.GetMonthlyAmountByYearForChart(sub_id, false);
+            BillDB edb = new BillDB();
+            Hashtable ht = edb.GetMonthlyAmountByYearForChart(sub_id, false);
 
-                MasterDB mdb = new MasterDB();
-                double[] optimal = mdb.GetSubOptimal(sub_id);
-                this.CreateChartLine(ht, sub_id, sub_name, optimal[0], optimal[1]);
-            }
+            MasterDB mdb = new MasterDB();
+            double[] optimal = mdb.GetSubOptimal(sub_id);
+            this.CreateChartLine(ht, sub_id, sub_name, optimal[0], optimal[1]);
         }
 
         private void CreateHBarChart(ArrayList majorIdList)
@@ -934,11 +928,11 @@ namespace Money.form
                     MasterDB mdb = new MasterDB();
                     mdb.GetSubList(tcbChart);
 
-                    // chart
-                    SetChart();
+                    // set toolbar button
                     SetHomeButton(false);
                     break;
                 default:
+                    // set toolbar button
                     SetHomeButton(true);
                     treeListView.Focus();
                     break;
