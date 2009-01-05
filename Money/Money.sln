@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual C# Express 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Money", "Money\Money.csproj", "{6C40A2D1-C48B-4FA2-83EE-F6EAE8F96E85}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ObjectListView", "ObjectListView\ObjectListView.csproj", "{18FEDA0C-D147-4286-B39A-01204808106A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tools", "Tools\Tools.csproj", "{B294B83A-9F14-451C-906C-563A6DB7D7FC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6C40A2D1-C48B-4FA2-83EE-F6EAE8F96E85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C40A2D1-C48B-4FA2-83EE-F6EAE8F96E85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C40A2D1-C48B-4FA2-83EE-F6EAE8F96E85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C40A2D1-C48B-4FA2-83EE-F6EAE8F96E85}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18FEDA0C-D147-4286-B39A-01204808106A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18FEDA0C-D147-4286-B39A-01204808106A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18FEDA0C-D147-4286-B39A-01204808106A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18FEDA0C-D147-4286-B39A-01204808106A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B294B83A-9F14-451C-906C-563A6DB7D7FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B294B83A-9F14-451C-906C-563A6DB7D7FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B294B83A-9F14-451C-906C-563A6DB7D7FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B294B83A-9F14-451C-906C-563A6DB7D7FC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
+	EndGlobalSection
+EndGlobal
