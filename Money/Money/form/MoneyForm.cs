@@ -921,24 +921,8 @@ namespace Money.form
         #region Tab Event
         private void tcMain_SelectedIndexChanged(object sender, EventArgs e)
         {
-            switch (tcMain.SelectedIndex)
-            {
-                case 1:
-                    // set chart select box
-                    MasterDB mdb = new MasterDB();
-                    mdb.GetSubList(tcbChart);
-
-                    // set toolbar button
-                    SetHomeButton(false);
-                    break;
-                default:
-                    // set toolbar button
-                    SetHomeButton(true);
-                    treeListView.Focus();
-                    break;
-            }
-            tcbChart.Visible = (tcMain.SelectedIndex == 1);
             bool isHome = (tcMain.SelectedIndex == 0);
+            tcbChart.Visible = !isHome;
             btnShowDate.Visible = isHome;
             btnPrev.Visible = isHome;
             btnNext.Visible = isHome;
@@ -946,6 +930,23 @@ namespace Money.form
             tcbType.Visible = isHome;
             btnMonth.Visible = isHome;
             toolStripSeparator2.Visible = isHome;
+
+            // set toolbar button
+            SetHomeButton(isHome);
+
+            switch (tcMain.SelectedIndex)
+            {
+                case 1:
+                    // set chart select box
+                    MasterDB mdb = new MasterDB();
+                    mdb.GetSubList(tcbChart);
+
+                    tcbChart.Focus();
+                    break;
+                default:
+                    treeListView.Focus();
+                    break;
+            }
         }
         #endregion
 
