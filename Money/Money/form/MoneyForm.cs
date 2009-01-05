@@ -652,7 +652,7 @@ namespace Money.form
             int endYear = DateTime.Now.Year;
             int staYear = endYear - ht.Keys.Count + 1;
 
-            for (int i = staYear; i <= endYear; i++)
+            for (int i = endYear; i >= staYear; i--)
             {
                 if (ht[i.ToString()] == null)
                     continue;
