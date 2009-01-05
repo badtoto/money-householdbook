@@ -116,10 +116,6 @@ namespace Money.form
 
             #endregion
 
-            // set chart select box
-            MasterDB mdb = new MasterDB();
-            mdb.GetSubList(tcbChart);
-
             CheckDefaultData();
             
             // set date
@@ -934,6 +930,10 @@ namespace Money.form
             switch (tcMain.SelectedIndex)
             {
                 case 1:
+                    // set chart select box
+                    MasterDB mdb = new MasterDB();
+                    mdb.GetSubList(tcbChart);
+
                     // chart
                     SetChart();
                     SetHomeButton(false);
