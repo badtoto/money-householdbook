@@ -1,0 +1,276 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6C40A2D1-C48B-4FA2-83EE-F6EAE8F96E85}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Money</RootNamespace>
+    <AssemblyName>Money</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <ApplicationIcon>Money.ico</ApplicationIcon>
+    <ManifestCertificateThumbprint>9AEC61FB7D4FA90DE23065178231D6C60AB9B202</ManifestCertificateThumbprint>
+    <ManifestKeyFile>Money_TemporaryKey.pfx</ManifestKeyFile>
+    <GenerateManifests>true</GenerateManifests>
+    <SignManifests>true</SignManifests>
+    <StartupObject>Money.Program</StartupObject>
+    <PublishUrl>D:\MyProject\MSProjects\Money\Publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <AutorunEnabled>true</AutorunEnabled>
+    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ObjectListView, Version=2.0.3272.34350, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ObjectListView\bin\Release\ObjectListView.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.SQLite, Version=1.0.53.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\System.Data.SQLite.DLL</HintPath>
+    </Reference>
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="ZedGraph, Version=5.1.4.31904, Culture=neutral, PublicKeyToken=02a83cbd123fcd60, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\ZedGraph.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="control\ControlUtils.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="control\FrequencyCtl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="control\FrequencyCtl.Designer.cs">
+      <DependentUpon>FrequencyCtl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="control\HBarChart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="control\HBarChart.Designer.cs">
+      <DependentUpon>HBarChart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="control\MyLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="control\MyTreeListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="control\NumericBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="control\NumericBox.Designer.cs">
+      <DependentUpon>NumericBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="control\NumericBoxPopup.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="control\NumericBoxPopup.Designer.cs">
+      <DependentUpon>NumericBoxPopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="control\piechart\PieChartControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="control\piechart\PieChartControl.DrawingMetrics.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="control\piechart\PieChartControl.Events.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="control\piechart\PieChartControl.ItemCollection.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="control\piechart\PieChartControl.ItemCollectionEditor.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="control\piechart\PieChartControl.PieChartItemStyle.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="control\piechart\PieChartControl.PieChartStyle.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="control\piechart\PieChartItem.cs" />
+    <Compile Include="control\piechart\PieChartItem.ItemConverter.cs" />
+    <Compile Include="db\FixedDataDB.cs" />
+    <Compile Include="form\AboutBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\AboutBox.Designer.cs">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\BillForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\BillForm.designer.cs">
+      <DependentUpon>BillForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\MoneyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\MoneyForm.Designer.cs">
+      <DependentUpon>MoneyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="instance\BaseTbl.cs" />
+    <Compile Include="db\BaseDB.cs" />
+    <Compile Include="db\BillDB.cs" />
+    <Compile Include="db\MasterDB.cs" />
+    <Compile Include="db\SystemDB.cs" />
+    <Compile Include="instance\BillTbl.cs" />
+    <Compile Include="form\PasswordForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\PasswordForm.Designer.cs">
+      <DependentUpon>PasswordForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\OptionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\OptionForm.Designer.cs">
+      <DependentUpon>OptionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="instance\FixedDataTbl.cs" />
+    <Compile Include="control\ListItem.cs" />
+    <Compile Include="instance\SubTbl.cs" />
+    <Compile Include="util\CommonUtils.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="form\AboutBox.resx">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\BillForm.resx">
+      <DependentUpon>BillForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\MoneyForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>MoneyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\PasswordForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>PasswordForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\OptionForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>OptionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="util\NumericUtils.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\create.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Home_16.png" />
+    <None Include="Resources\Edit_16.png" />
+    <None Include="Resources\Delete_16.png" />
+    <None Include="Resources\Database_16.png" />
+    <None Include="Resources\Add_16.png" />
+    <None Include="Resources\Tools_16.png" />
+    <None Include="Resources\Tick_16.png" />
+    <None Include="Resources\Optimize_16.png" />
+    <None Include="Resources\Merge_16.png" />
+    <None Include="Resources\Info_16.png" />
+    <None Include="Resources\Secure_32.png" />
+    <None Include="Resources\Calendar_16.png" />
+    <None Include="Resources\Expand_16.png" />
+    <None Include="Resources\Collapse_16.png" />
+    <None Include="Resources\Exit_16.png" />
+    <None Include="Resources\Forward_16.png" />
+    <None Include="Resources\Back_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Money.ico" />
+    <None Include="Resources\Status_16.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
