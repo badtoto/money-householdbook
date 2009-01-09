@@ -119,7 +119,7 @@ namespace Money.form
             CheckDefaultData();
             
             // set date
-            SetDispDate();
+            SetDispDate(DateTime.Now);
         }
         #endregion
 
@@ -315,9 +315,7 @@ namespace Money.form
         {
             if (obj is DateTime)
             {
-                SetDispDate();
-                DateTime dt = (DateTime)obj;
-                tcbDate.Text = string.Format("{0}{2}{1:00}", dt.Year, dt.Month, CultureInfo.CurrentCulture.DateTimeFormat.DateSeparator);
+                SetDispDate(obj);
             }
             else
             {
@@ -815,7 +813,7 @@ namespace Money.form
                 treeListView.CollapseAll();
         }
 
-        private void SetDispDate()
+        private void SetDispDate(object obj)
         {
             // get data
             BillDB bdb = new BillDB();
@@ -845,10 +843,17 @@ namespace Money.form
             }
 
             // set disp data
+            DateTime dt = DateTime.Now;
+            if (obj is DateTime)
+            {
+                dt = (DateTime)obj;
+            }
+
             if (monthVisible)
-                tcbDate.Text = string.Format("{0}{2}{1:00}", DateTime.Now.Year, DateTime.Now.Month, CultureInfo.CurrentCulture.DateTimeFormat.DateSeparator);
+                tcbDate.Text = string.Format("{0}{2}{1:00}", dt.Year, dt.Month, CultureInfo.CurrentCulture.DateTimeFormat.DateSeparator);
             else
-                tcbDate.Text = DateTime.Now.Year.ToString();
+                tcbDate.Text = dt.Year.ToString();
+
         }
 
         private void SetHomeButton(bool enabled)
@@ -1086,7 +1091,7 @@ namespace Money.form
         private void btnMonth_Click(object sender, EventArgs e)
         {
             btnMonth.Checked = !btnMonth.Checked;
-            SetDispDate();
+            SetDispDate(null);
         }
 
         private void tcbDate_SelectedIndexChanged(object sender, EventArgs e)
