@@ -376,21 +376,14 @@ namespace Money.db
         /// <param name="sub_id"></param>
         /// <param name="withTax"></param>
         /// <returns></returns>
-        public Hashtable GetMonthlyAmountByYearForChart(int sub_id, bool withTax)
+        public Hashtable GetMonthlyAmountByYearForChart(int[] year, int sub_id, bool withTax)
         {
             Hashtable ht = new Hashtable();
             ArrayList list = new ArrayList();
             Hashtable htData = new Hashtable();
 
-            int staYear = CommonUtils.SYSTEM_START_YEAR;
-            int endYear = DateTime.Now.Year;
-            if (staYear <= endYear - CommonUtils.MAX_CHART_YEARS)
-            {
-                staYear = endYear - CommonUtils.MAX_CHART_YEARS + 1;
-            }
-
-            DateTime staDate = new DateTime(staYear, 1, 1);
-            DateTime endDate = new DateTime(endYear, 12, 31);
+            DateTime staDate = new DateTime(year[0], 1, 1);
+            DateTime endDate = new DateTime(year[1], 12, 31);
 
             double sum = 0;
             SQLiteConnection conn = null;
@@ -435,7 +428,7 @@ namespace Money.db
                     htData.Add(reader["date"].ToString(), Convert.ToDouble(reader["amount"].ToString()));
                 }
 
-                for (int i = staYear; i <= endYear; i++)
+                for (int i = year[0]; i <= year[1]; i++)
                 {
                     list = new ArrayList();
                     for (int j = 1; j <= 12; j++)
