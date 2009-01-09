@@ -20,11 +20,7 @@ namespace Money.util
 
         public static int DEFAULT_USER_ID = 0;
 
-        public static int MAX_CHART_YEARS = 4;
-
         public static int KEEP_DB_BACKUP_FILE_DAYS = 45;
-
-        public static int SYSTEM_START_YEAR = 2005;
 
         public static CultureInfo APP_CULTURE_INFO = CultureInfo.CreateSpecificCulture("en- US");
 
