@@ -24,6 +24,7 @@ namespace Money.form
     {
         #region Members
         private static Color[] columnColor = { Color.Blue, Color.Red, Color.Green, Color.DarkOrange};
+        bool inAddYearItems = false;
 
         double[] x = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 };
         double[] x_water = { 1, 3, 5, 7, 9, 11 };
@@ -570,11 +571,20 @@ namespace Money.form
             string sub_name = ((ListItem)tcbChart.SelectedItem).Name;
 
             BillDB edb = new BillDB();
-            Hashtable ht = edb.GetMonthlyAmountByYearForChart(sub_id, false);
+            int sta = Convert.ToInt32(tcbChartStartYear.Text);
+            int end = Convert.ToInt32(tcbChartEndYear.Text);
+            int[] t = {sta, end};
+            if (sta > end)
+            {
+                int tmp = t[1];
+                t[1] = t[0];
+                t[0] = tmp;
+            }
+            Hashtable ht = edb.GetMonthlyAmountByYearForChart(t, sub_id, false);
 
             MasterDB mdb = new MasterDB();
             double[] optimal = mdb.GetSubOptimal(sub_id);
-            this.CreateChartLine(ht, sub_id, sub_name, optimal[0], optimal[1]);
+            this.CreateChartLine(t, ht, sub_id, sub_name, optimal[0], optimal[1]);
         }
 
         private void CreateHBarChart(ArrayList majorIdList)
@@ -620,7 +630,7 @@ namespace Money.form
 #endif
         }
 
-        private void CreateChartLine(Hashtable ht, int sub_id, string title, double optimalValue, double optimalRange)
+        private void CreateChartLine(int[] range, Hashtable ht, int sub_id, string title, double optimalValue, double optimalRange)
         {
 #if DEBUG
             sw = new System.Diagnostics.Stopwatch();
@@ -643,7 +653,7 @@ namespace Money.form
             // Fill the axis background with a color gradient
             myPane.Chart.Fill = new Fill(Color.FromArgb(255, 255, 245), Color.FromArgb(255, 255, 190), 90F);
 
-            int endYear = DateTime.Now.Year;
+            int endYear = range[1];
             int staYear = endYear - ht.Keys.Count + 1;
 
             for (int i = endYear; i >= staYear; i--)
@@ -653,7 +663,7 @@ namespace Money.form
                 tmp = (ArrayList)ht[i.ToString()];
 
                 // Generate a red curve with "Curve 1" in the legend
-                myCurve = myPane.AddCurve(i.ToString(), (sub_id != 9 ? x : x_water), (double[])tmp.ToArray(typeof(double)), columnColor[colorIndex++]);
+                myCurve = myPane.AddCurve(i.ToString(), (sub_id != 9 ? x : x_water), (double[])tmp.ToArray(typeof(double)), colorIndex >= columnColor.Length ? RandomColor : columnColor[colorIndex++]);
                 // Make the symbols opaque by filling them with white
                 myCurve.Symbol.Fill = new Fill(Color.White);
             }
@@ -922,7 +932,11 @@ namespace Money.form
         private void tcMain_SelectedIndexChanged(object sender, EventArgs e)
         {
             bool isHome = (tcMain.SelectedIndex == 0);
+            tcbChartStartYear.Visible = !isHome;
+            tcbChartEndYear.Visible = !isHome;
+            tslTo.Visible = !isHome;
             tcbChart.Visible = !isHome;
+
             btnShowDate.Visible = isHome;
             btnPrev.Visible = isHome;
             btnNext.Visible = isHome;
@@ -938,6 +952,20 @@ namespace Money.form
             {
                 case 1:
                     // set chart select box
+                    inAddYearItems = true;
+                    BillDB bdb = new BillDB();
+                    DateTime[] dateRange = bdb.GetBillDateRange();
+                    tcbChartStartYear.Items.Clear();
+                    tcbChartEndYear.Items.Clear();
+                    for (int i = dateRange[0].Year; i <= dateRange[1].Year; i++)
+                    {
+                        tcbChartStartYear.Items.Add(i.ToString());
+                        tcbChartEndYear.Items.Add(i.ToString());
+                    }
+                    tcbChartStartYear.SelectedIndex = 0;
+                    tcbChartEndYear.SelectedIndex = tcbChartEndYear.Items.Count - 1;
+                    inAddYearItems = false;
+
                     MasterDB mdb = new MasterDB();
                     mdb.GetSubList(tcbChart);
 
@@ -1011,6 +1039,12 @@ namespace Money.form
             SetChart();
         }
 
+        private void tcbChartYear_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (!inAddYearItems)
+                SetChart();
+        }
+        
         private void tcbType_SelectedIndexChanged(object sender, EventArgs e)
         {
             SetDispData();

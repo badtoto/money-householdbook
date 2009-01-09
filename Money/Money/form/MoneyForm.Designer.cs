@@ -79,6 +79,9 @@
             this.btnNext = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.tcbType = new System.Windows.Forms.ToolStripComboBox();
+            this.tcbChartStartYear = new System.Windows.Forms.ToolStripComboBox();
+            this.tslTo = new System.Windows.Forms.ToolStripLabel();
+            this.tcbChartEndYear = new System.Windows.Forms.ToolStripComboBox();
             this.tcbChart = new System.Windows.Forms.ToolStripComboBox();
             this.toolStripContainer = new System.Windows.Forms.ToolStripContainer();
             this.tcMain.SuspendLayout();
@@ -458,6 +461,9 @@
             this.btnNext,
             this.toolStripSeparator2,
             this.tcbType,
+            this.tcbChartStartYear,
+            this.tslTo,
+            this.tcbChartEndYear,
             this.tcbChart});
             this.toolStrip.Location = new System.Drawing.Point(0, 0);
             this.toolStrip.Name = "toolStrip";
@@ -644,7 +650,6 @@
             // tcbDate
             // 
             this.tcbDate.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.tcbDate.FlatStyle = System.Windows.Forms.FlatStyle.Standard;
             this.tcbDate.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tcbDate.Name = "tcbDate";
             this.tcbDate.Size = new System.Drawing.Size(75, 25);
@@ -679,10 +684,39 @@
             this.tcbType.SelectedIndexChanged += new System.EventHandler(this.tcbType_SelectedIndexChanged);
             this.tcbType.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tcbType_KeyDown);
             // 
+            // tcbChartStartYear
+            // 
+            this.tcbChartStartYear.AutoSize = false;
+            this.tcbChartStartYear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.tcbChartStartYear.DropDownWidth = 55;
+            this.tcbChartStartYear.Font = new System.Drawing.Font("Tahoma", 9F);
+            this.tcbChartStartYear.Name = "tcbChartStartYear";
+            this.tcbChartStartYear.Size = new System.Drawing.Size(55, 22);
+            this.tcbChartStartYear.Visible = false;
+            this.tcbChartStartYear.SelectedIndexChanged += new System.EventHandler(this.tcbChartYear_SelectedIndexChanged);
+            // 
+            // tslTo
+            // 
+            this.tslTo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tslTo.Name = "tslTo";
+            this.tslTo.Size = new System.Drawing.Size(19, 23);
+            this.tslTo.Text = " - ";
+            this.tslTo.Visible = false;
+            // 
+            // tcbChartEndYear
+            // 
+            this.tcbChartEndYear.AutoSize = false;
+            this.tcbChartEndYear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.tcbChartEndYear.DropDownWidth = 55;
+            this.tcbChartEndYear.Font = new System.Drawing.Font("Tahoma", 9F);
+            this.tcbChartEndYear.Name = "tcbChartEndYear";
+            this.tcbChartEndYear.Size = new System.Drawing.Size(55, 22);
+            this.tcbChartEndYear.Visible = false;
+            this.tcbChartEndYear.SelectedIndexChanged += new System.EventHandler(this.tcbChartYear_SelectedIndexChanged);
+            // 
             // tcbChart
             // 
             this.tcbChart.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.tcbChart.FlatStyle = System.Windows.Forms.FlatStyle.Standard;
             this.tcbChart.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tcbChart.Name = "tcbChart";
             this.tcbChart.Size = new System.Drawing.Size(240, 22);
@@ -799,5 +833,8 @@
         private BrightIdeasSoftware.OLVColumn colAB;
         private System.Windows.Forms.TableLayoutPanel tlpHome;
         private System.Windows.Forms.TableLayoutPanel tlpSta;
+        private System.Windows.Forms.ToolStripComboBox tcbChartStartYear;
+        private System.Windows.Forms.ToolStripLabel tslTo;
+        private System.Windows.Forms.ToolStripComboBox tcbChartEndYear;
     }
 }
