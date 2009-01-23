@@ -14,7 +14,8 @@ namespace Money.control
         #region Overrides
         protected override void CorrectSubItemColors(ListViewItem olvi)
         {
-            if (this.OwnerDraw && olvi.UseItemStyleForSubItems)
+            olvi.UseItemStyleForSubItems = false;
+            if (this.OwnerDraw)
             {
                 foreach (ListViewItem.ListViewSubItem si in olvi.SubItems)
                 {
