@@ -275,6 +275,8 @@ namespace Money.form
                 }
                 BillDB edb = new BillDB();
                 edb.CheckExpenseFixed();
+                ((MoneyForm)Owner).SetDispData(-1, DateTime.Now);
+
 
                 // 3. optimal data
                 if (editOptimalHT.Values.Count > 0)

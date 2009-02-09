@@ -343,6 +343,9 @@ namespace Money.form
 
         public void SetDispData()
         {
+#if DEBUG
+            Console.WriteLine("into SetDispData()");
+#endif
             #region Initialize
             string dateStr = tcbDate.Text;
             if (!btnShowDate.Checked)

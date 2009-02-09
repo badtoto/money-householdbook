@@ -829,7 +829,7 @@ namespace Money.db
                                     addStartDate = addStartDate.AddYears(fixedData.Interval);
                                     break;
                                 default:
-                                    addStartDate = addStartDate.AddMonths(fixedData.Interval);
+                                    addStartDate = new DateTime(addStartDate.Year, addStartDate.Month + fixedData.Interval, Convert.ToInt32(fixedData.IntervalDetail));
                                     break;
                             }
                         }
@@ -858,6 +858,8 @@ namespace Money.db
                                     DateTime tmp = new DateTime(addStartDate.Year, addStartDate.Month, Convert.ToInt32(fixedData.IntervalDetail));
                                     if (Convert.ToInt32(fixedData.IntervalDetail) < addStartDate.Day)
                                         addStartDate = tmp.AddMonths(1);
+                                    else
+                                        addStartDate = tmp;
                                     break;
                             }
                         }
@@ -962,6 +964,9 @@ namespace Money.db
                 if (reader.Read() && reader[0] != null)
                     try { dateRange[1] = DateTime.Parse(reader[0].ToString() + " 00:00:00"); }
                     catch { }
+
+                if (dateRange[1] <= DateTime.Now)
+                    dateRange[1] = DateTime.Now;
             }
             catch (Exception e)
             {
