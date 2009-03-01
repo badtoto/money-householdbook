@@ -371,10 +371,13 @@ namespace Money.form
             btnApply.Enabled = true;
         }
 
-        private void option_CellEditStarting(object sender, CellEditEventArgs e)
+        void ListItemValueChanged(object sender, EventArgs e)
         {
             btnApply.Enabled = true;
+        }
 
+        private void option_CellEditStarting(object sender, CellEditEventArgs e)
+        {
             if (e.Column.Text == colOptOptimal.Text || e.Column.Text == colOptRange.Text || e.Column.Text == colFixAmount.Text)
             {
                 NumericBox ctb = new NumericBox();
@@ -393,6 +396,7 @@ namespace Money.form
                 {
                     ctb.Text = ((FixedDataTbl)e.RowObject).Amount.ToString();
                 }
+                ctb.TextChanged += new EventHandler(ListItemValueChanged);
                 e.Control = ctb;
             }
             else if (e.Column.Text == colFixFrequency.Text)
@@ -403,6 +407,7 @@ namespace Money.form
                 ctl.Interval = ((FixedDataTbl)e.RowObject).Interval;
                 ctl.IntervalType = ((FixedDataTbl)e.RowObject).IntervalType;
                 ctl.IntervalDetail = ((FixedDataTbl)e.RowObject).IntervalDetail;
+                ctl.FrequencyCtlValueChanged += new EventHandler(ListItemValueChanged);
                 e.Control = ctl;
             }
             else if (e.Column.Text == colUserName.Text)
@@ -411,6 +416,7 @@ namespace Money.form
                 tb.Bounds = e.CellBounds;
                 tb.Font = ((ObjectListView)sender).Font;
                 tb.Text = ((BaseTbl)e.RowObject).Name;
+                tb.TextChanged += new EventHandler(ListItemValueChanged);
                 e.Control = tb;
             }
             else if (e.Column.Text == colUserDeleted.Text)
@@ -421,7 +427,32 @@ namespace Money.form
                 cb.DropDownStyle = ComboBoxStyle.DropDownList;
                 SetDeleteFlgItems(cb);
                 cb.SelectedIndex = ((BaseTbl)e.RowObject).DeleteFlg;
+                cb.SelectedIndexChanged += new EventHandler(ListItemValueChanged);
                 e.Control = cb;
+            }
+            else if (e.Column.Text == colFixStartDate.Text)
+            {
+                DateTimePicker dt = new DateTimePicker();
+                dt.Bounds = e.CellBounds;
+                dt.Font = ((ObjectListView)sender).Font;
+                DateTime dtt = ((FixedDataTbl)e.RowObject).StartDate;
+                if (dtt < dt.MinDate)
+                    dtt = dt.MinDate;
+                dt.Value = dtt;
+                dt.ValueChanged += new EventHandler(ListItemValueChanged);
+                e.Control = dt;
+            }
+            else if (e.Column.Text == colFixEndDate.Text)
+            {
+                DateTimePicker dt = new DateTimePicker();
+                dt.Bounds = e.CellBounds;
+                dt.Font = ((ObjectListView)sender).Font;
+                DateTime dtt = ((FixedDataTbl)e.RowObject).EndDate;
+                if (dtt > dt.MaxDate)
+                    dtt = dt.MaxDate;
+                dt.Value = dtt;
+                dt.ValueChanged += new EventHandler(ListItemValueChanged);
+                e.Control = dt;
             }
             else
             {
@@ -435,28 +466,34 @@ namespace Money.form
             if (e.Column.Text == colOptOptimal.Text)
             {
                 ((SubTbl)e.RowObject).Optimal = ((NumericBox)e.Control).Double;
+                ((NumericBox)e.Control).TextChanged -= new EventHandler(ListItemValueChanged);
             }
             else if (e.Column.Text == colOptRange.Text)
             {
                 ((SubTbl)e.RowObject).Range = ((NumericBox)e.Control).Double;
+                ((NumericBox)e.Control).TextChanged -= new EventHandler(ListItemValueChanged);
             }
             else if (e.Column.Text == colFixAmount.Text)
             {
                 ((FixedDataTbl)e.RowObject).Amount = ((NumericBox)e.Control).Double;
+                ((NumericBox)e.Control).TextChanged -= new EventHandler(ListItemValueChanged);
             }
             else if (e.Column.Text == colUserDeleted.Text)
             {
                 ((BaseTbl)e.RowObject).DeleteFlg = ((ComboBox)e.Control).SelectedIndex;
+                ((ComboBox)e.Control).SelectedIndexChanged -= new EventHandler(ListItemValueChanged);
             }
             else if (e.Column.Text == colUserName.Text)
             {
                 ((BaseTbl)e.RowObject).Name = ((TextBox)e.Control).Text;
+                ((TextBox)e.Control).TextChanged -= new EventHandler(ListItemValueChanged);
             }
             else if (e.Column.Text == colFixFrequency.Text)
             {
                 ((FixedDataTbl)e.RowObject).Interval = ((FrequencyCtl)e.Control).Interval;
                 ((FixedDataTbl)e.RowObject).IntervalType = ((FrequencyCtl)e.Control).IntervalType;
                 ((FixedDataTbl)e.RowObject).IntervalDetail = ((FrequencyCtl)e.Control).IntervalDetail;
+                ((FrequencyCtl)e.Control).FrequencyCtlValueChanged -= new EventHandler(ListItemValueChanged);
             }
             else if (e.Column.Text == colFixStartDate.Text)
             {
@@ -468,6 +505,7 @@ namespace Money.form
                 }
                 DateTime tmp = ((DateTimePicker)e.Control).Value;
                 ((FixedDataTbl)e.RowObject).StartDate = new DateTime(tmp.Year, tmp.Month, tmp.Day, 0, 0, 0);
+                ((DateTimePicker)e.Control).ValueChanged -= new EventHandler(ListItemValueChanged);
             }
             else if (e.Column.Text == colFixEndDate.Text)
             {
@@ -479,6 +517,7 @@ namespace Money.form
                     e.Cancel = true;
                     return;
                 }
+                ((DateTimePicker)e.Control).ValueChanged -= new EventHandler(ListItemValueChanged);
             }
 
             // Any updating will have been down in the SelectedIndexChanged event handler
