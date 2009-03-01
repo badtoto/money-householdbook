@@ -9,6 +9,7 @@ using Money.util;
 
 namespace Money.control
 {
+    [DesignTimeVisible(true), DefaultEvent("ValueChanged")]
     public partial class FrequencyCtl : UserControl
     {
         #region Constructor
@@ -17,6 +18,9 @@ namespace Money.control
             InitializeComponent();
 
             SetIntervalTypeItems(cbType);
+
+            this.nudInterval.ValueChanged += new EventHandler(nudInterval_ValueChanged);
+            this.cbDetail.SelectedIndexChanged += new EventHandler(cbDetail_SelectedIndexChanged);
         }
         #endregion
 
@@ -57,10 +61,33 @@ namespace Money.control
                     break;
                 default: break;
             }
+
+            if (FrequencyCtlValueChanged != null)
+            {
+                FrequencyCtlValueChanged(this, EventArgs.Empty);
+            }
+        }
+
+        void cbDetail_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (FrequencyCtlValueChanged != null)
+            {
+                FrequencyCtlValueChanged(this, EventArgs.Empty);
+            }
+        }
+
+        void nudInterval_ValueChanged(object sender, EventArgs e)
+        {
+            if (FrequencyCtlValueChanged != null)
+            {
+                FrequencyCtlValueChanged(this, EventArgs.Empty);
+            }
         }
         #endregion
 
         #region Properties
+        public event EventHandler FrequencyCtlValueChanged;
+
         public int IntervalType { get { return cbType.SelectedIndex; } set { cbType.SelectedIndex = value; } }
 
         public int Interval { get { return (int)nudInterval.Value; } set { nudInterval.Value = value; } }
