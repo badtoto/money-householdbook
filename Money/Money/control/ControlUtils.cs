@@ -7,7 +7,7 @@ using System.Windows.Forms;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms.VisualStyles;
 
-namespace Money.control
+namespace GMoney.control
 {
     class ControlUtils
     {

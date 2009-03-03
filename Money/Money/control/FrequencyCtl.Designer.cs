@@ -1,4 +1,4 @@
-﻿namespace Money.control
+﻿namespace GMoney.control
 {
     partial class FrequencyCtl
     {

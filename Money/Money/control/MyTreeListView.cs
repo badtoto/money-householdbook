@@ -4,10 +4,10 @@ using System.Text;
 using BrightIdeasSoftware;
 using System.Windows.Forms;
 using System.Drawing;
-using Money.util;
-using Money.instance;
+using GMoney.util;
+using GMoney.instance;
 
-namespace Money.control
+namespace GMoney.control
 {
     class MyTreeListView : TreeListView
     {

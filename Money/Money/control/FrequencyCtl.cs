@@ -5,9 +5,9 @@ using System.Drawing;
 using System.Data;
 using System.Text;
 using System.Windows.Forms;
-using Money.util;
+using GMoney.util;
 
-namespace Money.control
+namespace GMoney.control
 {
     [DesignTimeVisible(true), DefaultEvent("ValueChanged")]
     public partial class FrequencyCtl : UserControl
