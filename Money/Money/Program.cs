@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
-using Money.form;
-using Money.util;
+using GMoney.form;
+using GMoney.util;
 using System.Threading;
-using Money.db;
+using GMoney.db;
 
-namespace Money
+namespace GMoney
 {
     static class Program
     {

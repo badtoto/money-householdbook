@@ -1,4 +1,4 @@
-﻿namespace Money.form
+﻿namespace GMoney.form
 {
     partial class MoneyForm
     {
@@ -34,7 +34,7 @@
             this.tpHome = new System.Windows.Forms.TabPage();
             this.tlpHome = new System.Windows.Forms.TableLayoutPanel();
             this.gbBalance = new System.Windows.Forms.GroupBox();
-            this.treeListView = new Money.control.MyTreeListView();
+            this.treeListView = new GMoney.control.MyTreeListView();
             this.colCategory = new BrightIdeasSoftware.OLVColumn();
             this.colUserName = new BrightIdeasSoftware.OLVColumn();
             this.colDate = new BrightIdeasSoftware.OLVColumn();
@@ -51,7 +51,7 @@
             this.gbStatistics = new System.Windows.Forms.GroupBox();
             this.tlpSta = new System.Windows.Forms.TableLayoutPanel();
             this.pieChart = new Nexus.Windows.Forms.PieChart();
-            this.barChart = new Money.control.HBarChart();
+            this.barChart = new GMoney.control.HBarChart();
             this.tpChart = new System.Windows.Forms.TabPage();
             this.zgcExpense = new ZedGraph.ZedGraphControl();
             this.imageListMainTab = new System.Windows.Forms.ImageList(this.components);
@@ -259,7 +259,7 @@
             // 
             // editToolStripMenuItem
             // 
-            this.editToolStripMenuItem.Image = global::Money.Properties.Resources.Edit_16;
+            this.editToolStripMenuItem.Image = global::GMoney.Properties.Resources.Edit_16;
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
             this.editToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
             this.editToolStripMenuItem.Text = "&Edit";
@@ -267,7 +267,7 @@
             // 
             // mergeToolStripMenuItem
             // 
-            this.mergeToolStripMenuItem.Image = global::Money.Properties.Resources.Merge_16;
+            this.mergeToolStripMenuItem.Image = global::GMoney.Properties.Resources.Merge_16;
             this.mergeToolStripMenuItem.Name = "mergeToolStripMenuItem";
             this.mergeToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
             this.mergeToolStripMenuItem.Text = "&Merge";
@@ -275,7 +275,7 @@
             // 
             // deleteToolStripMenuItem
             // 
-            this.deleteToolStripMenuItem.Image = global::Money.Properties.Resources.Delete_16;
+            this.deleteToolStripMenuItem.Image = global::GMoney.Properties.Resources.Delete_16;
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
             this.deleteToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
             this.deleteToolStripMenuItem.Text = "&Delete";
@@ -346,7 +346,7 @@
             // 
             this.barChart.Background.GradientColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(210)))), ((int)(((byte)(245)))));
             this.barChart.Background.GradientColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(30)))), ((int)(((byte)(90)))));
-            this.barChart.Background.PaintingMode = Money.control.CBackgroundProperty.PaintingModes.RadialGradient;
+            this.barChart.Background.PaintingMode = GMoney.control.CBackgroundProperty.PaintingModes.RadialGradient;
             this.barChart.Background.SolidColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(30)))), ((int)(((byte)(90)))));
             this.barChart.BarOrientation = System.Windows.Forms.Orientation.Horizontal;
             this.barChart.Border.BoundRect = ((System.Drawing.RectangleF)(resources.GetObject("resource.BoundRect")));
@@ -361,7 +361,7 @@
             this.barChart.Dock = System.Windows.Forms.DockStyle.Fill;
             this.barChart.Items.BarOrientation = System.Windows.Forms.Orientation.Horizontal;
             this.barChart.Items.DefaultWidth = 0;
-            this.barChart.Items.DrawingMode = Money.control.HBarItems.DrawingModes.Glass;
+            this.barChart.Items.DrawingMode = GMoney.control.HBarItems.DrawingModes.Glass;
             this.barChart.Items.ShouldReCalculate = false;
             this.barChart.Label.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.barChart.Label.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
@@ -371,16 +371,16 @@
             this.barChart.Name = "barChart";
             this.barChart.Shadow.ColorInner = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.barChart.Shadow.ColorOuter = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.barChart.Shadow.Mode = Money.control.CShadowProperty.Modes.Inner;
+            this.barChart.Shadow.Mode = GMoney.control.CShadowProperty.Modes.Inner;
             this.barChart.Shadow.WidthInner = 5;
             this.barChart.Shadow.WidthOuter = 5;
             this.barChart.Size = new System.Drawing.Size(198, 306);
-            this.barChart.SizingMode = Money.control.HBarChart.BarSizingMode.AutoScale;
+            this.barChart.SizingMode = GMoney.control.HBarChart.BarSizingMode.AutoScale;
             this.barChart.TabIndex = 1;
             this.barChart.Values.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.barChart.Values.Font = new System.Drawing.Font("Tahoma", 7F);
             this.barChart.Values.FontDefaultSize = 7F;
-            this.barChart.Values.Mode = Money.control.CValueProperty.ValueMode.Percent;
+            this.barChart.Values.Mode = GMoney.control.CValueProperty.ValueMode.Percent;
             this.barChart.Values.Visible = true;
             // 
             // tpChart
@@ -475,7 +475,7 @@
             // btnNew
             // 
             this.btnNew.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnNew.Image = global::Money.Properties.Resources.Add_16;
+            this.btnNew.Image = global::GMoney.Properties.Resources.Add_16;
             this.btnNew.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnNew.Name = "btnNew";
             this.btnNew.Size = new System.Drawing.Size(23, 23);
@@ -486,7 +486,7 @@
             // btnEdit
             // 
             this.btnEdit.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnEdit.Image = global::Money.Properties.Resources.Edit_16;
+            this.btnEdit.Image = global::GMoney.Properties.Resources.Edit_16;
             this.btnEdit.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(23, 23);
@@ -497,7 +497,7 @@
             // btnMerge
             // 
             this.btnMerge.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnMerge.Image = global::Money.Properties.Resources.Merge_16;
+            this.btnMerge.Image = global::GMoney.Properties.Resources.Merge_16;
             this.btnMerge.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnMerge.Name = "btnMerge";
             this.btnMerge.Size = new System.Drawing.Size(23, 23);
@@ -508,7 +508,7 @@
             // btnDel
             // 
             this.btnDel.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnDel.Image = global::Money.Properties.Resources.Delete_16;
+            this.btnDel.Image = global::GMoney.Properties.Resources.Delete_16;
             this.btnDel.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnDel.Name = "btnDel";
             this.btnDel.Size = new System.Drawing.Size(23, 23);
@@ -553,7 +553,7 @@
             // btnVacuum
             // 
             this.btnVacuum.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnVacuum.Image = global::Money.Properties.Resources.Optimize_16;
+            this.btnVacuum.Image = global::GMoney.Properties.Resources.Optimize_16;
             this.btnVacuum.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnVacuum.Name = "btnVacuum";
             this.btnVacuum.Size = new System.Drawing.Size(23, 23);
@@ -565,7 +565,7 @@
             // btnBackup
             // 
             this.btnBackup.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnBackup.Image = global::Money.Properties.Resources.Database_16;
+            this.btnBackup.Image = global::GMoney.Properties.Resources.Database_16;
             this.btnBackup.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnBackup.Name = "btnBackup";
             this.btnBackup.Size = new System.Drawing.Size(23, 23);
@@ -577,7 +577,7 @@
             // btnOption
             // 
             this.btnOption.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnOption.Image = global::Money.Properties.Resources.Tools_16;
+            this.btnOption.Image = global::GMoney.Properties.Resources.Tools_16;
             this.btnOption.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnOption.Name = "btnOption";
             this.btnOption.Size = new System.Drawing.Size(23, 23);
@@ -594,7 +594,7 @@
             // 
             this.btnExit.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.btnExit.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnExit.Image = global::Money.Properties.Resources.Exit_16;
+            this.btnExit.Image = global::GMoney.Properties.Resources.Exit_16;
             this.btnExit.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(23, 23);
@@ -606,7 +606,7 @@
             // 
             this.btnAbout.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.btnAbout.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnAbout.Image = global::Money.Properties.Resources.Info_16;
+            this.btnAbout.Image = global::GMoney.Properties.Resources.Info_16;
             this.btnAbout.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnAbout.Name = "btnAbout";
             this.btnAbout.Size = new System.Drawing.Size(23, 23);
@@ -618,7 +618,7 @@
             this.btnShowDate.Checked = true;
             this.btnShowDate.CheckState = System.Windows.Forms.CheckState.Checked;
             this.btnShowDate.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnShowDate.Image = global::Money.Properties.Resources.Calendar_16;
+            this.btnShowDate.Image = global::GMoney.Properties.Resources.Calendar_16;
             this.btnShowDate.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnShowDate.Name = "btnShowDate";
             this.btnShowDate.Size = new System.Drawing.Size(23, 23);
@@ -641,7 +641,7 @@
             // btnPrev
             // 
             this.btnPrev.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnPrev.Image = global::Money.Properties.Resources.Back_16;
+            this.btnPrev.Image = global::GMoney.Properties.Resources.Back_16;
             this.btnPrev.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnPrev.Name = "btnPrev";
             this.btnPrev.Size = new System.Drawing.Size(23, 23);
@@ -659,7 +659,7 @@
             // btnNext
             // 
             this.btnNext.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnNext.Image = global::Money.Properties.Resources.Forward_16;
+            this.btnNext.Image = global::GMoney.Properties.Resources.Forward_16;
             this.btnNext.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(23, 23);
@@ -822,10 +822,10 @@
         private System.Windows.Forms.ImageList imageListMainTab;
         private System.Windows.Forms.ToolStripContainer toolStripContainer;
         private Nexus.Windows.Forms.PieChart pieChart;
-        private Money.control.HBarChart barChart;
+        private GMoney.control.HBarChart barChart;
         private System.Windows.Forms.GroupBox gbBalance;
         private System.Windows.Forms.GroupBox gbStatistics;
-        private Money.control.MyTreeListView treeListView;
+        private GMoney.control.MyTreeListView treeListView;
         private BrightIdeasSoftware.OLVColumn colCategory;
         private BrightIdeasSoftware.OLVColumn colUserName;
         private BrightIdeasSoftware.OLVColumn colDate;

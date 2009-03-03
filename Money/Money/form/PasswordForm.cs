@@ -5,11 +5,11 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-using Money.util;
-using Money.db;
-using Money.control;
+using GMoney.util;
+using GMoney.db;
+using GMoney.control;
 
-namespace Money.form
+namespace GMoney.form
 {
     public partial class PasswordForm : Form
     {

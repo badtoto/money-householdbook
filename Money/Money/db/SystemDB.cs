@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Text;
 using System.Data.SQLite;
 using System.Data.Common;
-using Money.util;
+using GMoney.util;
 
-namespace Money.db
+namespace GMoney.db
 {
     class SystemDB : BaseDB
     {

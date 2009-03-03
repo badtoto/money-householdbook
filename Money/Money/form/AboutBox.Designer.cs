@@ -1,4 +1,4 @@
-﻿namespace Money.form
+﻿namespace GMoney.form
 {
     partial class AboutBox
     {
@@ -32,7 +32,7 @@
             this.labelCopyright = new System.Windows.Forms.Label();
             this.textBoxDescription = new System.Windows.Forms.TextBox();
             this.okButton = new System.Windows.Forms.Button();
-            this.myLabel1 = new Money.control.MyLabel();
+            this.myLabel1 = new GMoney.control.MyLabel();
             this.tableLayoutPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -116,7 +116,7 @@
             this.myLabel1.Name = "myLabel1";
             this.myLabel1.Size = new System.Drawing.Size(418, 108);
             this.myLabel1.TabIndex = 25;
-            this.myLabel1.Text = "Money";
+            this.myLabel1.Text = "GMoney";
             // 
             // AboutBox
             // 
@@ -147,6 +147,6 @@
         private System.Windows.Forms.TextBox textBoxDescription;
         private System.Windows.Forms.Button okButton;
         private System.Windows.Forms.Label labelCopyright;
-        private Money.control.MyLabel myLabel1;
+        private GMoney.control.MyLabel myLabel1;
     }
 }

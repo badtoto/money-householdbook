@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using Money.util;
+using GMoney.util;
 
-namespace Money.instance
+namespace GMoney.instance
 {
     class FixedDataTbl : BillTbl
     {

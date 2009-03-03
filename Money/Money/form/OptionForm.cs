@@ -5,14 +5,14 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-using Money.util;
-using Money.db;
-using Money.control;
+using GMoney.util;
+using GMoney.db;
+using GMoney.control;
 using System.Collections;
 using BrightIdeasSoftware;
-using Money.instance;
+using GMoney.instance;
 
-namespace Money.form
+namespace GMoney.form
 {
     public partial class OptionForm : Form
     {

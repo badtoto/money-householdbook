@@ -5,13 +5,13 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-using Money.db;
-using Money.control;
-using Money.util;
+using GMoney.db;
+using GMoney.control;
+using GMoney.util;
 using System.Timers;
-using Money.instance;
+using GMoney.instance;
 
-namespace Money.form
+namespace GMoney.form
 {
     public partial class BillForm : Form
     {
@@ -146,7 +146,7 @@ namespace Money.form
                 }
                 else
                 {
-                    tbl.UserId = Money.util.CommonUtils.DEFAULT_USER_ID;
+                    tbl.UserId = GMoney.util.CommonUtils.DEFAULT_USER_ID;
                     tbl.UserName = user_name;
                 }
             }

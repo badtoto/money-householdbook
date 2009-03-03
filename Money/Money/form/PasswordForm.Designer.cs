@@ -1,4 +1,4 @@
-﻿namespace Money.form
+﻿namespace GMoney.form
 {
     partial class PasswordForm
     {
@@ -90,7 +90,7 @@
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = global::Money.Properties.Resources.Secure_32;
+            this.pictureBox1.Image = global::GMoney.Properties.Resources.Secure_32;
             this.pictureBox1.Location = new System.Drawing.Point(10, 9);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(32, 32);

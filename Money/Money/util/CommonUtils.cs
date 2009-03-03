@@ -7,14 +7,14 @@ using System.Reflection;
 using System.Globalization;
 using System.Security.Cryptography;
 
-namespace Money.util
+namespace GMoney.util
 {
     class CommonUtils
     {
         #region Properties
         public static string SYSTEM_BACKUP_PATH = "backup";
 
-        public static string DB_NAME = "money.db";
+        public static string DB_NAME = "GMoney.db";
 
         public static string DB_PWD = "4a7d1ed414474e4033ac29ccb8653d9b";
 

@@ -1,4 +1,4 @@
-﻿namespace Money.form
+﻿namespace GMoney.form
 {
     partial class OptionForm
     {
@@ -53,12 +53,12 @@
             this.tbOldPass = new System.Windows.Forms.TextBox();
             this.labelOldPass = new System.Windows.Forms.Label();
             this.tpFixed = new System.Windows.Forms.TabPage();
-            this.frequencyCtl = new Money.control.FrequencyCtl();
+            this.frequencyCtl = new GMoney.control.FrequencyCtl();
             this.cbUser = new System.Windows.Forms.ComboBox();
             this.btnFixedDel = new System.Windows.Forms.Label();
             this.btnFixedNew = new System.Windows.Forms.Label();
             this.cbSub = new System.Windows.Forms.ComboBox();
-            this.ctbAmount = new Money.control.NumericBox();
+            this.ctbAmount = new GMoney.control.NumericBox();
             this.folvFixed = new BrightIdeasSoftware.FastObjectListView();
             this.colFixUserName = new BrightIdeasSoftware.OLVColumn();
             this.colFixSub = new BrightIdeasSoftware.OLVColumn();
@@ -169,7 +169,7 @@
             // btnUserNew
             // 
             this.btnUserNew.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnUserNew.Image = global::Money.Properties.Resources.Add_16;
+            this.btnUserNew.Image = global::GMoney.Properties.Resources.Add_16;
             this.btnUserNew.Location = new System.Drawing.Point(206, 175);
             this.btnUserNew.Margin = new System.Windows.Forms.Padding(0);
             this.btnUserNew.Name = "btnUserNew";
@@ -386,7 +386,7 @@
             // btnFixedDel
             // 
             this.btnFixedDel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnFixedDel.Image = global::Money.Properties.Resources.Delete_16;
+            this.btnFixedDel.Image = global::GMoney.Properties.Resources.Delete_16;
             this.btnFixedDel.Location = new System.Drawing.Point(631, 34);
             this.btnFixedDel.Margin = new System.Windows.Forms.Padding(0);
             this.btnFixedDel.Name = "btnFixedDel";
@@ -397,7 +397,7 @@
             // btnFixedNew
             // 
             this.btnFixedNew.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnFixedNew.Image = global::Money.Properties.Resources.Add_16;
+            this.btnFixedNew.Image = global::GMoney.Properties.Resources.Add_16;
             this.btnFixedNew.Location = new System.Drawing.Point(609, 34);
             this.btnFixedNew.Margin = new System.Windows.Forms.Padding(0);
             this.btnFixedNew.Name = "btnFixedNew";
@@ -522,7 +522,7 @@
             // 
             // deleteToolStripMenuItem
             // 
-            this.deleteToolStripMenuItem.Image = global::Money.Properties.Resources.Delete_16;
+            this.deleteToolStripMenuItem.Image = global::GMoney.Properties.Resources.Delete_16;
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
             this.deleteToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.deleteToolStripMenuItem.Text = "&Delete";
@@ -669,7 +669,7 @@
         private System.Windows.Forms.Label labelOptimal;
         private BrightIdeasSoftware.FastObjectListView folvOptimal;
         private BrightIdeasSoftware.FastObjectListView folvFixed;
-        private Money.control.NumericBox ctbAmount;
+        private GMoney.control.NumericBox ctbAmount;
         private System.Windows.Forms.ComboBox cbSub;
         private System.Windows.Forms.ContextMenuStrip cmsDelete;
         private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
@@ -680,7 +680,7 @@
         private BrightIdeasSoftware.FastObjectListView folvUser;
         private System.Windows.Forms.TextBox tbUserName;
         private System.Windows.Forms.Label btnUserNew;
-        private Money.control.FrequencyCtl frequencyCtl;
+        private GMoney.control.FrequencyCtl frequencyCtl;
 
         private BrightIdeasSoftware.OLVColumn colUserId;
         private BrightIdeasSoftware.OLVColumn colUserName;

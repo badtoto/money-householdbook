@@ -5,7 +5,7 @@ using System.Drawing;
 using System.Reflection;
 using System.Windows.Forms;
 
-namespace Money.form
+namespace GMoney.form
 {
     partial class AboutBox : Form
     {

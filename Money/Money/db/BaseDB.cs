@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Data.SQLite;
-using Money.util;
+using GMoney.util;
 using System.IO;
 using System.Data.Common;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 
-namespace Money.db
+namespace GMoney.db
 {
     class BaseDB
     {

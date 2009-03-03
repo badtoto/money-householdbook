@@ -2,16 +2,16 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Windows.Forms;
-using Money.control;
+using GMoney.control;
 using System.Data.SQLite;
-using Money.util;
+using GMoney.util;
 using System.Data.SqlClient;
 using System.Data;
 using System.Collections;
 using System.Data.Common;
-using Money.instance;
+using GMoney.instance;
 
-namespace Money.db
+namespace GMoney.db
 {
     class MasterDB : BaseDB
     {

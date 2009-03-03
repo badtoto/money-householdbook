@@ -5,12 +5,12 @@ using System.Data.SQLite;
 using System.Data.Common;
 using System.Collections;
 using System.Data;
-using Money.control;
-using Money.util;
-using Money.instance;
+using GMoney.control;
+using GMoney.util;
+using GMoney.instance;
 using System.Globalization;
 
-namespace Money.db
+namespace GMoney.db
 {
     class BillDB : BaseDB
     {

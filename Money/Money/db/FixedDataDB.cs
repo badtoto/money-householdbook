@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using Money.control;
+using GMoney.control;
 using System.Data.SQLite;
 using System.Data.Common;
-using Money.util;
+using GMoney.util;
 using System.Collections;
 using System.Data;
-using Money.instance;
+using GMoney.instance;
 
-namespace Money.db
+namespace GMoney.db
 {
     class FixedDataDB : BaseDB
     {

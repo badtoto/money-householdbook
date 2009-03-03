@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Money.instance
+namespace GMoney.instance
 {
     class BaseTbl
     {

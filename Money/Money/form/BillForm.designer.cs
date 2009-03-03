@@ -1,4 +1,4 @@
-﻿namespace Money.form
+﻿namespace GMoney.form
 {
     partial class BillForm
     {
@@ -50,7 +50,7 @@
             this.nudMonths = new System.Windows.Forms.NumericUpDown();
             this.labelSplit = new System.Windows.Forms.Label();
             this.tbRemarks = new System.Windows.Forms.TextBox();
-            this.tbAmount = new Money.control.NumericBox();
+            this.tbAmount = new GMoney.control.NumericBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudMonths)).BeginInit();
             this.SuspendLayout();
             // 
@@ -376,7 +376,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnCancel;
-        private Money.control.NumericBox tbAmount;
+        private GMoney.control.NumericBox tbAmount;
         private System.Windows.Forms.CheckBox cbAnnualBudget;
         private System.Windows.Forms.Label labelType;
         private System.Windows.Forms.ComboBox cbBillType;

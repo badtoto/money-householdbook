@@ -8,17 +8,17 @@ using System.Windows.Forms;
 using System.Collections;
 using System.Drawing.Drawing2D;
 using System.IO;
-using Money.db;
-using Money.util;
-using Money.instance;
-using Money.control;
+using GMoney.db;
+using GMoney.util;
+using GMoney.instance;
+using GMoney.control;
 using ZedGraph;
 using BrightIdeasSoftware;
 using Nexus.Windows.Forms;
-using Money.Properties;
+using GMoney.Properties;
 using System.Globalization;
 
-namespace Money.form
+namespace GMoney.form
 {
     public partial class MoneyForm : Form
     {
