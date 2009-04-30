@@ -23,7 +23,7 @@ namespace GMoney.form
     public partial class MoneyForm : Form
     {
         #region Members
-        private static Color[] columnColor = { Color.Blue, Color.Red, Color.Green, Color.DarkOrange};
+        private static Color[] columnColor = { Color.Blue, Color.Red, Color.Green};
         bool inAddYearItems = false;
 
         double[] x = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 };
@@ -663,8 +663,34 @@ namespace GMoney.form
                     continue;
                 tmp = (ArrayList)ht[i.ToString()];
 
+                string sCurve = string.Empty;
+                if (sub_id == 9)
+                {
+                    if (DateTime.Now.Month % 2 == 0)
+                    {
+                        sCurve = string.Format("{0}{2}{1:00} - {3}{5}{4:00}"
+                            , i - 1, DateTime.Now.AddMonths(2).Month, CultureInfo.CurrentCulture.DateTimeFormat.DateSeparator
+                            , i, DateTime.Now.Month, CultureInfo.CurrentCulture.DateTimeFormat.DateSeparator
+                            );
+                    }
+                    else
+                    {
+                        sCurve = string.Format("{0}{2}{1:00} - {3}{5}{4:00}"
+                            , i - 1, DateTime.Now.AddMonths(1).Month, CultureInfo.CurrentCulture.DateTimeFormat.DateSeparator
+                            , i, DateTime.Now.AddMonths(-1).Month, CultureInfo.CurrentCulture.DateTimeFormat.DateSeparator
+                            );
+                    }
+                }
+                else
+                {
+                    sCurve = string.Format("{0}{2}{1:00} - {3}{5}{4:00}"
+                        , i - 1, DateTime.Now.AddMonths(1).Month, CultureInfo.CurrentCulture.DateTimeFormat.DateSeparator
+                        , i, DateTime.Now.Month, CultureInfo.CurrentCulture.DateTimeFormat.DateSeparator
+                        );
+                }
+
                 // Generate a red curve with "Curve 1" in the legend
-                myCurve = myPane.AddCurve(i.ToString(), (sub_id != 9 ? x : x_water), (double[])tmp.ToArray(typeof(double)), colorIndex >= columnColor.Length ? RandomColor : columnColor[colorIndex++]);
+                myCurve = myPane.AddCurve(sCurve, (sub_id != 9 ? x : x_water), (double[])tmp.ToArray(typeof(double)), colorIndex >= columnColor.Length ? RandomColor : columnColor[colorIndex++]);
                 // Make the symbols opaque by filling them with white
                 myCurve.Symbol.Fill = new Fill(Color.White);
             }
@@ -970,7 +996,15 @@ namespace GMoney.form
                         tcbChartStartYear.Items.Add(i.ToString());
                         tcbChartEndYear.Items.Add(i.ToString());
                     }
-                    tcbChartStartYear.SelectedIndex = 0;
+                    if (tcbChartStartYear.Items.Count > 4)
+                    {
+                        // default for near 3 years
+                        tcbChartStartYear.SelectedIndex = tcbChartEndYear.Items.Count - 4;
+                    }
+                    else
+                    {
+                        tcbChartStartYear.SelectedIndex = 0;
+                    }
                     tcbChartEndYear.SelectedIndex = tcbChartEndYear.Items.Count - 1;
                     inAddYearItems = false;
 
