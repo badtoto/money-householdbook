@@ -382,10 +382,20 @@ namespace GMoney.db
             ArrayList list = new ArrayList();
             Hashtable htData = new Hashtable();
 
-            DateTime staDate = new DateTime(year[0], 1, 1);
-            DateTime endDate = new DateTime(year[1], 12, 31);
+            DateTime staDate = new DateTime(year[0], DateTime.Now.AddMonths(1).Month, 1);
+            DateTime endDate = new DateTime(year[1], DateTime.Now.Month, DateTime.Now.Day);
+            if (sub_id == 9)
+            {
+                if (endDate.Month % 2 == 1)
+                {
+                    endDate = endDate.AddDays(-endDate.Day);
+                }
+                else
+                {
+                    staDate = staDate.AddMonths(1);
+                }
+            }
 
-            double sum = 0;
             SQLiteConnection conn = null;
             SQLiteCommand cmd = null;
             SQLiteDataReader reader = null;
@@ -428,22 +438,44 @@ namespace GMoney.db
                     htData.Add(reader["date"].ToString(), Convert.ToDouble(reader["amount"].ToString()));
                 }
 
-                for (int i = year[0]; i <= year[1]; i++)
+                DateTime date = staDate;
+                int cnt = 0;
+                while (date <= endDate)
                 {
-                    list = new ArrayList();
-                    for (int j = 1; j <= 12; j++)
+                    strDate = string.Format("{0}{2}{1:00}", date.Year, date.Month, CultureInfo.CurrentCulture.DateTimeFormat.DateSeparator);
+                    if (htData[strDate] == null)
+                        list.Add((double)0);
+                    else
+                        list.Add(htData[strDate]);
+                    
+                    cnt++;
+                    if ((sub_id == 9 && cnt % 6 == 0) || (sub_id != 9 && cnt % 12 == 0))
                     {
-                        if (sub_id == 9 && j % 2 == 1)
-                            continue;
-
-                        strDate = string.Format("{0}{2}{1:00}", i, j, CultureInfo.CurrentCulture.DateTimeFormat.DateSeparator);
-                        if (htData[strDate] == null)
-                            list.Add(sum);
-                        else
-                            list.Add(htData[strDate]);
+                        ht.Add(date.Year.ToString(), list);
+                        list = new ArrayList();
                     }
-                    ht.Add(i.ToString(), list);
+                    date = date.AddMonths(1);
+                    if (sub_id == 9)
+                        date = date.AddMonths(1);
                 }
+#if DEBUG1
+                //for (int i = year[0]; i <= year[1]; i++)
+                //{
+                //    list = new ArrayList();
+                //    for (int j = 1; j <= 12; j++)
+                //    {
+                //        if (sub_id == 9 && j % 2 == 1)
+                //            continue;
+
+                //        strDate = string.Format("{0}{2}{1:00}", i, j, CultureInfo.CurrentCulture.DateTimeFormat.DateSeparator);
+                //        if (htData[strDate] == null)
+                //            list.Add(sum);
+                //        else
+                //            list.Add(htData[strDate]);
+                //    }
+                //    ht.Add(i.ToString(), list);
+                //}
+#endif
             }
             catch (Exception e)
             {
