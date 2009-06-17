@@ -73,8 +73,8 @@ namespace GMoney.util
             get
             {
                 string[] names = new string[12];
-                for (int i = 0; i < names.Length; i++)
-                    names[i] = APP_CULTURE_INFO.DateTimeFormat.AbbreviatedMonthNames[i];
+                for (int i = DateTime.Now.Month; i < names.Length + DateTime.Now.Month; i++)
+                    names[i - DateTime.Now.Month] = APP_CULTURE_INFO.DateTimeFormat.AbbreviatedMonthNames[i % 12];
                 return names;
             }
         }
@@ -83,10 +83,19 @@ namespace GMoney.util
         {
             get
             {
+                int staMonth = DateTime.Now.Month;
+                if (DateTime.Now.Month % 2 != 0)
+                {
+                    staMonth = staMonth - 1;
+                }
                 // water only 6 months
                 string[] names = new string[6];
-                for (int i = 0; i < names.Length; i++)
-                    names[i] = APP_CULTURE_INFO.DateTimeFormat.AbbreviatedMonthNames[i * 2 + 1];
+                int cnt = 0;
+                while (cnt < names.Length)
+                {
+                    names[cnt++] = APP_CULTURE_INFO.DateTimeFormat.AbbreviatedMonthNames[(staMonth + 1) % 12];
+                    staMonth = staMonth + 2;
+                }
                 return names;
             }
         }
