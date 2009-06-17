@@ -299,9 +299,9 @@ namespace GMoney.db
                 if (!string.IsNullOrEmpty(strDate))
                 {
                     if (strDate.Length == 7)
-                        sql += " and substr(bill_date, 0, 7) = @date";
+                        sql += " and substr(bill_date, 1, 7) = @date";
                     else if (strDate.Length == 4)
-                        sql += " and substr(bill_date, 0, 4) = @date";
+                        sql += " and substr(bill_date, 1, 4) = @date";
                 }
 
                 if (strDate.Length == 7)
@@ -410,7 +410,7 @@ namespace GMoney.db
                 string sql = string.Empty;
                 if (sub_id == 0)
                 {
-                    sql = "select substr(bill_date, 0, 7) as date, sum(amount) as amount from v_bill where annual_budget <> " + (int)CommonUtils.AnnualBudget.Yes;
+                    sql = "select substr(bill_date, 1, 7) as date, sum(amount) as amount from v_bill where annual_budget <> " + (int)CommonUtils.AnnualBudget.Yes;
                     // TODO: Hard coding for sub_id
                     if (!withTax)
                         sql += " and bill_type = " + (int)CommonUtils.BillType.Expense + " ";
@@ -419,10 +419,10 @@ namespace GMoney.db
                 }
                 else
                 {
-                    sql = "select substr(bill_date, 0, 7) as date, sum(amount) as amount from v_bill where sub_id = @sub_id ";
+                    sql = "select substr(bill_date, 1, 7) as date, sum(amount) as amount from v_bill where sub_id = @sub_id ";
                 }
                 sql += " and bill_date between @bill_date_1 and @bill_date_2 ";
-                sql += " group by substr(bill_date, 0, 7) order by substr(bill_date, 0, 7)";
+                sql += " group by substr(bill_date, 1, 7) order by substr(bill_date, 0, 7)";
                 cmd.CommandText = sql;
 
                 cmd.Parameters.AddWithValue("bill_date_1", staDate.ToShortDateString());
@@ -537,9 +537,9 @@ namespace GMoney.db
                 {
                     where = true;
                     if (strDate.Length == 7)
-                        sql += " where substr(bill_date, 0, 7) = @date";
+                        sql += " where substr(bill_date, 1, 7) = @date";
                     else if (strDate.Length == 4)
-                        sql += " where substr(bill_date, 0, 4) = @date";
+                        sql += " where substr(bill_date, 1, 4) = @date";
                 }
 
                 if (onlyAnnual)
