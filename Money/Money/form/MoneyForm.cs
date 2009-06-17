@@ -1254,7 +1254,8 @@ namespace GMoney.form
                                 tmp = (ArrayList)sObj[2];
                             }
 
-                            total += tbl.Amount;
+                            if (!tbl.IsAnnualBudget)
+                                total += tbl.Amount;
                             tmp.Add(tbl);
                             sObj[0] = sub_name;
                             sObj[1] = total;
