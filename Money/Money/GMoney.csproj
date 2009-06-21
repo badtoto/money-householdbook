@@ -16,7 +16,7 @@
     </UpgradeBackupLocation>
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
-    <ApplicationIcon>Money.ico</ApplicationIcon>
+    <ApplicationIcon>Emblem-Money.ico</ApplicationIcon>
     <ManifestCertificateThumbprint>9AEC61FB7D4FA90DE23065178231D6C60AB9B202</ManifestCertificateThumbprint>
     <ManifestKeyFile>Money_TemporaryKey.pfx</ManifestKeyFile>
     <GenerateManifests>true</GenerateManifests>
@@ -262,6 +262,7 @@
     <None Include="Resources\Back_16.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Emblem-Money.ico" />
     <Content Include="Money.ico" />
     <None Include="Resources\Status_16.png" />
   </ItemGroup>

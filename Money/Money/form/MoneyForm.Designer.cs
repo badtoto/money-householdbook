@@ -111,7 +111,7 @@
             this.tcMain.Location = new System.Drawing.Point(0, 0);
             this.tcMain.Name = "tcMain";
             this.tcMain.SelectedIndex = 0;
-            this.tcMain.Size = new System.Drawing.Size(792, 518);
+            this.tcMain.Size = new System.Drawing.Size(792, 519);
             this.tcMain.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tcMain.TabIndex = 0;
             this.tcMain.SelectedIndexChanged += new System.EventHandler(this.tcMain_SelectedIndexChanged);
@@ -123,7 +123,7 @@
             this.tpHome.Location = new System.Drawing.Point(4, 26);
             this.tpHome.Name = "tpHome";
             this.tpHome.Padding = new System.Windows.Forms.Padding(1);
-            this.tpHome.Size = new System.Drawing.Size(784, 488);
+            this.tpHome.Size = new System.Drawing.Size(784, 489);
             this.tpHome.TabIndex = 0;
             this.tpHome.Text = "Home";
             this.tpHome.UseVisualStyleBackColor = true;
@@ -140,7 +140,7 @@
             this.tlpHome.Name = "tlpHome";
             this.tlpHome.RowCount = 1;
             this.tlpHome.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpHome.Size = new System.Drawing.Size(782, 486);
+            this.tlpHome.Size = new System.Drawing.Size(782, 487);
             this.tlpHome.TabIndex = 1;
             // 
             // gbBalance
@@ -150,7 +150,7 @@
             this.gbBalance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.gbBalance.Location = new System.Drawing.Point(3, 3);
             this.gbBalance.Name = "gbBalance";
-            this.gbBalance.Size = new System.Drawing.Size(560, 480);
+            this.gbBalance.Size = new System.Drawing.Size(560, 481);
             this.gbBalance.TabIndex = 0;
             this.gbBalance.TabStop = false;
             this.gbBalance.Text = "Balance";
@@ -176,22 +176,21 @@
             this.treeListView.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.treeListView.FullRowSelect = true;
             this.treeListView.HideSelection = false;
-            this.treeListView.ItemRenderer = null;
             this.treeListView.Location = new System.Drawing.Point(3, 19);
             this.treeListView.Name = "treeListView";
             this.treeListView.OwnerDraw = true;
             this.treeListView.RowHeight = 18;
             this.treeListView.ShowGroups = false;
-            this.treeListView.Size = new System.Drawing.Size(554, 458);
+            this.treeListView.Size = new System.Drawing.Size(554, 459);
             this.treeListView.TabIndex = 4;
             this.treeListView.UseAlternatingBackColors = true;
             this.treeListView.UseCompatibleStateImageBehavior = false;
             this.treeListView.View = System.Windows.Forms.View.Details;
             this.treeListView.VirtualMode = true;
+            this.treeListView.DoubleClick += new System.EventHandler(this.List_DoubleClick);
             this.treeListView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.List_KeyDown);
             this.treeListView.ItemActivate += new System.EventHandler(this.treeListView_ItemActivate);
             this.treeListView.SelectionChanged += new System.EventHandler(this.treeListView_SelectionChanged);
-            this.treeListView.DoubleClick += new System.EventHandler(this.List_DoubleClick);
             // 
             // colCategory
             // 
@@ -309,7 +308,7 @@
             this.gbStatistics.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.gbStatistics.Location = new System.Drawing.Point(569, 3);
             this.gbStatistics.Name = "gbStatistics";
-            this.gbStatistics.Size = new System.Drawing.Size(210, 480);
+            this.gbStatistics.Size = new System.Drawing.Size(210, 481);
             this.gbStatistics.TabIndex = 0;
             this.gbStatistics.TabStop = false;
             this.gbStatistics.Text = "Statistics";
@@ -326,7 +325,7 @@
             this.tlpSta.RowCount = 2;
             this.tlpSta.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 32F));
             this.tlpSta.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 68F));
-            this.tlpSta.Size = new System.Drawing.Size(204, 458);
+            this.tlpSta.Size = new System.Drawing.Size(204, 459);
             this.tlpSta.TabIndex = 0;
             // 
             // pieChart
@@ -374,7 +373,7 @@
             this.barChart.Shadow.Mode = GMoney.control.CShadowProperty.Modes.Inner;
             this.barChart.Shadow.WidthInner = 5;
             this.barChart.Shadow.WidthOuter = 5;
-            this.barChart.Size = new System.Drawing.Size(198, 306);
+            this.barChart.Size = new System.Drawing.Size(198, 307);
             this.barChart.SizingMode = GMoney.control.HBarChart.BarSizingMode.AutoScale;
             this.barChart.TabIndex = 1;
             this.barChart.Values.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -468,7 +467,7 @@
             this.tcbChart});
             this.toolStrip.Location = new System.Drawing.Point(0, 0);
             this.toolStrip.Name = "toolStrip";
-            this.toolStrip.Size = new System.Drawing.Size(792, 26);
+            this.toolStrip.Size = new System.Drawing.Size(792, 25);
             this.toolStrip.Stretch = true;
             this.toolStrip.TabIndex = 105;
             // 
@@ -478,7 +477,7 @@
             this.btnNew.Image = global::GMoney.Properties.Resources.Add_16;
             this.btnNew.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnNew.Name = "btnNew";
-            this.btnNew.Size = new System.Drawing.Size(23, 23);
+            this.btnNew.Size = new System.Drawing.Size(23, 22);
             this.btnNew.Text = "New";
             this.btnNew.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnNew.Click += new System.EventHandler(this.btnNewBill_Click);
@@ -489,7 +488,7 @@
             this.btnEdit.Image = global::GMoney.Properties.Resources.Edit_16;
             this.btnEdit.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(23, 23);
+            this.btnEdit.Size = new System.Drawing.Size(23, 22);
             this.btnEdit.Text = "Edit";
             this.btnEdit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
@@ -500,7 +499,7 @@
             this.btnMerge.Image = global::GMoney.Properties.Resources.Merge_16;
             this.btnMerge.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnMerge.Name = "btnMerge";
-            this.btnMerge.Size = new System.Drawing.Size(23, 23);
+            this.btnMerge.Size = new System.Drawing.Size(23, 22);
             this.btnMerge.Text = "Merge";
             this.btnMerge.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnMerge.Click += new System.EventHandler(this.btnMerge_Click);
@@ -511,7 +510,7 @@
             this.btnDel.Image = global::GMoney.Properties.Resources.Delete_16;
             this.btnDel.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnDel.Name = "btnDel";
-            this.btnDel.Size = new System.Drawing.Size(23, 23);
+            this.btnDel.Size = new System.Drawing.Size(23, 22);
             this.btnDel.Text = "Delete";
             this.btnDel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
@@ -519,7 +518,7 @@
             // toolStripSeparator5
             // 
             this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 26);
+            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 25);
             // 
             // btnExpand
             // 
@@ -527,7 +526,7 @@
             this.btnExpand.Image = ((System.Drawing.Image)(resources.GetObject("btnExpand.Image")));
             this.btnExpand.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnExpand.Name = "btnExpand";
-            this.btnExpand.Size = new System.Drawing.Size(23, 23);
+            this.btnExpand.Size = new System.Drawing.Size(23, 22);
             this.btnExpand.Text = "Expand";
             this.btnExpand.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnExpand.ToolTipText = "Expand Group";
@@ -539,7 +538,7 @@
             this.btnCollapse.Image = ((System.Drawing.Image)(resources.GetObject("btnCollapse.Image")));
             this.btnCollapse.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnCollapse.Name = "btnCollapse";
-            this.btnCollapse.Size = new System.Drawing.Size(23, 23);
+            this.btnCollapse.Size = new System.Drawing.Size(23, 22);
             this.btnCollapse.Text = "Collapse";
             this.btnCollapse.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnCollapse.ToolTipText = "Collapse Group";
@@ -548,7 +547,7 @@
             // toolStripSeparator6
             // 
             this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(6, 26);
+            this.toolStripSeparator6.Size = new System.Drawing.Size(6, 25);
             // 
             // btnVacuum
             // 
@@ -556,7 +555,7 @@
             this.btnVacuum.Image = global::GMoney.Properties.Resources.Optimize_16;
             this.btnVacuum.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnVacuum.Name = "btnVacuum";
-            this.btnVacuum.Size = new System.Drawing.Size(23, 23);
+            this.btnVacuum.Size = new System.Drawing.Size(23, 22);
             this.btnVacuum.Text = "Vacuum";
             this.btnVacuum.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnVacuum.ToolTipText = "Database Vacuum";
@@ -568,7 +567,7 @@
             this.btnBackup.Image = global::GMoney.Properties.Resources.Database_16;
             this.btnBackup.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnBackup.Name = "btnBackup";
-            this.btnBackup.Size = new System.Drawing.Size(23, 23);
+            this.btnBackup.Size = new System.Drawing.Size(23, 22);
             this.btnBackup.Text = "Backup";
             this.btnBackup.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnBackup.ToolTipText = "Database Backup";
@@ -580,7 +579,7 @@
             this.btnOption.Image = global::GMoney.Properties.Resources.Tools_16;
             this.btnOption.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnOption.Name = "btnOption";
-            this.btnOption.Size = new System.Drawing.Size(23, 23);
+            this.btnOption.Size = new System.Drawing.Size(23, 22);
             this.btnOption.Text = "Options";
             this.btnOption.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnOption.Click += new System.EventHandler(this.btnOption_Click);
@@ -588,7 +587,7 @@
             // toolStripSeparator7
             // 
             this.toolStripSeparator7.Name = "toolStripSeparator7";
-            this.toolStripSeparator7.Size = new System.Drawing.Size(6, 26);
+            this.toolStripSeparator7.Size = new System.Drawing.Size(6, 25);
             // 
             // btnExit
             // 
@@ -609,7 +608,7 @@
             this.btnAbout.Image = global::GMoney.Properties.Resources.Info_16;
             this.btnAbout.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnAbout.Name = "btnAbout";
-            this.btnAbout.Size = new System.Drawing.Size(23, 23);
+            this.btnAbout.Size = new System.Drawing.Size(23, 22);
             this.btnAbout.Text = "About";
             this.btnAbout.Click += new System.EventHandler(this.btnAbout_Click);
             // 
@@ -621,7 +620,7 @@
             this.btnShowDate.Image = global::GMoney.Properties.Resources.Calendar_16;
             this.btnShowDate.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnShowDate.Name = "btnShowDate";
-            this.btnShowDate.Size = new System.Drawing.Size(23, 23);
+            this.btnShowDate.Size = new System.Drawing.Size(23, 22);
             this.btnShowDate.Text = "Show Date";
             this.btnShowDate.Click += new System.EventHandler(this.btnShowDate_Click);
             // 
@@ -633,7 +632,7 @@
             this.btnMonth.Image = ((System.Drawing.Image)(resources.GetObject("btnMonth.Image")));
             this.btnMonth.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnMonth.Name = "btnMonth";
-            this.btnMonth.Size = new System.Drawing.Size(46, 23);
+            this.btnMonth.Size = new System.Drawing.Size(46, 22);
             this.btnMonth.Text = "Month";
             this.btnMonth.ToolTipText = "Show with Month";
             this.btnMonth.Click += new System.EventHandler(this.btnMonth_Click);
@@ -644,7 +643,7 @@
             this.btnPrev.Image = global::GMoney.Properties.Resources.Back_16;
             this.btnPrev.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnPrev.Name = "btnPrev";
-            this.btnPrev.Size = new System.Drawing.Size(23, 23);
+            this.btnPrev.Size = new System.Drawing.Size(23, 22);
             this.btnPrev.Text = "Previous";
             this.btnPrev.Click += new System.EventHandler(this.btnPrev_Click);
             // 
@@ -653,7 +652,7 @@
             this.tcbDate.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.tcbDate.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tcbDate.Name = "tcbDate";
-            this.tcbDate.Size = new System.Drawing.Size(75, 26);
+            this.tcbDate.Size = new System.Drawing.Size(75, 25);
             this.tcbDate.SelectedIndexChanged += new System.EventHandler(this.tcbDate_SelectedIndexChanged);
             // 
             // btnNext
@@ -662,14 +661,14 @@
             this.btnNext.Image = global::GMoney.Properties.Resources.Forward_16;
             this.btnNext.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(23, 23);
+            this.btnNext.Size = new System.Drawing.Size(23, 22);
             this.btnNext.Text = "Next";
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 26);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
             // tcbType
             // 
@@ -681,7 +680,7 @@
             "Income",
             "Annual"});
             this.tcbType.Name = "tcbType";
-            this.tcbType.Size = new System.Drawing.Size(200, 26);
+            this.tcbType.Size = new System.Drawing.Size(200, 25);
             this.tcbType.SelectedIndexChanged += new System.EventHandler(this.tcbType_SelectedIndexChanged);
             this.tcbType.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tcbType_KeyDown);
             // 
@@ -735,7 +734,7 @@
             // 
             this.toolStripContainer.ContentPanel.Controls.Add(this.tcMain);
             this.toolStripContainer.ContentPanel.RenderMode = System.Windows.Forms.ToolStripRenderMode.ManagerRenderMode;
-            this.toolStripContainer.ContentPanel.Size = new System.Drawing.Size(792, 518);
+            this.toolStripContainer.ContentPanel.Size = new System.Drawing.Size(792, 519);
             this.toolStripContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripContainer.Location = new System.Drawing.Point(0, 0);
             this.toolStripContainer.Name = "toolStripContainer";
