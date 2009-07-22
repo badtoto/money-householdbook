@@ -4,6 +4,7 @@ using System.Text;
 using System.Data.SQLite;
 using System.Data.Common;
 using GMoney.util;
+using System.Drawing;
 
 namespace GMoney.db
 {
@@ -58,7 +59,16 @@ namespace GMoney.db
                 cmd.CommandText = "update s_system set app_value = @value where app_name = @name";
                 cmd.Parameters.AddWithValue("name", app_name);
                 cmd.Parameters.AddWithValue("value", app_value);
-                cmd.ExecuteNonQuery();
+                int ret = cmd.ExecuteNonQuery();
+
+                if (ret <= 0)
+                {
+                    cmd = conn.CreateCommand();
+                    cmd.CommandText = "insert into s_system(app_name, app_value) values (@name, @value)";
+                    cmd.Parameters.AddWithValue("name", app_name);
+                    cmd.Parameters.AddWithValue("value", app_value);
+                    cmd.ExecuteNonQuery();
+                }
 
                 tran.Commit();
 
@@ -108,6 +118,53 @@ namespace GMoney.db
         {
             return SetValue("last_vacuum_date", value);
         }
+
+        public Point GetFormLocation()
+        {
+            Point p = Point.Empty;
+
+            string x = GetValue("point_x");
+            string y = GetValue("point_y");
+            if ((!string.IsNullOrEmpty(x)) && (!string.IsNullOrEmpty(y)))
+            {
+                try
+                {
+                    p = new Point(Convert.ToInt32(x), Convert.ToInt32(y));
+                }
+                catch { }
+            }
+
+            return p;
+        }
+
+        public Size GetFormSize()
+        {
+            Size s = Size.Empty;
+
+            string width = GetValue("size_width");
+            string height = GetValue("size_height");
+            if ((!string.IsNullOrEmpty(width)) && (!string.IsNullOrEmpty(height)))
+            {
+                try
+                {
+                    s = new Size(Convert.ToInt32(width), Convert.ToInt32(height));
+                }
+                catch { }
+            }
+
+            return s;
+        }
+
+        public bool SetFormLocation(Point p)
+        {
+            return SetValue("point_x", p.X.ToString()) && SetValue("point_y", p.Y.ToString());
+        }
+
+        public bool SetFormSize(Size s)
+        {
+            return SetValue("size_width", s.Width.ToString()) && SetValue("size_height", s.Height.ToString());
+        }
+
         #endregion
     }
 }
