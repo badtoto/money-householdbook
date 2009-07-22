@@ -756,6 +756,7 @@
             this.Name = "MoneyForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MoneyForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MoneyForm_FormClosing);
             this.tcMain.ResumeLayout(false);
             this.tpHome.ResumeLayout(false);
             this.tlpHome.ResumeLayout(false);

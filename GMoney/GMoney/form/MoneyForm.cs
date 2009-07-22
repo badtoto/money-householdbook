@@ -39,6 +39,18 @@ namespace GMoney.form
         {
             InitializeComponent();
 
+            #region set window location & size
+            SystemDB sdb = new SystemDB();
+            // Set window location
+            if (sdb.GetFormLocation() != Point.Empty)
+                this.Location = sdb.GetFormLocation();
+
+            // Set window size
+            if (sdb.GetFormSize() != Size.Empty)
+                this.Size = sdb.GetFormSize();
+            #endregion
+
+
             this.Text = CommonUtils.CaptionName;
             randRGB = new Random();
 
@@ -1169,6 +1181,23 @@ namespace GMoney.form
 
             CreateHBarChart(list);
         }
+        #endregion
+
+        #region Others
+
+        private void MoneyForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            SystemDB sdb = new SystemDB();
+            // Copy window location to app settings
+            sdb.SetFormLocation(this.Location);
+
+            // Copy window size to app settings
+            if (this.WindowState == FormWindowState.Normal)
+                sdb.SetFormSize(this.Size);
+            else
+                sdb.SetFormSize(this.RestoreBounds.Size);
+        }
+
         #endregion
         #endregion
 
