@@ -249,8 +249,6 @@ namespace GMoney.form
 
         private void cbBillType_SelectedIndexChanged(object sender, EventArgs e)
         {
-            cbAnnualBudget.Visible = (cbBillType.SelectedIndex == 0);
-
             MasterDB db = new MasterDB();
             db.GetMajorList(cbMajor, cbBillType.SelectedIndex, IsUpdate);
         }

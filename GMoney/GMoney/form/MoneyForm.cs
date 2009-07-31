@@ -428,6 +428,11 @@ namespace GMoney.form
                 }
 
                 // Status Label
+                if (btnShowDate.Checked && btnMonth.Checked)
+                {
+                    // month expense without annual
+                    total -= totalAB;
+                }
                 this.toolStripStatusLabel.Text = string.Format(Properties.Resources.GroupBoxIncomeTitle, NumericUtils.ToCurrency(total));
                 gbBalance.Text = string.Format(Properties.Resources.GroupBoxIncomeTitle, NumericUtils.ToCurrency(total));
                 #endregion
