@@ -961,7 +961,10 @@ namespace GMoney.form
                     if (obj is BillTbl)
                         total += ((BillTbl)obj).Amount;
                 }
-                this.toolStripStatusLabel.Text = String.Format(Resources.StatusLabel, treeListView.SelectedObjects.Count.ToString("n0"), treeListView.NodeCount.ToString("n0"), NumericUtils.ToCurrency(total));
+                if (treeListView.SelectedObjects.Count > 1)
+                    this.toolStripStatusLabel.Text = String.Format(Resources.StatusLabelWithAverage, treeListView.SelectedObjects.Count.ToString("n0"), treeListView.NodeCount.ToString("n0"), NumericUtils.ToCurrency(total), NumericUtils.ToCurrency(total / treeListView.SelectedObjects.Count));
+                else
+                    this.toolStripStatusLabel.Text = String.Format(Resources.StatusLabel, treeListView.SelectedObjects.Count.ToString("n0"), treeListView.NodeCount.ToString("n0"), NumericUtils.ToCurrency(total));
             }
         }
 
