@@ -449,6 +449,15 @@ namespace GMoney.Properties {
             }
         }
         
+        /// <summary>
+        ///   Looks up a localized string similar to Selected {0} of {1} items, Total : {2}, Average : {3}.
+        /// </summary>
+        internal static string StatusLabelWithAverage {
+            get {
+                return ResourceManager.GetString("StatusLabelWithAverage", resourceCulture);
+            }
+        }
+        
         internal static System.Drawing.Bitmap Tick_16 {
             get {
                 object obj = ResourceManager.GetObject("Tick_16", resourceCulture);
