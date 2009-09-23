@@ -34,13 +34,6 @@
             this.tpHome = new System.Windows.Forms.TabPage();
             this.tlpHome = new System.Windows.Forms.TableLayoutPanel();
             this.gbBalance = new System.Windows.Forms.GroupBox();
-            this.treeListView = new GMoney.control.MyTreeListView();
-            this.colCategory = new BrightIdeasSoftware.OLVColumn();
-            this.colUserName = new BrightIdeasSoftware.OLVColumn();
-            this.colDate = new BrightIdeasSoftware.OLVColumn();
-            this.colAmount = new BrightIdeasSoftware.OLVColumn();
-            this.colRemarks = new BrightIdeasSoftware.OLVColumn();
-            this.colAB = new BrightIdeasSoftware.OLVColumn();
             this.cmsHomeTab = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mergeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -50,8 +43,6 @@
             this.collapseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gbStatistics = new System.Windows.Forms.GroupBox();
             this.tlpSta = new System.Windows.Forms.TableLayoutPanel();
-            this.pieChart = new Nexus.Windows.Forms.PieChart();
-            this.barChart = new GMoney.control.HBarChart();
             this.tpChart = new System.Windows.Forms.TabPage();
             this.zgcExpense = new ZedGraph.ZedGraphControl();
             this.imageListMainTab = new System.Windows.Forms.ImageList(this.components);
@@ -84,11 +75,19 @@
             this.tcbChartEndYear = new System.Windows.Forms.ToolStripComboBox();
             this.tcbChart = new System.Windows.Forms.ToolStripComboBox();
             this.toolStripContainer = new System.Windows.Forms.ToolStripContainer();
+            this.treeListView = new GMoney.control.MyTreeListView();
+            this.colCategory = new BrightIdeasSoftware.OLVColumn();
+            this.colUserName = new BrightIdeasSoftware.OLVColumn();
+            this.colDate = new BrightIdeasSoftware.OLVColumn();
+            this.colAmount = new BrightIdeasSoftware.OLVColumn();
+            this.colRemarks = new BrightIdeasSoftware.OLVColumn();
+            this.colAB = new BrightIdeasSoftware.OLVColumn();
+            this.pieChart = new Nexus.Windows.Forms.PieChart();
+            this.barChart = new GMoney.control.HBarChart();
             this.tcMain.SuspendLayout();
             this.tpHome.SuspendLayout();
             this.tlpHome.SuspendLayout();
             this.gbBalance.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.treeListView)).BeginInit();
             this.cmsHomeTab.SuspendLayout();
             this.gbStatistics.SuspendLayout();
             this.tlpSta.SuspendLayout();
@@ -99,6 +98,7 @@
             this.toolStripContainer.ContentPanel.SuspendLayout();
             this.toolStripContainer.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.treeListView)).BeginInit();
             this.SuspendLayout();
             // 
             // tcMain
@@ -111,7 +111,7 @@
             this.tcMain.Location = new System.Drawing.Point(0, 0);
             this.tcMain.Name = "tcMain";
             this.tcMain.SelectedIndex = 0;
-            this.tcMain.Size = new System.Drawing.Size(792, 519);
+            this.tcMain.Size = new System.Drawing.Size(1016, 687);
             this.tcMain.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tcMain.TabIndex = 0;
             this.tcMain.SelectedIndexChanged += new System.EventHandler(this.tcMain_SelectedIndexChanged);
@@ -123,7 +123,7 @@
             this.tpHome.Location = new System.Drawing.Point(4, 26);
             this.tpHome.Name = "tpHome";
             this.tpHome.Padding = new System.Windows.Forms.Padding(1);
-            this.tpHome.Size = new System.Drawing.Size(784, 489);
+            this.tpHome.Size = new System.Drawing.Size(1008, 657);
             this.tpHome.TabIndex = 0;
             this.tpHome.Text = "Home";
             this.tpHome.UseVisualStyleBackColor = true;
@@ -140,7 +140,7 @@
             this.tlpHome.Name = "tlpHome";
             this.tlpHome.RowCount = 1;
             this.tlpHome.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpHome.Size = new System.Drawing.Size(782, 487);
+            this.tlpHome.Size = new System.Drawing.Size(1006, 655);
             this.tlpHome.TabIndex = 1;
             // 
             // gbBalance
@@ -150,98 +150,10 @@
             this.gbBalance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.gbBalance.Location = new System.Drawing.Point(3, 3);
             this.gbBalance.Name = "gbBalance";
-            this.gbBalance.Size = new System.Drawing.Size(560, 481);
+            this.gbBalance.Size = new System.Drawing.Size(723, 649);
             this.gbBalance.TabIndex = 0;
             this.gbBalance.TabStop = false;
             this.gbBalance.Text = "Balance";
-            // 
-            // treeListView
-            // 
-            this.treeListView.AllColumns.Add(this.colCategory);
-            this.treeListView.AllColumns.Add(this.colUserName);
-            this.treeListView.AllColumns.Add(this.colDate);
-            this.treeListView.AllColumns.Add(this.colAmount);
-            this.treeListView.AllColumns.Add(this.colRemarks);
-            this.treeListView.AllColumns.Add(this.colAB);
-            this.treeListView.AlternateRowBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(245)))), ((int)(((byte)(250)))));
-            this.treeListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.colCategory,
-            this.colUserName,
-            this.colDate,
-            this.colAmount,
-            this.colRemarks,
-            this.colAB});
-            this.treeListView.ContextMenuStrip = this.cmsHomeTab;
-            this.treeListView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.treeListView.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.treeListView.FullRowSelect = true;
-            this.treeListView.HideSelection = false;
-            this.treeListView.Location = new System.Drawing.Point(3, 19);
-            this.treeListView.Name = "treeListView";
-            this.treeListView.OwnerDraw = true;
-            this.treeListView.RowHeight = 18;
-            this.treeListView.ShowGroups = false;
-            this.treeListView.Size = new System.Drawing.Size(554, 459);
-            this.treeListView.TabIndex = 4;
-            this.treeListView.UseAlternatingBackColors = true;
-            this.treeListView.UseCompatibleStateImageBehavior = false;
-            this.treeListView.View = System.Windows.Forms.View.Details;
-            this.treeListView.VirtualMode = true;
-            this.treeListView.DoubleClick += new System.EventHandler(this.List_DoubleClick);
-            this.treeListView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.List_KeyDown);
-            this.treeListView.ItemActivate += new System.EventHandler(this.treeListView_ItemActivate);
-            this.treeListView.SelectionChanged += new System.EventHandler(this.treeListView_SelectionChanged);
-            // 
-            // colCategory
-            // 
-            this.colCategory.FillsFreeSpace = true;
-            this.colCategory.MinimumWidth = 180;
-            this.colCategory.Text = "Category";
-            this.colCategory.Width = 180;
-            // 
-            // colUserName
-            // 
-            this.colUserName.FillsFreeSpace = true;
-            this.colUserName.MaximumWidth = 120;
-            this.colUserName.MinimumWidth = 90;
-            this.colUserName.Text = "Name";
-            this.colUserName.Width = 90;
-            // 
-            // colDate
-            // 
-            this.colDate.FillsFreeSpace = true;
-            this.colDate.IsEditable = false;
-            this.colDate.MaximumWidth = 120;
-            this.colDate.MinimumWidth = 80;
-            this.colDate.Text = "Date";
-            this.colDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.colDate.Width = 80;
-            // 
-            // colAmount
-            // 
-            this.colAmount.FillsFreeSpace = true;
-            this.colAmount.IsEditable = false;
-            this.colAmount.MaximumWidth = 150;
-            this.colAmount.MinimumWidth = 75;
-            this.colAmount.Text = "Amount";
-            this.colAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.colAmount.Width = 75;
-            // 
-            // colRemarks
-            // 
-            this.colRemarks.FillsFreeSpace = true;
-            this.colRemarks.IsEditable = false;
-            this.colRemarks.MinimumWidth = 80;
-            this.colRemarks.Text = "Remarks";
-            this.colRemarks.Width = 80;
-            // 
-            // colAB
-            // 
-            this.colAB.MaximumWidth = 24;
-            this.colAB.MinimumWidth = 24;
-            this.colAB.Text = "Annual";
-            this.colAB.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.colAB.Width = 24;
             // 
             // cmsHomeTab
             // 
@@ -306,9 +218,9 @@
             this.gbStatistics.Controls.Add(this.tlpSta);
             this.gbStatistics.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gbStatistics.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.gbStatistics.Location = new System.Drawing.Point(569, 3);
+            this.gbStatistics.Location = new System.Drawing.Point(732, 3);
             this.gbStatistics.Name = "gbStatistics";
-            this.gbStatistics.Size = new System.Drawing.Size(210, 481);
+            this.gbStatistics.Size = new System.Drawing.Size(271, 649);
             this.gbStatistics.TabIndex = 0;
             this.gbStatistics.TabStop = false;
             this.gbStatistics.Text = "Statistics";
@@ -325,62 +237,8 @@
             this.tlpSta.RowCount = 2;
             this.tlpSta.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 32F));
             this.tlpSta.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 68F));
-            this.tlpSta.Size = new System.Drawing.Size(204, 459);
+            this.tlpSta.Size = new System.Drawing.Size(265, 627);
             this.tlpSta.TabIndex = 0;
-            // 
-            // pieChart
-            // 
-            this.pieChart.AutoSizePie = true;
-            this.pieChart.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pieChart.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.pieChart.Location = new System.Drawing.Point(3, 3);
-            this.pieChart.Name = "pieChart";
-            this.pieChart.Radius = 200F;
-            this.pieChart.Size = new System.Drawing.Size(198, 140);
-            this.pieChart.TabIndex = 0;
-            this.pieChart.Thickness = 30F;
-            this.pieChart.ItemClicked += new Nexus.Windows.Forms.PieChartItemEventHandler(this.pieChart_ItemClicked);
-            // 
-            // barChart
-            // 
-            this.barChart.Background.GradientColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(210)))), ((int)(((byte)(245)))));
-            this.barChart.Background.GradientColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(30)))), ((int)(((byte)(90)))));
-            this.barChart.Background.PaintingMode = GMoney.control.CBackgroundProperty.PaintingModes.RadialGradient;
-            this.barChart.Background.SolidColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(30)))), ((int)(((byte)(90)))));
-            this.barChart.BarOrientation = System.Windows.Forms.Orientation.Horizontal;
-            this.barChart.Border.BoundRect = ((System.Drawing.RectangleF)(resources.GetObject("resource.BoundRect")));
-            this.barChart.Border.Color = System.Drawing.Color.White;
-            this.barChart.Border.Visible = true;
-            this.barChart.Border.Width = 1;
-            this.barChart.Description.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.barChart.Description.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
-            this.barChart.Description.FontDefaultSize = 12F;
-            this.barChart.Description.Text = "Detail";
-            this.barChart.Description.Visible = false;
-            this.barChart.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.barChart.Items.BarOrientation = System.Windows.Forms.Orientation.Horizontal;
-            this.barChart.Items.DefaultWidth = 0;
-            this.barChart.Items.DrawingMode = GMoney.control.HBarItems.DrawingModes.Glass;
-            this.barChart.Items.ShouldReCalculate = false;
-            this.barChart.Label.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.barChart.Label.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
-            this.barChart.Label.FontDefaultSize = 8F;
-            this.barChart.Label.Visible = true;
-            this.barChart.Location = new System.Drawing.Point(3, 149);
-            this.barChart.Name = "barChart";
-            this.barChart.Shadow.ColorInner = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.barChart.Shadow.ColorOuter = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.barChart.Shadow.Mode = GMoney.control.CShadowProperty.Modes.Inner;
-            this.barChart.Shadow.WidthInner = 5;
-            this.barChart.Shadow.WidthOuter = 5;
-            this.barChart.Size = new System.Drawing.Size(198, 307);
-            this.barChart.SizingMode = GMoney.control.HBarChart.BarSizingMode.AutoScale;
-            this.barChart.TabIndex = 1;
-            this.barChart.Values.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.barChart.Values.Font = new System.Drawing.Font("Tahoma", 7F);
-            this.barChart.Values.FontDefaultSize = 7F;
-            this.barChart.Values.Mode = GMoney.control.CValueProperty.ValueMode.Percent;
-            this.barChart.Values.Visible = true;
             // 
             // tpChart
             // 
@@ -389,7 +247,7 @@
             this.tpChart.Location = new System.Drawing.Point(4, 26);
             this.tpChart.Name = "tpChart";
             this.tpChart.Padding = new System.Windows.Forms.Padding(3);
-            this.tpChart.Size = new System.Drawing.Size(784, 488);
+            this.tpChart.Size = new System.Drawing.Size(1008, 657);
             this.tpChart.TabIndex = 1;
             this.tpChart.Text = "Chart";
             this.tpChart.UseVisualStyleBackColor = true;
@@ -408,7 +266,7 @@
             this.zgcExpense.ScrollMinX = 0;
             this.zgcExpense.ScrollMinY = 0;
             this.zgcExpense.ScrollMinY2 = 0;
-            this.zgcExpense.Size = new System.Drawing.Size(778, 482);
+            this.zgcExpense.Size = new System.Drawing.Size(1002, 651);
             this.zgcExpense.TabIndex = 8;
             // 
             // imageListMainTab
@@ -426,7 +284,7 @@
             this.toolStripStatusLabel});
             this.statusStrip.Location = new System.Drawing.Point(0, 0);
             this.statusStrip.Name = "statusStrip";
-            this.statusStrip.Size = new System.Drawing.Size(792, 22);
+            this.statusStrip.Size = new System.Drawing.Size(1016, 22);
             this.statusStrip.TabIndex = 104;
             // 
             // toolStripStatusLabel
@@ -467,7 +325,7 @@
             this.tcbChart});
             this.toolStrip.Location = new System.Drawing.Point(0, 0);
             this.toolStrip.Name = "toolStrip";
-            this.toolStrip.Size = new System.Drawing.Size(792, 25);
+            this.toolStrip.Size = new System.Drawing.Size(1016, 25);
             this.toolStrip.Stretch = true;
             this.toolStrip.TabIndex = 105;
             // 
@@ -596,7 +454,7 @@
             this.btnExit.Image = global::GMoney.Properties.Resources.Exit_16;
             this.btnExit.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(23, 23);
+            this.btnExit.Size = new System.Drawing.Size(36, 36);
             this.btnExit.Text = "Exit";
             this.btnExit.Visible = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
@@ -699,7 +557,7 @@
             // 
             this.tslTo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.tslTo.Name = "tslTo";
-            this.tslTo.Size = new System.Drawing.Size(19, 23);
+            this.tslTo.Size = new System.Drawing.Size(19, 36);
             this.tslTo.Text = " - ";
             this.tslTo.Visible = false;
             // 
@@ -734,22 +592,164 @@
             // 
             this.toolStripContainer.ContentPanel.Controls.Add(this.tcMain);
             this.toolStripContainer.ContentPanel.RenderMode = System.Windows.Forms.ToolStripRenderMode.ManagerRenderMode;
-            this.toolStripContainer.ContentPanel.Size = new System.Drawing.Size(792, 519);
+            this.toolStripContainer.ContentPanel.Size = new System.Drawing.Size(1016, 687);
             this.toolStripContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripContainer.Location = new System.Drawing.Point(0, 0);
             this.toolStripContainer.Name = "toolStripContainer";
-            this.toolStripContainer.Size = new System.Drawing.Size(792, 566);
+            this.toolStripContainer.Size = new System.Drawing.Size(1016, 734);
             this.toolStripContainer.TabIndex = 106;
             // 
             // toolStripContainer.TopToolStripPanel
             // 
             this.toolStripContainer.TopToolStripPanel.Controls.Add(this.toolStrip);
             // 
+            // treeListView
+            // 
+            this.treeListView.AllColumns.Add(this.colCategory);
+            this.treeListView.AllColumns.Add(this.colUserName);
+            this.treeListView.AllColumns.Add(this.colDate);
+            this.treeListView.AllColumns.Add(this.colAmount);
+            this.treeListView.AllColumns.Add(this.colRemarks);
+            this.treeListView.AllColumns.Add(this.colAB);
+            this.treeListView.AlternateRowBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(245)))), ((int)(((byte)(250)))));
+            this.treeListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.colCategory,
+            this.colUserName,
+            this.colDate,
+            this.colAmount,
+            this.colRemarks,
+            this.colAB});
+            this.treeListView.ContextMenuStrip = this.cmsHomeTab;
+            this.treeListView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.treeListView.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.treeListView.FullRowSelect = true;
+            this.treeListView.HideSelection = false;
+            this.treeListView.Location = new System.Drawing.Point(3, 19);
+            this.treeListView.Name = "treeListView";
+            this.treeListView.OwnerDraw = true;
+            this.treeListView.RowHeight = 18;
+            this.treeListView.ShowGroups = false;
+            this.treeListView.Size = new System.Drawing.Size(717, 627);
+            this.treeListView.TabIndex = 4;
+            this.treeListView.UseAlternatingBackColors = true;
+            this.treeListView.UseCompatibleStateImageBehavior = false;
+            this.treeListView.View = System.Windows.Forms.View.Details;
+            this.treeListView.VirtualMode = true;
+            this.treeListView.DoubleClick += new System.EventHandler(this.List_DoubleClick);
+            this.treeListView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.List_KeyDown);
+            this.treeListView.ItemActivate += new System.EventHandler(this.treeListView_ItemActivate);
+            this.treeListView.SelectionChanged += new System.EventHandler(this.treeListView_SelectionChanged);
+            // 
+            // colCategory
+            // 
+            this.colCategory.FillsFreeSpace = true;
+            this.colCategory.IsEditable = false;
+            this.colCategory.MinimumWidth = 180;
+            this.colCategory.Text = "Category";
+            this.colCategory.Width = 180;
+            // 
+            // colUserName
+            // 
+            this.colUserName.IsEditable = false;
+            this.colUserName.MaximumWidth = 120;
+            this.colUserName.MinimumWidth = 90;
+            this.colUserName.Text = "Name";
+            this.colUserName.Width = 90;
+            // 
+            // colDate
+            // 
+            this.colDate.IsEditable = false;
+            this.colDate.MaximumWidth = 120;
+            this.colDate.MinimumWidth = 80;
+            this.colDate.Text = "Date";
+            this.colDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.colDate.Width = 80;
+            // 
+            // colAmount
+            // 
+            this.colAmount.IsEditable = false;
+            this.colAmount.MaximumWidth = 150;
+            this.colAmount.MinimumWidth = 75;
+            this.colAmount.Text = "Amount";
+            this.colAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.colAmount.Width = 75;
+            // 
+            // colRemarks
+            // 
+            this.colRemarks.FillsFreeSpace = true;
+            this.colRemarks.IsEditable = false;
+            this.colRemarks.MinimumWidth = 80;
+            this.colRemarks.Text = "Remarks";
+            this.colRemarks.Width = 80;
+            // 
+            // colAB
+            // 
+            this.colAB.IsEditable = false;
+            this.colAB.MaximumWidth = 24;
+            this.colAB.MinimumWidth = 24;
+            this.colAB.Text = "Annual";
+            this.colAB.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.colAB.Width = 24;
+            // 
+            // pieChart
+            // 
+            this.pieChart.AutoSizePie = true;
+            this.pieChart.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pieChart.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.pieChart.Location = new System.Drawing.Point(3, 3);
+            this.pieChart.Name = "pieChart";
+            this.pieChart.Radius = 200F;
+            this.pieChart.Size = new System.Drawing.Size(259, 194);
+            this.pieChart.TabIndex = 0;
+            this.pieChart.Thickness = 30F;
+            this.pieChart.ItemClicked += new Nexus.Windows.Forms.PieChartItemEventHandler(this.pieChart_ItemClicked);
+            // 
+            // barChart
+            // 
+            this.barChart.Background.GradientColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(210)))), ((int)(((byte)(245)))));
+            this.barChart.Background.GradientColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(30)))), ((int)(((byte)(90)))));
+            this.barChart.Background.PaintingMode = GMoney.control.CBackgroundProperty.PaintingModes.RadialGradient;
+            this.barChart.Background.SolidColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(30)))), ((int)(((byte)(90)))));
+            this.barChart.BarOrientation = System.Windows.Forms.Orientation.Horizontal;
+            this.barChart.Border.BoundRect = ((System.Drawing.RectangleF)(resources.GetObject("resource.BoundRect")));
+            this.barChart.Border.Color = System.Drawing.Color.White;
+            this.barChart.Border.Visible = true;
+            this.barChart.Border.Width = 1;
+            this.barChart.Description.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.barChart.Description.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
+            this.barChart.Description.FontDefaultSize = 12F;
+            this.barChart.Description.Text = "Detail";
+            this.barChart.Description.Visible = false;
+            this.barChart.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.barChart.Items.BarOrientation = System.Windows.Forms.Orientation.Horizontal;
+            this.barChart.Items.DefaultWidth = 0;
+            this.barChart.Items.DrawingMode = GMoney.control.HBarItems.DrawingModes.Glass;
+            this.barChart.Items.ShouldReCalculate = false;
+            this.barChart.Label.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.barChart.Label.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
+            this.barChart.Label.FontDefaultSize = 8F;
+            this.barChart.Label.Visible = true;
+            this.barChart.Location = new System.Drawing.Point(3, 203);
+            this.barChart.Name = "barChart";
+            this.barChart.Shadow.ColorInner = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.barChart.Shadow.ColorOuter = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.barChart.Shadow.Mode = GMoney.control.CShadowProperty.Modes.Inner;
+            this.barChart.Shadow.WidthInner = 5;
+            this.barChart.Shadow.WidthOuter = 5;
+            this.barChart.Size = new System.Drawing.Size(259, 421);
+            this.barChart.SizingMode = GMoney.control.HBarChart.BarSizingMode.AutoScale;
+            this.barChart.TabIndex = 1;
+            this.barChart.Values.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.barChart.Values.Font = new System.Drawing.Font("Tahoma", 7F);
+            this.barChart.Values.FontDefaultSize = 7F;
+            this.barChart.Values.Mode = GMoney.control.CValueProperty.ValueMode.Percent;
+            this.barChart.Values.Visible = true;
+            // 
             // MoneyForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(792, 566);
+            this.ClientSize = new System.Drawing.Size(1016, 734);
             this.Controls.Add(this.toolStripContainer);
             this.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -761,7 +761,6 @@
             this.tpHome.ResumeLayout(false);
             this.tlpHome.ResumeLayout(false);
             this.gbBalance.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.treeListView)).EndInit();
             this.cmsHomeTab.ResumeLayout(false);
             this.gbStatistics.ResumeLayout(false);
             this.tlpSta.ResumeLayout(false);
@@ -777,6 +776,7 @@
             this.toolStripContainer.TopToolStripPanel.PerformLayout();
             this.toolStripContainer.ResumeLayout(false);
             this.toolStripContainer.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.treeListView)).EndInit();
             this.ResumeLayout(false);
 
         }
