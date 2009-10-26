@@ -12,26 +12,27 @@ namespace GMoney.control
     class MyTreeListView : TreeListView
     {
         #region Overrides
-        protected override void CorrectSubItemColors(ListViewItem olvi)
-        {
-            olvi.UseItemStyleForSubItems = false;
-            if (this.OwnerDraw)
-            {
-                foreach (ListViewItem.ListViewSubItem si in olvi.SubItems)
-                {
-                    si.BackColor = olvi.BackColor;
-                    if (NumericUtils.IsNumeric(si.Text) && double.Parse(si.Text.Replace(",", "")) < 0)
-                    {
-                        si.ForeColor = Color.Red;
-                    }
-                    else
-                    {
-                        si.ForeColor = olvi.ForeColor;
-                    }
-                }
-            }
-        }
-
+#if DEBUG
+        //protected override void CorrectSubItemColors(ListViewItem olvi)
+        //{
+        //    olvi.UseItemStyleForSubItems = false;
+        //    if (this.OwnerDraw)
+        //    {
+        //        foreach (ListViewItem.ListViewSubItem si in olvi.SubItems)
+        //        {
+        //            si.BackColor = olvi.BackColor;
+        //            if (NumericUtils.IsNumeric(si.Text) && double.Parse(si.Text.Replace(",", "")) < 0)
+        //            {
+        //                si.ForeColor = Color.Red;
+        //            }
+        //            else
+        //            {
+        //                si.ForeColor = olvi.ForeColor;
+        //            }
+        //        }
+        //    }
+        //}
+#endif
         public override int IndexOf(Object modelObject)
         {
             for (int i = 0; i < this.GetItemCount(); i++)
