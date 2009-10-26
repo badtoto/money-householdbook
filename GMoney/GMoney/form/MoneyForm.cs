@@ -944,6 +944,15 @@ namespace GMoney.form
         #endregion
 
         #region TreeListView Event
+
+        private void treeListView_FormatCell(object sender, FormatCellEventArgs e)
+        {
+            if (NumericUtils.IsNumeric(e.SubItem.Text) && double.Parse(e.SubItem.Text.Replace(",", "")) < 0)
+            {
+                e.SubItem.ForeColor = Color.Red;
+            }
+        }
+
         private void treeListView_ItemActivate(object sender, EventArgs e)
         {
             Object model = this.treeListView.SelectedObject;
