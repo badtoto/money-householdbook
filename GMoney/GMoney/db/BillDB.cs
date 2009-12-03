@@ -861,7 +861,8 @@ namespace GMoney.db
                                     addStartDate = addStartDate.AddYears(fixedData.Interval);
                                     break;
                                 default:
-                                    addStartDate = new DateTime(addStartDate.Year, addStartDate.Month + fixedData.Interval, Convert.ToInt32(fixedData.IntervalDetail));
+                                    addStartDate = new DateTime(addStartDate.Year, addStartDate.Month, Convert.ToInt32(fixedData.IntervalDetail));
+                                    addStartDate = addStartDate.AddMonths(fixedData.Interval);
                                     break;
                             }
                         }
