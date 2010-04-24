@@ -381,6 +381,7 @@ namespace GMoney.db
             Hashtable ht = new Hashtable();
             ArrayList list = new ArrayList();
             Hashtable htData = new Hashtable();
+            int monthInterval = new FixedDataDB().GetMonthInterval(sub_id);
 
             DateTime staDate = new DateTime(year[0], DateTime.Now.AddMonths(1).Month, 1);
             DateTime endDate = new DateTime(year[1], DateTime.Now.Month, DateTime.Now.Day);
@@ -449,14 +450,26 @@ namespace GMoney.db
                         list.Add(htData[strDate]);
                     
                     cnt++;
-                    if ((sub_id == 9 && cnt % 6 == 0) || (sub_id != 9 && cnt % 12 == 0))
+                    //if ((sub_id == 9 && cnt % 6 == 0) || (sub_id != 9 && cnt % 12 == 0))
+                    //{
+                    //    ht.Add(date.Year.ToString(), list);
+                    //    list = new ArrayList();
+                    //}
+                    //date = date.AddMonths(1);
+                    //if (sub_id == 9)
+                    //    date = date.AddMonths(1);
+                    if (
+                        (!(monthInterval < 12 && 12 % monthInterval == 0 && monthInterval > 1) && cnt % 12 == 0) 
+                        ||
+                        (monthInterval < 12 && 12 % monthInterval == 0 && monthInterval > 1 && (cnt % (12 / monthInterval)) == 0))
                     {
                         ht.Add(date.Year.ToString(), list);
                         list = new ArrayList();
                     }
                     date = date.AddMonths(1);
-                    if (sub_id == 9)
-                        date = date.AddMonths(1);
+                    if (monthInterval < 12 && 12 % monthInterval == 0 && monthInterval > 1)
+                        date = date.AddMonths(monthInterval - 1);
+
                 }
 #if DEBUG1
                 //for (int i = year[0]; i <= year[1]; i++)

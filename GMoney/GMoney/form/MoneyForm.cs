@@ -25,9 +25,6 @@ namespace GMoney.form
         #region Members
         private static Color[] columnColor = { Color.Blue, Color.Red, Color.Green};
         bool inAddYearItems = false;
-
-        double[] x = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 };
-        double[] x_water = { 1, 3, 5, 7, 9, 11 };
         Random randRGB = null;
 #if DEBUG
         System.Diagnostics.Stopwatch sw = null;
@@ -602,6 +599,7 @@ namespace GMoney.form
 
             MasterDB mdb = new MasterDB();
             double[] optimal = mdb.GetSubOptimal(sub_id);
+
             this.CreateChartLine(t, ht, sub_id, sub_name, optimal[0], optimal[1]);
         }
 
@@ -654,6 +652,10 @@ namespace GMoney.form
             sw = new System.Diagnostics.Stopwatch();
             sw.Start();
 #endif
+
+            FixedDataDB fdb = new FixedDataDB();
+            int monthInterval = fdb.GetMonthInterval(sub_id);
+
             GraphPane myPane = zgcExpense.GraphPane;
             myPane.CurveList.Clear();
             myPane.GraphObjList.Clear();
@@ -673,6 +675,7 @@ namespace GMoney.form
 
             int endYear = range[1];
             int staYear = endYear - ht.Keys.Count + 1;
+            double[] s_x = CommonUtils.GetX(monthInterval);
 
             for (int i = endYear; i >= staYear; i--)
             {
@@ -681,23 +684,41 @@ namespace GMoney.form
                 tmp = (ArrayList)ht[i.ToString()];
 
                 string sCurve = string.Empty;
-                if (sub_id == 9)
+                //if (monthInterval == 2)
+                //{
+                //    if (DateTime.Now.Month % 2 == 0)
+                //    {
+                //        sCurve = string.Format("{0}{2}{1:00} - {3}{5}{4:00}"
+                //            , i - 1, DateTime.Now.AddMonths(2).Month, CultureInfo.CurrentCulture.DateTimeFormat.DateSeparator
+                //            , i, DateTime.Now.Month, CultureInfo.CurrentCulture.DateTimeFormat.DateSeparator
+                //            );
+                //    }
+                //    else
+                //    {
+                //        sCurve = string.Format("{0}{2}{1:00} - {3}{5}{4:00}"
+                //            , i - 1, DateTime.Now.AddMonths(1).Month, CultureInfo.CurrentCulture.DateTimeFormat.DateSeparator
+                //            , i, DateTime.Now.AddMonths(-1).Month, CultureInfo.CurrentCulture.DateTimeFormat.DateSeparator
+                //            );
+                //    }
+                //}
+                if (monthInterval == 2 || monthInterval == 3 || monthInterval == 4 || monthInterval == 6)
                 {
-                    if (DateTime.Now.Month % 2 == 0)
+                    if (DateTime.Now.Month % monthInterval == 0)
                     {
                         sCurve = string.Format("{0}{2}{1:00} - {3}{5}{4:00}"
-                            , i - 1, DateTime.Now.AddMonths(2).Month, CultureInfo.CurrentCulture.DateTimeFormat.DateSeparator
+                            , i - 1, DateTime.Now.AddMonths(monthInterval).Month, CultureInfo.CurrentCulture.DateTimeFormat.DateSeparator
                             , i, DateTime.Now.Month, CultureInfo.CurrentCulture.DateTimeFormat.DateSeparator
                             );
                     }
                     else
                     {
                         sCurve = string.Format("{0}{2}{1:00} - {3}{5}{4:00}"
-                            , i - 1, DateTime.Now.AddMonths(1).Month, CultureInfo.CurrentCulture.DateTimeFormat.DateSeparator
-                            , i, DateTime.Now.AddMonths(-1).Month, CultureInfo.CurrentCulture.DateTimeFormat.DateSeparator
+                            , i - 1, DateTime.Now.AddMonths(monthInterval - DateTime.Now.Month % monthInterval).Month, CultureInfo.CurrentCulture.DateTimeFormat.DateSeparator
+                            , i, DateTime.Now.AddMonths(-DateTime.Now.Month % monthInterval).Month, CultureInfo.CurrentCulture.DateTimeFormat.DateSeparator
                             );
                     }
                 }
+
                 else
                 {
                     sCurve = string.Format("{0}{2}{1:00} - {3}{5}{4:00}"
@@ -707,13 +728,13 @@ namespace GMoney.form
                 }
 
                 // Generate a red curve with "Curve 1" in the legend
-                myCurve = myPane.AddCurve(sCurve, (sub_id != 9 ? x : x_water), (double[])tmp.ToArray(typeof(double)), colorIndex >= columnColor.Length ? RandomColor : columnColor[colorIndex++]);
+                myCurve = myPane.AddCurve(sCurve, s_x, (double[])tmp.ToArray(typeof(double)), colorIndex >= columnColor.Length ? RandomColor : columnColor[colorIndex++]);
                 // Make the symbols opaque by filling them with white
                 myCurve.Symbol.Fill = new Fill(Color.White);
             }
 
             // Set the XAxis labels
-            myPane.XAxis.Scale.TextLabels = sub_id != 9 ? CommonUtils.MONTH_NAMES : CommonUtils.MONTH_NAMES_WATER;
+            myPane.XAxis.Scale.TextLabels = CommonUtils.GetMonth(monthInterval);
             // Set the XAxis to Text type
             myPane.XAxis.Type = AxisType.Text;
             // Display the Y axis grid lines

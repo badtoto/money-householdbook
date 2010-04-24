@@ -68,6 +68,7 @@ namespace GMoney.util
             }
         }
 
+#if DEBUG1
         public static string[] MONTH_NAMES
         {
             get
@@ -99,6 +100,7 @@ namespace GMoney.util
                 return names;
             }
         }
+#endif
         #endregion
         
         #region Methods
@@ -156,6 +158,54 @@ namespace GMoney.util
         public static DialogResult ShowWarningWithCancel(string message)
         {
             return MessageBox.Show(message, Properties.Resources.MSG_WARNING, MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+        }
+
+        public static double[] GetX(int interval)
+        {
+            double[] x = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 };
+            if (interval < 12 && 12 % interval == 0 && interval > 1)
+            {
+                int j = 0;
+                x = new double[12 / interval];
+                for (int i = 0; i < 12; i++)
+                {
+                    if ((i + 1) % interval == 0)
+                        x[j++] = i;
+                }
+            }
+            return x;
+        }
+
+
+        public static string[] GetMonth(int interval)
+        {
+            if (interval < 12 && 12 % interval == 0 && interval > 1)
+            {
+                int staMonth = DateTime.Now.Month;
+                if (DateTime.Now.Month % interval != 0)
+                {
+                    staMonth = staMonth - 1;
+                }
+                // water only 6 months
+                string[] names = new string[12 / interval];
+                int cnt = 0;
+                while (cnt < names.Length)
+                {
+                    int index = (staMonth + interval) % 12 - 1;
+                    if (index <= 0)
+                        index += 12;
+                    names[cnt++] = APP_CULTURE_INFO.DateTimeFormat.AbbreviatedMonthNames[index];
+                    staMonth = staMonth + interval;
+                }
+                return names;
+            }
+            else
+            {
+                string[] names = new string[12];
+                for (int i = DateTime.Now.Month; i < names.Length + DateTime.Now.Month; i++)
+                    names[i - DateTime.Now.Month] = APP_CULTURE_INFO.DateTimeFormat.AbbreviatedMonthNames[i % 12];
+                return names;
+            }
         }
         #endregion
     }

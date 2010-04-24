@@ -241,6 +241,54 @@ namespace GMoney.db
             }
             return list;
         }
+
+        /// <summary>
+        /// Get Interval of category
+        /// </summary>
+        /// <param name="sub_id">category id</param>
+        /// <returns></returns>
+        public int GetMonthInterval(int sub_id)
+        {
+            SQLiteConnection conn = null;
+            SQLiteCommand cmd = null;
+            SQLiteDataReader reader = null;
+            int monthInterval = -1;
+
+            try
+            {
+                conn = GetConnection();
+
+                cmd = conn.CreateCommand();
+
+                cmd.CommandText = "select interval from v_fixed_data where interval_type = @interval_type and sub_id = @sub_id";
+                cmd.Parameters.AddWithValue("interval_type", GMoney.util.CommonUtils.IntervalType.EveryMonth);
+                cmd.Parameters.AddWithValue("sub_id", sub_id);
+
+                reader = cmd.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    monthInterval = reader.GetInt32(0);
+                }
+            }
+            catch (Exception e)
+            {
+                CommonUtils.ShowError(e.ToString());
+            }
+            finally
+            {
+                if (conn != null)
+                {
+                    try
+                    {
+                        conn.Close();
+                    }
+                    catch { }
+                    conn = null;
+                }
+            }
+            return monthInterval;
+        }
         #endregion
     }
 }
