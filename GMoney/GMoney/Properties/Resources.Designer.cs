@@ -74,6 +74,13 @@ namespace GMoney.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap add_user_32 {
+            get {
+                object obj = ResourceManager.GetObject("add_user_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap Back_16 {
             get {
                 object obj = ResourceManager.GetObject("Back_16", resourceCulture);

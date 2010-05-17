@@ -169,11 +169,11 @@
             // btnUserNew
             // 
             this.btnUserNew.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnUserNew.Image = global::GMoney.Properties.Resources.Add_16;
-            this.btnUserNew.Location = new System.Drawing.Point(206, 175);
+            this.btnUserNew.Image = global::GMoney.Properties.Resources.add_user_32;
+            this.btnUserNew.Location = new System.Drawing.Point(208, 163);
             this.btnUserNew.Margin = new System.Windows.Forms.Padding(0);
             this.btnUserNew.Name = "btnUserNew";
-            this.btnUserNew.Size = new System.Drawing.Size(20, 20);
+            this.btnUserNew.Size = new System.Drawing.Size(32, 32);
             this.btnUserNew.TabIndex = 10;
             this.btnUserNew.Click += new System.EventHandler(this.btnUserNew_Click);
             // 
@@ -205,8 +205,8 @@
             this.folvUser.UseCompatibleStateImageBehavior = false;
             this.folvUser.View = System.Windows.Forms.View.Details;
             this.folvUser.VirtualMode = true;
-            this.folvUser.CellEditFinishing += new BrightIdeasSoftware.CellEditEventHandler(this.option_CellEditFinishing);
             this.folvUser.CellEditStarting += new BrightIdeasSoftware.CellEditEventHandler(this.option_CellEditStarting);
+            this.folvUser.CellEditFinishing += new BrightIdeasSoftware.CellEditEventHandler(this.option_CellEditFinishing);
             // 
             // colUserId
             // 
@@ -258,7 +258,7 @@
             this.labelBasicUser.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.labelBasicUser.Location = new System.Drawing.Point(3, 151);
             this.labelBasicUser.Name = "labelBasicUser";
-            this.labelBasicUser.Size = new System.Drawing.Size(290, 20);
+            this.labelBasicUser.Size = new System.Drawing.Size(166, 20);
             this.labelBasicUser.TabIndex = 8;
             this.labelBasicUser.Text = "User Manager";
             this.labelBasicUser.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -397,7 +397,7 @@
             // btnFixedNew
             // 
             this.btnFixedNew.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnFixedNew.Image = global::GMoney.Properties.Resources.Add_16;
+            this.btnFixedNew.Image = ((System.Drawing.Image)(resources.GetObject("btnFixedNew.Image")));
             this.btnFixedNew.Location = new System.Drawing.Point(609, 34);
             this.btnFixedNew.Margin = new System.Windows.Forms.Padding(0);
             this.btnFixedNew.Name = "btnFixedNew";
@@ -459,9 +459,9 @@
             this.folvFixed.UseCompatibleStateImageBehavior = false;
             this.folvFixed.View = System.Windows.Forms.View.Details;
             this.folvFixed.VirtualMode = true;
-            this.folvFixed.CellEditFinishing += new BrightIdeasSoftware.CellEditEventHandler(this.option_CellEditFinishing);
-            this.folvFixed.KeyDown += new System.Windows.Forms.KeyEventHandler(this.folvFixed_KeyDown);
             this.folvFixed.CellEditStarting += new BrightIdeasSoftware.CellEditEventHandler(this.option_CellEditStarting);
+            this.folvFixed.KeyDown += new System.Windows.Forms.KeyEventHandler(this.folvFixed_KeyDown);
+            this.folvFixed.CellEditFinishing += new BrightIdeasSoftware.CellEditEventHandler(this.option_CellEditFinishing);
             // 
             // colFixUserName
             // 
@@ -574,8 +574,8 @@
             this.folvOptimal.UseCompatibleStateImageBehavior = false;
             this.folvOptimal.View = System.Windows.Forms.View.Details;
             this.folvOptimal.VirtualMode = true;
-            this.folvOptimal.CellEditFinishing += new BrightIdeasSoftware.CellEditEventHandler(this.option_CellEditFinishing);
             this.folvOptimal.CellEditStarting += new BrightIdeasSoftware.CellEditEventHandler(this.option_CellEditStarting);
+            this.folvOptimal.CellEditFinishing += new BrightIdeasSoftware.CellEditEventHandler(this.option_CellEditFinishing);
             // 
             // colOptSub
             // 
