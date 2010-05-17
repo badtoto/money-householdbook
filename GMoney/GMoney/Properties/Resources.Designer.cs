@@ -454,23 +454,9 @@ namespace GMoney.Properties {
             }
         }
         
-        internal static System.Drawing.Bitmap Next_32 {
-            get {
-                object obj = ResourceManager.GetObject("Next_32", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
         internal static System.Drawing.Bitmap Optimize_16 {
             get {
                 object obj = ResourceManager.GetObject("Optimize_16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap Previous_32 {
-            get {
-                object obj = ResourceManager.GetObject("Previous_32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
