@@ -248,18 +248,24 @@
     <None Include="Resources\Tick_16.png" />
     <None Include="Resources\Optimize_16.png" />
     <None Include="Resources\Merge_16.png" />
-    <None Include="Resources\Info_16.png" />
     <None Include="Resources\Secure_32.png" />
-    <None Include="Resources\Calendar_16.png" />
     <None Include="Resources\Expand_16.png" />
     <None Include="Resources\Collapse_16.png" />
     <None Include="Resources\Exit_16.png" />
-    <None Include="Resources\Forward_16.png" />
-    <None Include="Resources\Back_16.png" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Emblem-Money.ico" />
     <Content Include="Money.ico" />
+    <None Include="Resources\Info-32.png" />
+    <None Include="Resources\Gnome-Edit-Clear-32.png" />
+    <None Include="Resources\add_user-32.png" />
+    <None Include="Resources\Back_16.png" />
+    <None Include="Resources\Forward_16.png" />
+    <None Include="Resources\Calendar_16.png" />
+    <None Include="Resources\Back Button_32.png" />
+    <None Include="Resources\Forward Button_32.png" />
+    <None Include="Resources\Calendar_32.png" />
+    <None Include="Resources\Add_32.png" />
     <None Include="Resources\Status_16.png" />
   </ItemGroup>
   <ItemGroup>
