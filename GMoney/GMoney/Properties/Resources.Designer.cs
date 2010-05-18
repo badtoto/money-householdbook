@@ -81,13 +81,6 @@ namespace GMoney.Properties {
             }
         }
         
-        internal static System.Drawing.Bitmap Back_16 {
-            get {
-                object obj = ResourceManager.GetObject("Back_16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
         internal static System.Drawing.Bitmap Back_Button_32 {
             get {
                 object obj = ResourceManager.GetObject("Back_Button_32", resourceCulture);
@@ -172,16 +165,16 @@ namespace GMoney.Properties {
             }
         }
         
-        internal static System.Drawing.Bitmap Forward_16 {
+        internal static System.Drawing.Bitmap Forward_Button_32 {
             get {
-                object obj = ResourceManager.GetObject("Forward_16", resourceCulture);
+                object obj = ResourceManager.GetObject("Forward_Button_32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap Forward_Button_32 {
+        internal static System.Drawing.Bitmap Gnome_Edit_Clear_32 {
             get {
-                object obj = ResourceManager.GetObject("Forward_Button_32", resourceCulture);
+                object obj = ResourceManager.GetObject("Gnome_Edit_Clear_32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -222,9 +215,9 @@ namespace GMoney.Properties {
             }
         }
         
-        internal static System.Drawing.Bitmap Info_16 {
+        internal static System.Drawing.Bitmap Info_32 {
             get {
-                object obj = ResourceManager.GetObject("Info_16", resourceCulture);
+                object obj = ResourceManager.GetObject("Info_32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -458,13 +451,6 @@ namespace GMoney.Properties {
         internal static string MSG_WARNING {
             get {
                 return ResourceManager.GetString("MSG_WARNING", resourceCulture);
-            }
-        }
-        
-        internal static System.Drawing.Bitmap Optimize_16 {
-            get {
-                object obj = ResourceManager.GetObject("Optimize_16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
             }
         }
         

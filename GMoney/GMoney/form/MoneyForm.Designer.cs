@@ -489,6 +489,7 @@
             // 
             this.btnEdit.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.btnEdit.Image = global::GMoney.Properties.Resources.Edit_16;
+            this.btnEdit.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnEdit.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(23, 36);
@@ -555,10 +556,11 @@
             // btnVacuum
             // 
             this.btnVacuum.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnVacuum.Image = global::GMoney.Properties.Resources.Optimize_16;
+            this.btnVacuum.Image = global::GMoney.Properties.Resources.Gnome_Edit_Clear_32;
+            this.btnVacuum.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnVacuum.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnVacuum.Name = "btnVacuum";
-            this.btnVacuum.Size = new System.Drawing.Size(23, 36);
+            this.btnVacuum.Size = new System.Drawing.Size(36, 36);
             this.btnVacuum.Text = "Vacuum";
             this.btnVacuum.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnVacuum.ToolTipText = "Database Vacuum";
@@ -608,10 +610,11 @@
             // 
             this.btnAbout.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.btnAbout.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnAbout.Image = global::GMoney.Properties.Resources.Info_16;
+            this.btnAbout.Image = global::GMoney.Properties.Resources.Info_32;
+            this.btnAbout.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnAbout.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnAbout.Name = "btnAbout";
-            this.btnAbout.Size = new System.Drawing.Size(23, 36);
+            this.btnAbout.Size = new System.Drawing.Size(36, 36);
             this.btnAbout.Text = "About";
             this.btnAbout.Click += new System.EventHandler(this.btnAbout_Click);
             // 

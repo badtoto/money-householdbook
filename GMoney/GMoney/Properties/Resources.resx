@@ -232,14 +232,8 @@
   <data name="Expand_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\expand_16.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Info_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Info_16.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Merge_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Merge_16.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Optimize_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Optimize_16.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Secure_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\secure_32.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -262,9 +256,6 @@
   <data name="add_user_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\add_user-32.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Back_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Back_16.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Back_Button_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Back Button_32.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -274,10 +265,13 @@
   <data name="Calendar_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Calendar_32.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Forward_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Forward_16.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Forward_Button_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Forward Button_32.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Gnome_Edit_Clear_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Gnome-Edit-Clear-32.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Info_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Info-32.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

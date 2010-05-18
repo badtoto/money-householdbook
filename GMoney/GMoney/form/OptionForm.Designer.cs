@@ -397,7 +397,7 @@
             // btnFixedNew
             // 
             this.btnFixedNew.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnFixedNew.Image = ((System.Drawing.Image)(resources.GetObject("btnFixedNew.Image")));
+            this.btnFixedNew.Image = global::GMoney.Properties.Resources.Add_16;
             this.btnFixedNew.Location = new System.Drawing.Point(609, 34);
             this.btnFixedNew.Margin = new System.Windows.Forms.Padding(0);
             this.btnFixedNew.Name = "btnFixedNew";
