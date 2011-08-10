@@ -207,6 +207,11 @@ namespace GMoney.util
                 return names;
             }
         }
+                
+        public static string GetDateString(DateTime dt)
+        {
+            return string.Format("{0}{2}{1:00}", dt.Year, dt.Month, CultureInfo.CurrentCulture.DateTimeFormat.DateSeparator);
+        }
         #endregion
     }
 }
