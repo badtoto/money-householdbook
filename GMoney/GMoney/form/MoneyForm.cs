@@ -137,7 +137,7 @@ namespace GMoney.form
         #region Bill
         private void NewBill()
         {
-            BillForm f = new BillForm(0);
+            BillForm f = new BillForm(0, tcbDate.Text);
             DialogResult d = f.ShowDialog(this);
             f.Dispose();
         }
@@ -166,7 +166,7 @@ namespace GMoney.form
             }
             billId = ((BillTbl)treeListView.SelectedObject).ID;
 
-            BillForm f = new BillForm(billId);
+            BillForm f = new BillForm(billId, null);
             DialogResult d = f.ShowDialog(this);
             f.Dispose();
         }
@@ -896,7 +896,7 @@ namespace GMoney.form
                 if (monthVisible)
                 {
                     cDate = dateRange[0].AddMonths(i++);
-                    tcbDate.Items.Add(string.Format("{0}{2}{1:00}", cDate.Year, cDate.Month, CultureInfo.CurrentCulture.DateTimeFormat.DateSeparator));
+                    tcbDate.Items.Add(CommonUtils.GetDateString(cDate));
                     if (cDate.Year >= dateRange[1].Year && cDate.Month >= dateRange[1].Month)
                         break;
                 }

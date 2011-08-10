@@ -17,11 +17,12 @@ namespace GMoney.form
     {
         #region Members
         private bool IsUpdate = false;
+        private string dateStr = string.Empty;
         private BillTbl tbl = new BillTbl();
         #endregion
 
         #region Constructor
-        public BillForm(int id)
+        public BillForm(int id, string _dateStr)
         {
             InitializeComponent();
 
@@ -29,6 +30,7 @@ namespace GMoney.form
 
             tbl.ID = id;
             IsUpdate = id != 0;
+            dateStr = _dateStr;
 
             SetDispData();
         }
@@ -111,6 +113,30 @@ namespace GMoney.form
                 this.nudMonths.Visible = false;
                 this.labelSplit.Visible = false;
                 this.tbAmount.Select();
+            }
+            else
+            {
+                // set date
+                try
+                {
+                    if (!string.IsNullOrEmpty(dateStr))
+                    {
+                        DateTime dt = DateTime.MinValue;
+
+                        if (dateStr.Length == 4 && Convert.ToInt32(dateStr) < DateTime.Now.Year)
+                        {
+                            dt = new DateTime(Convert.ToInt32(dateStr), 12, 31);
+                        }
+                        else if (dateStr.Length == 7 && dateStr.CompareTo(CommonUtils.GetDateString(DateTime.Now)) < 0 )
+                        {
+                            dt = new DateTime(Convert.ToInt32(dateStr.Substring(0, 4)), Convert.ToInt32(dateStr.Substring(5, 2)) + 1, 1).AddDays(-1);
+                        }
+
+                        if (dt != DateTime.MinValue)
+                            dtpDate.Value = dt;
+                    }
+                }
+                catch { }
             }
         }
 
