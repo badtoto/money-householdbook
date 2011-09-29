@@ -20,7 +20,7 @@
     <ApplicationIcon>Emblem-Money.ico</ApplicationIcon>
     <ManifestCertificateThumbprint>9AEC61FB7D4FA90DE23065178231D6C60AB9B202</ManifestCertificateThumbprint>
     <ManifestKeyFile>Money_TemporaryKey.pfx</ManifestKeyFile>
-    <GenerateManifests>true</GenerateManifests>
+    <GenerateManifests>false</GenerateManifests>
     <SignManifests>true</SignManifests>
     <StartupObject>GMoney.Program</StartupObject>
     <SccProjectName>Svn</SccProjectName>
@@ -54,12 +54,19 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
+    <DebugType>none</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
+    <DefineConstants>
+    </DefineConstants>
     <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
+    <WarningLevel>0</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -239,6 +246,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="Properties\app.manifest" />
     <None Include="Resources\create.sql" />
   </ItemGroup>
   <ItemGroup>
@@ -272,9 +280,9 @@
     <None Include="Resources\Status_16.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\demo\ObjectListViewDemo20\ObjectListView\ObjectListView2008.csproj">
+    <ProjectReference Include="..\..\demo\ObjectListViewDemo20\ObjectListView\ObjectListView2010.csproj">
       <Project>{18FEDA0C-D147-4286-B39A-01204808106A}</Project>
-      <Name>ObjectListView2008</Name>
+      <Name>ObjectListView2010</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

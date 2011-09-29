@@ -201,7 +201,6 @@
             this.colCategory.IsEditable = false;
             this.colCategory.MinimumWidth = 180;
             this.colCategory.Text = "Category";
-            this.colCategory.ValueBasedFilter = null;
             this.colCategory.Width = 180;
             // 
             // colUserName
@@ -210,7 +209,6 @@
             this.colUserName.MaximumWidth = 120;
             this.colUserName.MinimumWidth = 90;
             this.colUserName.Text = "Name";
-            this.colUserName.ValueBasedFilter = null;
             this.colUserName.Width = 90;
             // 
             // colDate
@@ -221,7 +219,6 @@
             this.colDate.MinimumWidth = 80;
             this.colDate.Text = "Date";
             this.colDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.colDate.ValueBasedFilter = null;
             this.colDate.Width = 80;
             // 
             // colAmount
@@ -232,7 +229,6 @@
             this.colAmount.MinimumWidth = 75;
             this.colAmount.Text = "Amount";
             this.colAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.colAmount.ValueBasedFilter = null;
             this.colAmount.Width = 75;
             // 
             // colRemarks
@@ -241,7 +237,6 @@
             this.colRemarks.IsEditable = false;
             this.colRemarks.MinimumWidth = 80;
             this.colRemarks.Text = "Remarks";
-            this.colRemarks.ValueBasedFilter = null;
             this.colRemarks.Width = 80;
             // 
             // colAB
@@ -252,7 +247,6 @@
             this.colAB.MinimumWidth = 24;
             this.colAB.Text = "Annual";
             this.colAB.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.colAB.ValueBasedFilter = null;
             this.colAB.Width = 24;
             // 
             // cmsHomeTab
@@ -737,7 +731,7 @@
             this.tcbChart.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.tcbChart.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tcbChart.Name = "tcbChart";
-            this.tcbChart.Size = new System.Drawing.Size(240, 22);
+            this.tcbChart.Size = new System.Drawing.Size(240, 39);
             this.tcbChart.Visible = false;
             this.tcbChart.SelectedIndexChanged += new System.EventHandler(this.tcbChart_SelectedIndexChanged);
             // 

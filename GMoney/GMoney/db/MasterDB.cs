@@ -358,6 +358,49 @@ namespace GMoney.db
             }
             return bRet;
         }
+
+        public ArrayList GetCategoryList()
+        {
+            ArrayList list = new ArrayList();
+            SQLiteConnection conn = null;
+            try
+            {
+                conn = GetConnection();
+
+                SQLiteCommand cmd = conn.CreateCommand();
+                cmd.CommandText = "select * from v_sub where sub_id > 0 order by bill_type, major_sort, sub_sort ";
+                SQLiteDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    BillTbl item = new BillTbl();
+                    item.BillType = Int32.Parse(reader["bill_type"].ToString());
+                    item.MajorId = Int32.Parse(reader["major_id"].ToString());
+                    item.MajorName = reader["major_name"].ToString();
+                    item.MajorSort = Int32.Parse(reader["major_sort"].ToString());
+                    item.SubId = Int32.Parse(reader["sub_id"].ToString());
+                    item.SubName = reader["sub_name"].ToString();
+                    item.SubSort = Int32.Parse(reader["sub_sort"].ToString());
+                    list.Add(item);
+                }
+            }
+            catch (Exception e)
+            {
+                CommonUtils.ShowError(e.ToString());
+            }
+            finally
+            {
+                if (conn != null)
+                {
+                    try
+                    {
+                        conn.Close();
+                    }
+                    catch { }
+                    conn = null;
+                }
+            }
+            return list;
+        }
         #endregion
 
         #region Optimal & Range

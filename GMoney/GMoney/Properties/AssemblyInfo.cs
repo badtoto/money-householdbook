@@ -11,7 +11,7 @@ using System.Resources;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Raymond")]
 [assembly: AssemblyProduct("GMoney")]
-[assembly: AssemblyCopyright("Copyright ©  2008-2010 Raymond")]
+[assembly: AssemblyCopyright("Copyright ©  2011 Raymond")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -30,6 +30,6 @@ using System.Resources;
 //      Build Number
 //      Revision
 //
-[assembly: AssemblyVersion("0.8.*")]
-[assembly: AssemblyFileVersion("0.8.0.0")]
+[assembly: AssemblyVersion("0.9.*")]
+[assembly: AssemblyFileVersion("0.9.0.0")]
 [assembly: NeutralResourcesLanguageAttribute("en")]

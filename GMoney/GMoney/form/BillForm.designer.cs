@@ -95,7 +95,7 @@
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(75, 23);
             this.btnOK.TabIndex = 20;
-            this.btnOK.Text = "OK";
+            this.btnOK.Text = "&OK";
             this.btnOK.UseVisualStyleBackColor = false;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
@@ -153,7 +153,7 @@
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 21;
-            this.btnCancel.Text = "Cancel";
+            this.btnCancel.Text = "&Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
             // 
             // cbAnnualBudget
@@ -314,7 +314,7 @@
             this.tbAmount.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.tbAmount.Location = new System.Drawing.Point(103, 129);
             this.tbAmount.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tbAmount.Minimum = 0;
+            this.tbAmount.Minimum = 0D;
             this.tbAmount.Name = "tbAmount";
             this.tbAmount.ShowPopupCalculator = true;
             this.tbAmount.Size = new System.Drawing.Size(125, 22);
