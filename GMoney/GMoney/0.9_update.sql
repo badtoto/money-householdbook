@@ -1,3 +1,5 @@
+--add table d_budget
+CREATE TABLE [d_budget] ([id] integer PRIMARY KEY  NOT NULL ,[category_id] integer NOT NULL,[category_type] tinyint NOT NULL,[amount] GMoney NOT NULL, [create_date] datetime NOT NULL, [update_date] datetime NOT NULL);
 --m_major
 
 INSERT INTO m_major VALUES (NULL,"Education",0,5,datetime('now'),datetime('now'),0);
