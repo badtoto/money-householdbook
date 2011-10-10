@@ -329,15 +329,6 @@ namespace GMoney.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [{0}] has already started!.
-        /// </summary>
-        internal static string MSG_INI_0001 {
-            get {
-                return ResourceManager.GetString("MSG_INI_0001", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to It failed in initialization..
         /// </summary>
         internal static string MSG_INI_0002 {

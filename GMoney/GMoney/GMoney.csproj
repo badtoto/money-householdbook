@@ -215,6 +215,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="util\MyProcess.cs" />
     <Compile Include="util\NumericUtils.cs" />
   </ItemGroup>
   <ItemGroup>

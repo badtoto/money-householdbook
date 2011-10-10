@@ -60,6 +60,7 @@
             this.cbMajor.FormattingEnabled = true;
             this.cbMajor.Location = new System.Drawing.Point(103, 99);
             this.cbMajor.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cbMajor.MaxDropDownItems = 20;
             this.cbMajor.Name = "cbMajor";
             this.cbMajor.Size = new System.Drawing.Size(125, 22);
             this.cbMajor.TabIndex = 8;

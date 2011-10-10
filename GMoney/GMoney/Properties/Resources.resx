@@ -127,9 +127,6 @@
   <data name="MSG_SELECT" xml:space="preserve">
     <value>Please Select Item!</value>
   </data>
-  <data name="MSG_INI_0001" xml:space="preserve">
-    <value>[{0}] has already started!</value>
-  </data>
   <data name="MSG_INI_0002" xml:space="preserve">
     <value>It failed in initialization.</value>
   </data>
