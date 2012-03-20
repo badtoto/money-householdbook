@@ -38,11 +38,11 @@
             this.tbUserName = new System.Windows.Forms.TextBox();
             this.btnUserNew = new System.Windows.Forms.Label();
             this.folvUser = new BrightIdeasSoftware.FastObjectListView();
-            this.colUserId = new BrightIdeasSoftware.OLVColumn();
-            this.colUserName = new BrightIdeasSoftware.OLVColumn();
-            this.colUserCreateDate = new BrightIdeasSoftware.OLVColumn();
-            this.colUserUpdateDate = new BrightIdeasSoftware.OLVColumn();
-            this.colUserDeleted = new BrightIdeasSoftware.OLVColumn();
+            this.colUserId = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.colUserName = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.colUserCreateDate = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.colUserUpdateDate = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.colUserDeleted = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.labelBasicUser = new System.Windows.Forms.Label();
             this.cbUseLoginPass = new System.Windows.Forms.CheckBox();
             this.labelBasicLogin = new System.Windows.Forms.Label();
@@ -53,6 +53,7 @@
             this.tbOldPass = new System.Windows.Forms.TextBox();
             this.labelOldPass = new System.Windows.Forms.Label();
             this.tpFixed = new System.Windows.Forms.TabPage();
+            this.tbRemarks = new System.Windows.Forms.TextBox();
             this.frequencyCtl = new GMoney.control.FrequencyCtl();
             this.cbUser = new System.Windows.Forms.ComboBox();
             this.btnFixedDel = new System.Windows.Forms.Label();
@@ -60,20 +61,21 @@
             this.cbSub = new System.Windows.Forms.ComboBox();
             this.ctbAmount = new GMoney.control.NumericBox();
             this.folvFixed = new BrightIdeasSoftware.FastObjectListView();
-            this.colFixUserName = new BrightIdeasSoftware.OLVColumn();
-            this.colFixSub = new BrightIdeasSoftware.OLVColumn();
-            this.colFixFrequency = new BrightIdeasSoftware.OLVColumn();
-            this.colFixStartDate = new BrightIdeasSoftware.OLVColumn();
-            this.colFixEndDate = new BrightIdeasSoftware.OLVColumn();
-            this.colFixAmount = new BrightIdeasSoftware.OLVColumn();
+            this.colFixUserName = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.colFixSub = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.colFixFrequency = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.colFixStartDate = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.colFixEndDate = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.colFixAmount = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.colFixRemarks = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.cmsDelete = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.labelFixed = new System.Windows.Forms.Label();
             this.tpOptimal = new System.Windows.Forms.TabPage();
             this.folvOptimal = new BrightIdeasSoftware.FastObjectListView();
-            this.colOptSub = new BrightIdeasSoftware.OLVColumn();
-            this.colOptOptimal = new BrightIdeasSoftware.OLVColumn();
-            this.colOptRange = new BrightIdeasSoftware.OLVColumn();
+            this.colOptSub = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.colOptOptimal = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.colOptRange = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.labelOptimal = new System.Windows.Forms.Label();
             this.tcOption.SuspendLayout();
             this.tpSecurity.SuspendLayout();
@@ -88,7 +90,7 @@
             // btnOK
             // 
             this.btnOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnOK.Location = new System.Drawing.Point(199, 376);
+            this.btnOK.Location = new System.Drawing.Point(262, 376);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(80, 23);
             this.btnOK.TabIndex = 1;
@@ -100,7 +102,7 @@
             // 
             this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Location = new System.Drawing.Point(293, 376);
+            this.btnCancel.Location = new System.Drawing.Point(356, 376);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(80, 23);
             this.btnCancel.TabIndex = 2;
@@ -110,7 +112,7 @@
             // btnApply
             // 
             this.btnApply.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnApply.Location = new System.Drawing.Point(387, 376);
+            this.btnApply.Location = new System.Drawing.Point(450, 376);
             this.btnApply.Name = "btnApply";
             this.btnApply.Size = new System.Drawing.Size(80, 23);
             this.btnApply.TabIndex = 3;
@@ -124,11 +126,11 @@
             this.tcOption.Controls.Add(this.tpFixed);
             this.tcOption.Controls.Add(this.tpOptimal);
             this.tcOption.ItemSize = new System.Drawing.Size(75, 19);
-            this.tcOption.Location = new System.Drawing.Point(6, 7);
+            this.tcOption.Location = new System.Drawing.Point(9, 7);
             this.tcOption.Multiline = true;
             this.tcOption.Name = "tcOption";
             this.tcOption.SelectedIndex = 0;
-            this.tcOption.Size = new System.Drawing.Size(664, 365);
+            this.tcOption.Size = new System.Drawing.Size(774, 365);
             this.tcOption.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tcOption.TabIndex = 0;
             this.tcOption.SelectedIndexChanged += new System.EventHandler(this.tcOption_SelectedIndexChanged);
@@ -150,7 +152,7 @@
             this.tpSecurity.Location = new System.Drawing.Point(4, 23);
             this.tpSecurity.Name = "tpSecurity";
             this.tpSecurity.Padding = new System.Windows.Forms.Padding(3);
-            this.tpSecurity.Size = new System.Drawing.Size(656, 338);
+            this.tpSecurity.Size = new System.Drawing.Size(766, 338);
             this.tpSecurity.TabIndex = 0;
             this.tpSecurity.Text = "Basic";
             this.tpSecurity.UseVisualStyleBackColor = true;
@@ -162,9 +164,9 @@
             this.tbUserName.Name = "tbUserName";
             this.tbUserName.Size = new System.Drawing.Size(200, 22);
             this.tbUserName.TabIndex = 9;
+            this.tbUserName.Enter += new System.EventHandler(this.optionAcceptButtonOff);
             this.tbUserName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbUserName_KeyDown);
             this.tbUserName.Leave += new System.EventHandler(this.optionAcceptButtonOn);
-            this.tbUserName.Enter += new System.EventHandler(this.optionAcceptButtonOff);
             // 
             // btnUserNew
             // 
@@ -186,6 +188,7 @@
             this.folvUser.AllColumns.Add(this.colUserDeleted);
             this.folvUser.AlternateRowBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(245)))), ((int)(((byte)(250)))));
             this.folvUser.CellEditActivation = BrightIdeasSoftware.ObjectListView.CellEditActivateMode.DoubleClick;
+            this.folvUser.CheckBoxes = false;
             this.folvUser.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.colUserId,
             this.colUserName,
@@ -199,14 +202,14 @@
             this.folvUser.Name = "folvUser";
             this.folvUser.RowHeight = 22;
             this.folvUser.ShowGroups = false;
-            this.folvUser.Size = new System.Drawing.Size(650, 137);
+            this.folvUser.Size = new System.Drawing.Size(760, 137);
             this.folvUser.TabIndex = 11;
             this.folvUser.UseAlternatingBackColors = true;
             this.folvUser.UseCompatibleStateImageBehavior = false;
             this.folvUser.View = System.Windows.Forms.View.Details;
             this.folvUser.VirtualMode = true;
-            this.folvUser.CellEditStarting += new BrightIdeasSoftware.CellEditEventHandler(this.option_CellEditStarting);
             this.folvUser.CellEditFinishing += new BrightIdeasSoftware.CellEditEventHandler(this.option_CellEditFinishing);
+            this.folvUser.CellEditStarting += new BrightIdeasSoftware.CellEditEventHandler(this.option_CellEditStarting);
             // 
             // colUserId
             // 
@@ -228,6 +231,7 @@
             // 
             this.colUserCreateDate.AspectName = "CreateDate";
             this.colUserCreateDate.AspectToStringFormat = "{0:yyyy/MM/dd}";
+            this.colUserCreateDate.HeaderTextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.colUserCreateDate.IsEditable = false;
             this.colUserCreateDate.MinimumWidth = 100;
             this.colUserCreateDate.Text = "Create Date";
@@ -238,6 +242,7 @@
             // 
             this.colUserUpdateDate.AspectName = "UpdateDate";
             this.colUserUpdateDate.AspectToStringFormat = "{0:yyyy/MM/dd}";
+            this.colUserUpdateDate.HeaderTextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.colUserUpdateDate.IsEditable = false;
             this.colUserUpdateDate.MinimumWidth = 100;
             this.colUserUpdateDate.Text = "Update Date";
@@ -248,6 +253,7 @@
             // 
             this.colUserDeleted.AspectName = "DeleteFlg";
             this.colUserDeleted.AspectToStringFormat = "";
+            this.colUserDeleted.HeaderTextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.colUserDeleted.MinimumWidth = 100;
             this.colUserDeleted.Text = "Deleted";
             this.colUserDeleted.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -346,6 +352,7 @@
             // 
             // tpFixed
             // 
+            this.tpFixed.Controls.Add(this.tbRemarks);
             this.tpFixed.Controls.Add(this.frequencyCtl);
             this.tpFixed.Controls.Add(this.cbUser);
             this.tpFixed.Controls.Add(this.btnFixedDel);
@@ -357,10 +364,17 @@
             this.tpFixed.Location = new System.Drawing.Point(4, 23);
             this.tpFixed.Name = "tpFixed";
             this.tpFixed.Padding = new System.Windows.Forms.Padding(3);
-            this.tpFixed.Size = new System.Drawing.Size(656, 338);
+            this.tpFixed.Size = new System.Drawing.Size(766, 338);
             this.tpFixed.TabIndex = 1;
             this.tpFixed.Text = "Fixed";
             this.tpFixed.UseVisualStyleBackColor = true;
+            // 
+            // tbRemarks
+            // 
+            this.tbRemarks.Location = new System.Drawing.Point(599, 33);
+            this.tbRemarks.Name = "tbRemarks";
+            this.tbRemarks.Size = new System.Drawing.Size(111, 22);
+            this.tbRemarks.TabIndex = 8;
             // 
             // frequencyCtl
             // 
@@ -387,7 +401,7 @@
             // 
             this.btnFixedDel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnFixedDel.Image = global::GMoney.Properties.Resources.Delete_16;
-            this.btnFixedDel.Location = new System.Drawing.Point(631, 34);
+            this.btnFixedDel.Location = new System.Drawing.Point(740, 34);
             this.btnFixedDel.Margin = new System.Windows.Forms.Padding(0);
             this.btnFixedDel.Name = "btnFixedDel";
             this.btnFixedDel.Size = new System.Drawing.Size(20, 20);
@@ -398,7 +412,7 @@
             // 
             this.btnFixedNew.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnFixedNew.Image = global::GMoney.Properties.Resources.Add_16;
-            this.btnFixedNew.Location = new System.Drawing.Point(609, 34);
+            this.btnFixedNew.Location = new System.Drawing.Point(718, 34);
             this.btnFixedNew.Margin = new System.Windows.Forms.Padding(0);
             this.btnFixedNew.Name = "btnFixedNew";
             this.btnFixedNew.Size = new System.Drawing.Size(20, 20);
@@ -420,13 +434,13 @@
             this.ctbAmount.BackColor = System.Drawing.SystemColors.Window;
             this.ctbAmount.Cursor = System.Windows.Forms.Cursors.Default;
             this.ctbAmount.Location = new System.Drawing.Point(503, 33);
-            this.ctbAmount.Minimum = 0;
+            this.ctbAmount.Minimum = 0D;
             this.ctbAmount.Name = "ctbAmount";
             this.ctbAmount.Size = new System.Drawing.Size(95, 22);
             this.ctbAmount.TabIndex = 4;
-            this.ctbAmount.Leave += new System.EventHandler(this.optionAcceptButtonOn);
             this.ctbAmount.Enter += new System.EventHandler(this.optionAcceptButtonOff);
             this.ctbAmount.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ctbAmount_KeyDown);
+            this.ctbAmount.Leave += new System.EventHandler(this.optionAcceptButtonOn);
             // 
             // folvFixed
             // 
@@ -436,15 +450,18 @@
             this.folvFixed.AllColumns.Add(this.colFixStartDate);
             this.folvFixed.AllColumns.Add(this.colFixEndDate);
             this.folvFixed.AllColumns.Add(this.colFixAmount);
+            this.folvFixed.AllColumns.Add(this.colFixRemarks);
             this.folvFixed.AlternateRowBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.folvFixed.CellEditActivation = BrightIdeasSoftware.ObjectListView.CellEditActivateMode.DoubleClick;
+            this.folvFixed.CheckBoxes = false;
             this.folvFixed.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.colFixUserName,
             this.colFixSub,
             this.colFixFrequency,
             this.colFixStartDate,
             this.colFixEndDate,
-            this.colFixAmount});
+            this.colFixAmount,
+            this.colFixRemarks});
             this.folvFixed.ContextMenuStrip = this.cmsDelete;
             this.folvFixed.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.folvFixed.FullRowSelect = true;
@@ -453,15 +470,15 @@
             this.folvFixed.Name = "folvFixed";
             this.folvFixed.RowHeight = 22;
             this.folvFixed.ShowGroups = false;
-            this.folvFixed.Size = new System.Drawing.Size(650, 278);
+            this.folvFixed.Size = new System.Drawing.Size(760, 278);
             this.folvFixed.TabIndex = 7;
             this.folvFixed.UseAlternatingBackColors = true;
             this.folvFixed.UseCompatibleStateImageBehavior = false;
             this.folvFixed.View = System.Windows.Forms.View.Details;
             this.folvFixed.VirtualMode = true;
+            this.folvFixed.CellEditFinishing += new BrightIdeasSoftware.CellEditEventHandler(this.option_CellEditFinishing);
             this.folvFixed.CellEditStarting += new BrightIdeasSoftware.CellEditEventHandler(this.option_CellEditStarting);
             this.folvFixed.KeyDown += new System.Windows.Forms.KeyEventHandler(this.folvFixed_KeyDown);
-            this.folvFixed.CellEditFinishing += new BrightIdeasSoftware.CellEditEventHandler(this.option_CellEditFinishing);
             // 
             // colFixUserName
             // 
@@ -491,6 +508,7 @@
             // 
             this.colFixStartDate.AspectName = "StartDate";
             this.colFixStartDate.AspectToStringFormat = "{0:yyyy/MM/dd}";
+            this.colFixStartDate.HeaderTextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.colFixStartDate.MinimumWidth = 80;
             this.colFixStartDate.Text = "StartDate";
             this.colFixStartDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -500,6 +518,7 @@
             // 
             this.colFixEndDate.AspectName = "EndDate";
             this.colFixEndDate.AspectToStringFormat = "{0:yyyy/MM/dd}";
+            this.colFixEndDate.HeaderTextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.colFixEndDate.MinimumWidth = 80;
             this.colFixEndDate.Text = "EndDate";
             this.colFixEndDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -509,9 +528,17 @@
             // 
             this.colFixAmount.AspectName = "Amount";
             this.colFixAmount.AspectToStringFormat = "{0:n0}";
+            this.colFixAmount.HeaderTextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.colFixAmount.MinimumWidth = 60;
             this.colFixAmount.Text = "Amount";
             this.colFixAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // colFixRemarks
+            // 
+            this.colFixRemarks.AspectName = "Remarks";
+            this.colFixRemarks.MinimumWidth = 80;
+            this.colFixRemarks.Text = "Remarks";
+            this.colFixRemarks.Width = 104;
             // 
             // cmsDelete
             // 
@@ -545,7 +572,7 @@
             this.tpOptimal.Location = new System.Drawing.Point(4, 23);
             this.tpOptimal.Name = "tpOptimal";
             this.tpOptimal.Padding = new System.Windows.Forms.Padding(3);
-            this.tpOptimal.Size = new System.Drawing.Size(656, 338);
+            this.tpOptimal.Size = new System.Drawing.Size(766, 338);
             this.tpOptimal.TabIndex = 2;
             this.tpOptimal.Text = "Optimal";
             this.tpOptimal.UseVisualStyleBackColor = true;
@@ -557,6 +584,7 @@
             this.folvOptimal.AllColumns.Add(this.colOptRange);
             this.folvOptimal.AlternateRowBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(245)))), ((int)(((byte)(250)))));
             this.folvOptimal.CellEditActivation = BrightIdeasSoftware.ObjectListView.CellEditActivateMode.DoubleClick;
+            this.folvOptimal.CheckBoxes = false;
             this.folvOptimal.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.colOptSub,
             this.colOptOptimal,
@@ -574,8 +602,8 @@
             this.folvOptimal.UseCompatibleStateImageBehavior = false;
             this.folvOptimal.View = System.Windows.Forms.View.Details;
             this.folvOptimal.VirtualMode = true;
-            this.folvOptimal.CellEditStarting += new BrightIdeasSoftware.CellEditEventHandler(this.option_CellEditStarting);
             this.folvOptimal.CellEditFinishing += new BrightIdeasSoftware.CellEditEventHandler(this.option_CellEditFinishing);
+            this.folvOptimal.CellEditStarting += new BrightIdeasSoftware.CellEditEventHandler(this.option_CellEditStarting);
             // 
             // colOptSub
             // 
@@ -590,6 +618,7 @@
             // 
             this.colOptOptimal.AspectName = "Optimal";
             this.colOptOptimal.AspectToStringFormat = "{0:n0}";
+            this.colOptOptimal.HeaderTextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.colOptOptimal.MinimumWidth = 100;
             this.colOptOptimal.Text = "Optimal";
             this.colOptOptimal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -599,6 +628,7 @@
             // 
             this.colOptRange.AspectName = "Range";
             this.colOptRange.AspectToStringFormat = "{0:n0}";
+            this.colOptRange.HeaderTextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.colOptRange.MinimumWidth = 100;
             this.colOptRange.Text = "Range";
             this.colOptRange.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -620,7 +650,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancel;
-            this.ClientSize = new System.Drawing.Size(677, 406);
+            this.ClientSize = new System.Drawing.Size(792, 406);
             this.Controls.Add(this.tcOption);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.btnApply);
@@ -640,6 +670,7 @@
             this.tpSecurity.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.folvUser)).EndInit();
             this.tpFixed.ResumeLayout(false);
+            this.tpFixed.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.folvFixed)).EndInit();
             this.cmsDelete.ResumeLayout(false);
             this.tpOptimal.ResumeLayout(false);
@@ -696,6 +727,8 @@
         private BrightIdeasSoftware.OLVColumn colOptSub;
         private BrightIdeasSoftware.OLVColumn colOptOptimal;
         private BrightIdeasSoftware.OLVColumn colOptRange;
+        private BrightIdeasSoftware.OLVColumn colFixRemarks;
+        private System.Windows.Forms.TextBox tbRemarks;
 
     }
 }

@@ -30,13 +30,14 @@ namespace GMoney.db
                 tran = conn.BeginTransaction();
 
                 SQLiteCommand cmd = conn.CreateCommand();
-                cmd.CommandText = "insert into d_fixed_data values (null, @user_id, @sub_id, @interval_type, @interval, @detail, @amount, @start_date, @end_date, @create_date, @update_date);";
+                cmd.CommandText = "insert into d_fixed_data (id, user_id, sub_id, interval_type, interval, detail, amount, remarks, start_date, end_date, create_date, update_date) values (null, @user_id, @sub_id, @interval_type, @interval, @detail, @amount, @remarks, @start_date, @end_date, @create_date, @update_date);";
                 cmd.Parameters.AddWithValue("user_id", tbl.UserId);
                 cmd.Parameters.AddWithValue("sub_id", tbl.SubId);
                 cmd.Parameters.AddWithValue("interval_type", tbl.IntervalType);
                 cmd.Parameters.AddWithValue("interval", tbl.Interval);
                 cmd.Parameters.AddWithValue("detail", tbl.IntervalDetail);
                 cmd.Parameters.AddWithValue("amount", tbl.Amount);
+                cmd.Parameters.AddWithValue("remarks", tbl.Remarks);
                 cmd.Parameters.AddWithValue("start_date", tbl.StartDate);
                 cmd.Parameters.AddWithValue("end_date", tbl.EndDate);
                 cmd.Parameters.AddWithValue("create_date", DateTime.Now);
@@ -89,13 +90,14 @@ namespace GMoney.db
                 foreach (FixedDataTbl tbl in collection)
                 {
                     cmd = conn.CreateCommand();
-                    cmd.CommandText = "update d_fixed_data set user_id = @user_id, sub_id = @sub_id, interval_type = @interval_type, interval = @interval, detail= @detail, amount = @amount, start_date=@start_date, end_date = @end_date, update_date = @update_date where id = @id;";
+                    cmd.CommandText = "update d_fixed_data set user_id = @user_id, sub_id = @sub_id, interval_type = @interval_type, interval = @interval, detail= @detail, amount = @amount, remarks = @remarks, start_date=@start_date, end_date = @end_date, update_date = @update_date where id = @id;";
                     cmd.Parameters.AddWithValue("user_id", tbl.UserId);
                     cmd.Parameters.AddWithValue("sub_id", tbl.SubId);
                     cmd.Parameters.AddWithValue("interval_type", tbl.IntervalType);
                     cmd.Parameters.AddWithValue("interval", tbl.Interval);
                     cmd.Parameters.AddWithValue("detail", tbl.IntervalDetail);
                     cmd.Parameters.AddWithValue("amount", tbl.Amount);
+                    cmd.Parameters.AddWithValue("remarks", tbl.Remarks);
                     cmd.Parameters.AddWithValue("start_date", tbl.StartDate);
                     cmd.Parameters.AddWithValue("end_date", tbl.EndDate);
                     cmd.Parameters.AddWithValue("update_date", DateTime.Now);
@@ -218,6 +220,7 @@ namespace GMoney.db
                     tbl.Interval = Convert.ToInt32(myRow["interval"].ToString());
                     tbl.IntervalDetail = myRow["detail"].ToString();
                     tbl.Amount = Convert.ToDouble(myRow["amount"].ToString());
+                    tbl.Remarks = myRow["remarks"].ToString();
                     tbl.StartDate = DateTime.Parse(myRow["start_date"].ToString());
                     tbl.EndDate = DateTime.Parse(myRow["end_date"].ToString());
                     list.Add(tbl);

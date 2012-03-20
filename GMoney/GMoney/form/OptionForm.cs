@@ -304,12 +304,14 @@ namespace GMoney.form
             tbl.IntervalDetail = frequencyCtl.IntervalDetail;
             tbl.StartDate = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 0, 0, 0);
             tbl.Amount = ctbAmount.Double;
+            tbl.Remarks = tbRemarks.Text.Trim();
 
             FixedDataDB fdb = new FixedDataDB();
             if (fdb.NewFixedData(tbl))
             {
                 // clear amount textbox
                 ctbAmount.Text = "0";
+                tbRemarks.Text = "";
                 // refresh
                 SetFixedListView();
             }
@@ -419,6 +421,15 @@ namespace GMoney.form
                 tb.TextChanged += new EventHandler(ListItemValueChanged);
                 e.Control = tb;
             }
+            else if (e.Column.Text == colFixRemarks.Text)
+            {
+                TextBox tb = new TextBox();
+                tb.Bounds = e.CellBounds;
+                tb.Font = ((ObjectListView)sender).Font;
+                tb.Text = ((FixedDataTbl)e.RowObject).Remarks;
+                tb.TextChanged += new EventHandler(ListItemValueChanged);
+                e.Control = tb;
+            }
             else if (e.Column.Text == colUserDeleted.Text)
             {
                 ComboBox cb = new ComboBox();
@@ -486,6 +497,11 @@ namespace GMoney.form
             else if (e.Column.Text == colUserName.Text)
             {
                 ((BaseTbl)e.RowObject).Name = ((TextBox)e.Control).Text;
+                ((TextBox)e.Control).TextChanged -= new EventHandler(ListItemValueChanged);
+            }
+            else if (e.Column.Text == colFixRemarks.Text)
+            {
+                ((FixedDataTbl)e.RowObject).Remarks = ((TextBox)e.Control).Text;
                 ((TextBox)e.Control).TextChanged -= new EventHandler(ListItemValueChanged);
             }
             else if (e.Column.Text == colFixFrequency.Text)

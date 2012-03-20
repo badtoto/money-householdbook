@@ -843,6 +843,7 @@ namespace GMoney.db
                     fixedData.Interval = int.Parse(reader["interval"].ToString());
                     fixedData.BillType = int.Parse(reader["bill_type"].ToString());
                     fixedData.Amount = double.Parse(reader["amount"].ToString());
+                    fixedData.Remarks = reader["remarks"].ToString();
                     fixedData.IntervalDetail = reader["detail"].ToString();
                     fixedData.StartDate = (DateTime)reader["start_date"];
                     fixedData.EndDate = (DateTime)reader["end_date"];
@@ -918,10 +919,10 @@ namespace GMoney.db
                         tbl.UserId = fixedData.UserId;
                         tbl.SubId = fixedData.SubId;
                         tbl.Amount = fixedData.Amount;
+                        tbl.Remarks = fixedData.Remarks;
                         tbl.Date = addStartDate;
                         tbl.FixedId = fixedData.ID;
 
-                        tbl.Remarks = string.Empty;
 
                         addList.Add(tbl);
 

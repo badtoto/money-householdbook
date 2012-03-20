@@ -1,0 +1,3 @@
+alter table d_fixed_data add column remarks text;
+drop view v_fixed_data;
+CREATE VIEW v_fixed_data as select fixed.id as id, fixed.user_id as user_id, user.name as user_name, fixed.sub_id as sub_id, sub.name as sub_name, sub.bill_type as bill_type, sub.major_sort as major_sort, sub.sub_sort as sub_sort, fixed.interval_type as interval_type, fixed.interval as interval, fixed.detail as detail, fixed.amount as amount, fixed.remarks as remarks, fixed.start_date as start_date, fixed.end_date as end_date from d_fixed_data as fixed left outer join m_user as user on fixed.user_id = user.id left outer join v_sub as sub on fixed.sub_id = sub.id ;
