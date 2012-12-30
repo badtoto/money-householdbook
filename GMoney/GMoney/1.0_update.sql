@@ -51,7 +51,7 @@ insert into m_sub values (NULL,6,'Books & Magazines',0,0,1, datetime('now'), dat
 insert into m_sub values (NULL,6,'Tuition',0,0,2, datetime('now'), datetime('now'), 0);
 insert into m_sub values (NULL,6,'School & Training',0,0,3, datetime('now'), datetime('now'), 0);
 insert into m_sub values (NULL,1,'Childcare fee',0,0,4, datetime('now'), datetime('now'), 0);
-insert into m_sub values (NULL,7,'Movie & Concert',0,0,1, datetime('now'), datetime('now'), 0);
+insert into m_sub values (NULL,7,'Hobbies/Leisure',0,0,1, datetime('now'), datetime('now'), 0);
 insert into m_sub values (NULL,7,'Recreational supplies',0,0,2, datetime('now'), datetime('now'), 0);
 insert into m_sub values (NULL,7,'Toys',0,0,3, datetime('now'), datetime('now'), 0);
 insert into m_sub values (NULL,7,'Enrichment lessons',0,0,4, datetime('now'), datetime('now'), 0);
