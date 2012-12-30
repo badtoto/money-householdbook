@@ -54,12 +54,10 @@
             this.labelOldPass = new System.Windows.Forms.Label();
             this.tpFixed = new System.Windows.Forms.TabPage();
             this.tbRemarks = new System.Windows.Forms.TextBox();
-            this.frequencyCtl = new GMoney.control.FrequencyCtl();
             this.cbUser = new System.Windows.Forms.ComboBox();
             this.btnFixedDel = new System.Windows.Forms.Label();
             this.btnFixedNew = new System.Windows.Forms.Label();
             this.cbSub = new System.Windows.Forms.ComboBox();
-            this.ctbAmount = new GMoney.control.NumericBox();
             this.folvFixed = new BrightIdeasSoftware.FastObjectListView();
             this.colFixUserName = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.colFixSub = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
@@ -77,6 +75,8 @@
             this.colOptOptimal = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.colOptRange = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.labelOptimal = new System.Windows.Forms.Label();
+            this.frequencyCtl = new GMoney.control.FrequencyCtl();
+            this.ctbAmount = new GMoney.control.NumericBox();
             this.tcOption.SuspendLayout();
             this.tpSecurity.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.folvUser)).BeginInit();
@@ -353,11 +353,11 @@
             // tpFixed
             // 
             this.tpFixed.Controls.Add(this.tbRemarks);
-            this.tpFixed.Controls.Add(this.frequencyCtl);
             this.tpFixed.Controls.Add(this.cbUser);
             this.tpFixed.Controls.Add(this.btnFixedDel);
             this.tpFixed.Controls.Add(this.btnFixedNew);
             this.tpFixed.Controls.Add(this.cbSub);
+            this.tpFixed.Controls.Add(this.frequencyCtl);
             this.tpFixed.Controls.Add(this.ctbAmount);
             this.tpFixed.Controls.Add(this.folvFixed);
             this.tpFixed.Controls.Add(this.labelFixed);
@@ -374,19 +374,7 @@
             this.tbRemarks.Location = new System.Drawing.Point(599, 33);
             this.tbRemarks.Name = "tbRemarks";
             this.tbRemarks.Size = new System.Drawing.Size(111, 22);
-            this.tbRemarks.TabIndex = 8;
-            // 
-            // frequencyCtl
-            // 
-            this.frequencyCtl.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.frequencyCtl.Interval = 1;
-            this.frequencyCtl.IntervalDetail = "";
-            this.frequencyCtl.IntervalType = -1;
-            this.frequencyCtl.Location = new System.Drawing.Point(310, 33);
-            this.frequencyCtl.Margin = new System.Windows.Forms.Padding(0);
-            this.frequencyCtl.Name = "frequencyCtl";
-            this.frequencyCtl.Size = new System.Drawing.Size(192, 22);
-            this.frequencyCtl.TabIndex = 3;
+            this.tbRemarks.TabIndex = 5;
             // 
             // cbUser
             // 
@@ -405,7 +393,7 @@
             this.btnFixedDel.Margin = new System.Windows.Forms.Padding(0);
             this.btnFixedDel.Name = "btnFixedDel";
             this.btnFixedDel.Size = new System.Drawing.Size(20, 20);
-            this.btnFixedDel.TabIndex = 6;
+            this.btnFixedDel.TabIndex = 7;
             this.btnFixedDel.Click += new System.EventHandler(this.btnFixedDel_Click);
             // 
             // btnFixedNew
@@ -416,7 +404,7 @@
             this.btnFixedNew.Margin = new System.Windows.Forms.Padding(0);
             this.btnFixedNew.Name = "btnFixedNew";
             this.btnFixedNew.Size = new System.Drawing.Size(20, 20);
-            this.btnFixedNew.TabIndex = 5;
+            this.btnFixedNew.TabIndex = 6;
             this.btnFixedNew.Click += new System.EventHandler(this.btnFixedNew_Click);
             // 
             // cbSub
@@ -427,20 +415,6 @@
             this.cbSub.Name = "cbSub";
             this.cbSub.Size = new System.Drawing.Size(225, 22);
             this.cbSub.TabIndex = 2;
-            // 
-            // ctbAmount
-            // 
-            this.ctbAmount.AllowNegative = false;
-            this.ctbAmount.BackColor = System.Drawing.SystemColors.Window;
-            this.ctbAmount.Cursor = System.Windows.Forms.Cursors.Default;
-            this.ctbAmount.Location = new System.Drawing.Point(503, 33);
-            this.ctbAmount.Minimum = 0D;
-            this.ctbAmount.Name = "ctbAmount";
-            this.ctbAmount.Size = new System.Drawing.Size(95, 22);
-            this.ctbAmount.TabIndex = 4;
-            this.ctbAmount.Enter += new System.EventHandler(this.optionAcceptButtonOff);
-            this.ctbAmount.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ctbAmount_KeyDown);
-            this.ctbAmount.Leave += new System.EventHandler(this.optionAcceptButtonOn);
             // 
             // folvFixed
             // 
@@ -471,7 +445,7 @@
             this.folvFixed.RowHeight = 22;
             this.folvFixed.ShowGroups = false;
             this.folvFixed.Size = new System.Drawing.Size(760, 278);
-            this.folvFixed.TabIndex = 7;
+            this.folvFixed.TabIndex = 8;
             this.folvFixed.UseAlternatingBackColors = true;
             this.folvFixed.UseCompatibleStateImageBehavior = false;
             this.folvFixed.View = System.Windows.Forms.View.Details;
@@ -596,7 +570,7 @@
             this.folvOptimal.Name = "folvOptimal";
             this.folvOptimal.RowHeight = 22;
             this.folvOptimal.ShowGroups = false;
-            this.folvOptimal.Size = new System.Drawing.Size(650, 302);
+            this.folvOptimal.Size = new System.Drawing.Size(760, 302);
             this.folvOptimal.TabIndex = 1;
             this.folvOptimal.UseAlternatingBackColors = true;
             this.folvOptimal.UseCompatibleStateImageBehavior = false;
@@ -643,6 +617,32 @@
             this.labelOptimal.TabIndex = 0;
             this.labelOptimal.Text = "Please set your Optimal Range of the following data.";
             this.labelOptimal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // frequencyCtl
+            // 
+            this.frequencyCtl.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.frequencyCtl.Interval = 1;
+            this.frequencyCtl.IntervalDetail = "";
+            this.frequencyCtl.IntervalType = -1;
+            this.frequencyCtl.Location = new System.Drawing.Point(310, 33);
+            this.frequencyCtl.Margin = new System.Windows.Forms.Padding(0);
+            this.frequencyCtl.Name = "frequencyCtl";
+            this.frequencyCtl.Size = new System.Drawing.Size(192, 22);
+            this.frequencyCtl.TabIndex = 3;
+            // 
+            // ctbAmount
+            // 
+            this.ctbAmount.AllowNegative = false;
+            this.ctbAmount.BackColor = System.Drawing.SystemColors.Window;
+            this.ctbAmount.Cursor = System.Windows.Forms.Cursors.Default;
+            this.ctbAmount.Location = new System.Drawing.Point(503, 33);
+            this.ctbAmount.Minimum = 0D;
+            this.ctbAmount.Name = "ctbAmount";
+            this.ctbAmount.Size = new System.Drawing.Size(95, 22);
+            this.ctbAmount.TabIndex = 4;
+            this.ctbAmount.Enter += new System.EventHandler(this.optionAcceptButtonOff);
+            this.ctbAmount.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ctbAmount_KeyDown);
+            this.ctbAmount.Leave += new System.EventHandler(this.optionAcceptButtonOn);
             // 
             // OptionForm
             // 
