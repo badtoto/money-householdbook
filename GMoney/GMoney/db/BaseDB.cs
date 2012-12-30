@@ -61,27 +61,30 @@ namespace GMoney.db
                 {
                     // update sql
                     string update_file = Path.Combine(Application.StartupPath, "update.sql");
-                    conn = GetConnection();
-                    tran = conn.BeginTransaction();
-
-                    using (StreamReader sr = new StreamReader(Path.Combine(Application.StartupPath, "update.sql")))
+                    if (File.Exists(update_file))
                     {
-                        string sql;
-                        while ((sql = sr.ReadLine()) != null)
+                        conn = GetConnection();
+                        tran = conn.BeginTransaction();
+
+                        using (StreamReader sr = new StreamReader(Path.Combine(Application.StartupPath, "update.sql")))
                         {
-                            using (SQLiteCommand cmd = conn.CreateCommand())
+                            string sql;
+                            while ((sql = sr.ReadLine()) != null)
                             {
-                                if (string.IsNullOrEmpty(sql) || sql.Trim().StartsWith(";"))
+                                using (SQLiteCommand cmd = conn.CreateCommand())
                                 {
-                                    continue;
+                                    if (string.IsNullOrEmpty(sql) || sql.Trim().StartsWith(";"))
+                                    {
+                                        continue;
+                                    }
+                                    cmd.CommandText = sql;
+                                    cmd.ExecuteNonQuery();
                                 }
-                                cmd.CommandText = sql;
-                                cmd.ExecuteNonQuery();
                             }
                         }
+
+                        tran.Commit();
                     }
-                    
-                    tran.Commit();
                 }
 #endif
 
