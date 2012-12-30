@@ -61,7 +61,7 @@
             this.cbMajor.Location = new System.Drawing.Point(103, 99);
             this.cbMajor.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbMajor.Name = "cbMajor";
-            this.cbMajor.Size = new System.Drawing.Size(125, 22);
+            this.cbMajor.Size = new System.Drawing.Size(356, 22);
             this.cbMajor.TabIndex = 8;
             this.cbMajor.SelectedIndexChanged += new System.EventHandler(this.cbMajor_SelectedIndexChanged);
             // 
@@ -69,10 +69,10 @@
             // 
             this.cbSub.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbSub.FormattingEnabled = true;
-            this.cbSub.Location = new System.Drawing.Point(234, 99);
+            this.cbSub.Location = new System.Drawing.Point(103, 128);
             this.cbSub.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbSub.Name = "cbSub";
-            this.cbSub.Size = new System.Drawing.Size(225, 22);
+            this.cbSub.Size = new System.Drawing.Size(356, 22);
             this.cbSub.TabIndex = 9;
             this.cbSub.SelectedIndexChanged += new System.EventHandler(this.cbSub_SelectedIndexChanged);
             // 
@@ -80,7 +80,7 @@
             // 
             this.cbPayment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbPayment.FormattingEnabled = true;
-            this.cbPayment.Location = new System.Drawing.Point(103, 189);
+            this.cbPayment.Location = new System.Drawing.Point(103, 218);
             this.cbPayment.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbPayment.Name = "cbPayment";
             this.cbPayment.Size = new System.Drawing.Size(125, 22);
@@ -90,7 +90,7 @@
             // btnOK
             // 
             this.btnOK.BackColor = System.Drawing.Color.Transparent;
-            this.btnOK.Location = new System.Drawing.Point(163, 215);
+            this.btnOK.Location = new System.Drawing.Point(163, 244);
             this.btnOK.Margin = new System.Windows.Forms.Padding(0);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(75, 23);
@@ -114,7 +114,7 @@
             // 
             this.labelPayment.BackColor = System.Drawing.Color.Transparent;
             this.labelPayment.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPayment.Location = new System.Drawing.Point(35, 189);
+            this.labelPayment.Location = new System.Drawing.Point(35, 218);
             this.labelPayment.Name = "labelPayment";
             this.labelPayment.Size = new System.Drawing.Size(62, 20);
             this.labelPayment.TabIndex = 18;
@@ -126,7 +126,7 @@
             // 
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(37, 129);
+            this.label5.Location = new System.Drawing.Point(37, 158);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(62, 20);
             this.label5.TabIndex = 10;
@@ -137,7 +137,7 @@
             // 
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(37, 159);
+            this.label6.Location = new System.Drawing.Point(37, 188);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(62, 20);
             this.label6.TabIndex = 12;
@@ -148,7 +148,7 @@
             // 
             this.btnCancel.BackColor = System.Drawing.Color.Transparent;
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Location = new System.Drawing.Point(258, 215);
+            this.btnCancel.Location = new System.Drawing.Point(258, 244);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(0);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
@@ -160,7 +160,7 @@
             // 
             this.cbAnnualBudget.AutoSize = true;
             this.cbAnnualBudget.BackColor = System.Drawing.Color.Transparent;
-            this.cbAnnualBudget.Location = new System.Drawing.Point(352, 163);
+            this.cbAnnualBudget.Location = new System.Drawing.Point(352, 192);
             this.cbAnnualBudget.Name = "cbAnnualBudget";
             this.cbAnnualBudget.Size = new System.Drawing.Size(107, 18);
             this.cbAnnualBudget.TabIndex = 17;
@@ -253,7 +253,7 @@
             // 
             this.cbSplit.AutoSize = true;
             this.cbSplit.BackColor = System.Drawing.Color.Transparent;
-            this.cbSplit.Location = new System.Drawing.Point(234, 131);
+            this.cbSplit.Location = new System.Drawing.Point(234, 160);
             this.cbSplit.Name = "cbSplit";
             this.cbSplit.Size = new System.Drawing.Size(69, 18);
             this.cbSplit.TabIndex = 14;
@@ -264,7 +264,7 @@
             // nudMonths
             // 
             this.nudMonths.Enabled = false;
-            this.nudMonths.Location = new System.Drawing.Point(305, 129);
+            this.nudMonths.Location = new System.Drawing.Point(305, 158);
             this.nudMonths.Maximum = new decimal(new int[] {
             12,
             0,
@@ -289,7 +289,7 @@
             // 
             this.labelSplit.AutoSize = true;
             this.labelSplit.BackColor = System.Drawing.Color.Transparent;
-            this.labelSplit.Location = new System.Drawing.Point(346, 132);
+            this.labelSplit.Location = new System.Drawing.Point(346, 161);
             this.labelSplit.Name = "labelSplit";
             this.labelSplit.Size = new System.Drawing.Size(47, 14);
             this.labelSplit.TabIndex = 16;
@@ -299,7 +299,7 @@
             // 
             this.tbRemarks.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.tbRemarks.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.tbRemarks.Location = new System.Drawing.Point(103, 159);
+            this.tbRemarks.Location = new System.Drawing.Point(103, 188);
             this.tbRemarks.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tbRemarks.Name = "tbRemarks";
             this.tbRemarks.Size = new System.Drawing.Size(125, 22);
@@ -312,7 +312,7 @@
             this.tbAmount.BackColor = System.Drawing.SystemColors.Window;
             this.tbAmount.Cursor = System.Windows.Forms.Cursors.Default;
             this.tbAmount.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.tbAmount.Location = new System.Drawing.Point(103, 129);
+            this.tbAmount.Location = new System.Drawing.Point(103, 158);
             this.tbAmount.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tbAmount.Minimum = 0D;
             this.tbAmount.Name = "tbAmount";
@@ -326,7 +326,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancel;
-            this.ClientSize = new System.Drawing.Size(494, 248);
+            this.ClientSize = new System.Drawing.Size(494, 278);
             this.Controls.Add(this.labelSplit);
             this.Controls.Add(this.nudMonths);
             this.Controls.Add(this.cbSplit);
