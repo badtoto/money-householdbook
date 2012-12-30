@@ -385,7 +385,8 @@ namespace GMoney.db
 
             DateTime staDate = new DateTime(year[0], DateTime.Now.AddMonths(1).Month, 1);
             DateTime endDate = new DateTime(year[1], DateTime.Now.Month, DateTime.Now.Day);
-            if (sub_id == 9)
+            /// MEMO: WATER
+            if (sub_id == 14)
             {
                 if (endDate.Month % 2 == 1)
                 {

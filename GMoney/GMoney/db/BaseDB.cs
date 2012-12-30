@@ -56,6 +56,34 @@ namespace GMoney.db
                     }
                     tran.Commit();
                 }
+#if DEBUG1
+                else
+                {
+                    // update sql
+                    string update_file = Path.Combine(Application.StartupPath, "update.sql");
+                    conn = GetConnection();
+                    tran = conn.BeginTransaction();
+
+                    using (StreamReader sr = new StreamReader(Path.Combine(Application.StartupPath, "update.sql")))
+                    {
+                        string sql;
+                        while ((sql = sr.ReadLine()) != null)
+                        {
+                            using (SQLiteCommand cmd = conn.CreateCommand())
+                            {
+                                if (string.IsNullOrEmpty(sql) || sql.Trim().StartsWith(";"))
+                                {
+                                    continue;
+                                }
+                                cmd.CommandText = sql;
+                                cmd.ExecuteNonQuery();
+                            }
+                        }
+                    }
+                    
+                    tran.Commit();
+                }
+#endif
 
                 bRet = true;
             }
@@ -142,6 +170,7 @@ namespace GMoney.db
             cnn.SetPassword(DB_PWD);
 #endif
             cnn.Open();
+//            cnn.ChangePassword("");
             return cnn;
         }
         #endregion
