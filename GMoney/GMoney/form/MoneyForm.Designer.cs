@@ -164,7 +164,6 @@
             this.treeListView.AllColumns.Add(this.colRemarks);
             this.treeListView.AllColumns.Add(this.colAB);
             this.treeListView.AlternateRowBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(245)))), ((int)(((byte)(250)))));
-            this.treeListView.CheckBoxes = false;
             this.treeListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.colCategory,
             this.colUserName,

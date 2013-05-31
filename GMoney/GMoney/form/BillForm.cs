@@ -177,7 +177,7 @@ namespace GMoney.form
                 }
             }
             tbl.SubId = (int)((ListItem)cbSub.SelectedItem).ID;
-            tbl.Amount = tbAmount.Double;
+            tbl.Amount = (double)tbAmount.Value;
             tbl.Remarks = tbRemarks.Text;
             //tbl.PaymentId = (int)((ListItem)cbPayment.SelectedItem).ID;
             tbl.AnnualBudget = cbAnnualBudget.Checked ? 1 : 0;

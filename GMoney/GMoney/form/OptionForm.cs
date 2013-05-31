@@ -303,7 +303,7 @@ namespace GMoney.form
             tbl.IntervalType = frequencyCtl.IntervalType;
             tbl.IntervalDetail = frequencyCtl.IntervalDetail;
             tbl.StartDate = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 0, 0, 0);
-            tbl.Amount = ctbAmount.Double;
+            tbl.Amount = (double)ctbAmount.Value;
             tbl.Remarks = tbRemarks.Text.Trim();
 
             FixedDataDB fdb = new FixedDataDB();
@@ -382,21 +382,23 @@ namespace GMoney.form
         {
             if (e.Column.Text == colOptOptimal.Text || e.Column.Text == colOptRange.Text || e.Column.Text == colFixAmount.Text)
             {
-                NumericBox ctb = new NumericBox();
+                NumericUpDown ctb = new NumericUpDown();
                 ctb.Bounds = e.CellBounds;
                 ctb.Font = ((ObjectListView)sender).Font;
-                ctb.AllowNegative = false;
+                ctb.TextAlign = HorizontalAlignment.Right;
+                ctb.ThousandsSeparator = true;
+                ctb.Maximum = 1000000000000;
                 if (e.Column.Text == colOptOptimal.Text)
                 {
-                    ctb.Text = ((SubTbl)e.RowObject).Optimal.ToString();
+                    ctb.Value = Convert.ToDecimal(((SubTbl)e.RowObject).Optimal);
                 }
                 else if (e.Column.Text == colOptRange.Text)
                 {
-                    ctb.Text = ((SubTbl)e.RowObject).Range.ToString();
+                    ctb.Value = Convert.ToDecimal(((SubTbl)e.RowObject).Range);
                 }
                 else if (e.Column.Text == colFixAmount.Text)
                 {
-                    ctb.Text = ((FixedDataTbl)e.RowObject).Amount.ToString();
+                    ctb.Value = Convert.ToDecimal(((FixedDataTbl)e.RowObject).Amount);
                 }
                 ctb.TextChanged += new EventHandler(ListItemValueChanged);
                 e.Control = ctb;
@@ -476,18 +478,18 @@ namespace GMoney.form
             // remove event handler
             if (e.Column.Text == colOptOptimal.Text)
             {
-                ((SubTbl)e.RowObject).Optimal = ((NumericBox)e.Control).Double;
-                ((NumericBox)e.Control).TextChanged -= new EventHandler(ListItemValueChanged);
+                ((SubTbl)e.RowObject).Optimal = (double)((NumericUpDown)e.Control).Value;
+                ((NumericUpDown)e.Control).ValueChanged -= new EventHandler(ListItemValueChanged);
             }
             else if (e.Column.Text == colOptRange.Text)
             {
-                ((SubTbl)e.RowObject).Range = ((NumericBox)e.Control).Double;
-                ((NumericBox)e.Control).TextChanged -= new EventHandler(ListItemValueChanged);
+                ((SubTbl)e.RowObject).Range = (double)((NumericUpDown)e.Control).Value;
+                ((NumericUpDown)e.Control).ValueChanged -= new EventHandler(ListItemValueChanged);
             }
             else if (e.Column.Text == colFixAmount.Text)
             {
-                ((FixedDataTbl)e.RowObject).Amount = ((NumericBox)e.Control).Double;
-                ((NumericBox)e.Control).TextChanged -= new EventHandler(ListItemValueChanged);
+                ((FixedDataTbl)e.RowObject).Amount = (double)((NumericUpDown)e.Control).Value;
+                ((NumericUpDown)e.Control).ValueChanged -= new EventHandler(ListItemValueChanged);
             }
             else if (e.Column.Text == colUserDeleted.Text)
             {

@@ -53,11 +53,13 @@
             this.tbOldPass = new System.Windows.Forms.TextBox();
             this.labelOldPass = new System.Windows.Forms.Label();
             this.tpFixed = new System.Windows.Forms.TabPage();
+            this.ctbAmount = new System.Windows.Forms.NumericUpDown();
             this.tbRemarks = new System.Windows.Forms.TextBox();
             this.cbUser = new System.Windows.Forms.ComboBox();
             this.btnFixedDel = new System.Windows.Forms.Label();
             this.btnFixedNew = new System.Windows.Forms.Label();
             this.cbSub = new System.Windows.Forms.ComboBox();
+            this.frequencyCtl = new GMoney.control.FrequencyCtl();
             this.folvFixed = new BrightIdeasSoftware.FastObjectListView();
             this.colFixUserName = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.colFixSub = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
@@ -75,12 +77,11 @@
             this.colOptOptimal = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.colOptRange = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.labelOptimal = new System.Windows.Forms.Label();
-            this.frequencyCtl = new GMoney.control.FrequencyCtl();
-            this.ctbAmount = new GMoney.control.NumericBox();
             this.tcOption.SuspendLayout();
             this.tpSecurity.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.folvUser)).BeginInit();
             this.tpFixed.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ctbAmount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.folvFixed)).BeginInit();
             this.cmsDelete.SuspendLayout();
             this.tpOptimal.SuspendLayout();
@@ -188,7 +189,6 @@
             this.folvUser.AllColumns.Add(this.colUserDeleted);
             this.folvUser.AlternateRowBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(245)))), ((int)(((byte)(250)))));
             this.folvUser.CellEditActivation = BrightIdeasSoftware.ObjectListView.CellEditActivateMode.DoubleClick;
-            this.folvUser.CheckBoxes = false;
             this.folvUser.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.colUserId,
             this.colUserName,
@@ -261,7 +261,7 @@
             // 
             // labelBasicUser
             // 
-            this.labelBasicUser.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.labelBasicUser.ForeColor = System.Drawing.Color.DodgerBlue;
             this.labelBasicUser.Location = new System.Drawing.Point(3, 151);
             this.labelBasicUser.Name = "labelBasicUser";
             this.labelBasicUser.Size = new System.Drawing.Size(166, 20);
@@ -282,7 +282,7 @@
             // 
             // labelBasicLogin
             // 
-            this.labelBasicLogin.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.labelBasicLogin.ForeColor = System.Drawing.Color.DodgerBlue;
             this.labelBasicLogin.Location = new System.Drawing.Point(3, 10);
             this.labelBasicLogin.Name = "labelBasicLogin";
             this.labelBasicLogin.Size = new System.Drawing.Size(290, 20);
@@ -352,13 +352,13 @@
             // 
             // tpFixed
             // 
+            this.tpFixed.Controls.Add(this.ctbAmount);
             this.tpFixed.Controls.Add(this.tbRemarks);
             this.tpFixed.Controls.Add(this.cbUser);
             this.tpFixed.Controls.Add(this.btnFixedDel);
             this.tpFixed.Controls.Add(this.btnFixedNew);
             this.tpFixed.Controls.Add(this.cbSub);
             this.tpFixed.Controls.Add(this.frequencyCtl);
-            this.tpFixed.Controls.Add(this.ctbAmount);
             this.tpFixed.Controls.Add(this.folvFixed);
             this.tpFixed.Controls.Add(this.labelFixed);
             this.tpFixed.Location = new System.Drawing.Point(4, 23);
@@ -368,6 +368,20 @@
             this.tpFixed.TabIndex = 1;
             this.tpFixed.Text = "Fixed";
             this.tpFixed.UseVisualStyleBackColor = true;
+            // 
+            // ctbAmount
+            // 
+            this.ctbAmount.Location = new System.Drawing.Point(504, 33);
+            this.ctbAmount.Maximum = new decimal(new int[] {
+            -727379968,
+            232,
+            0,
+            0});
+            this.ctbAmount.Name = "ctbAmount";
+            this.ctbAmount.Size = new System.Drawing.Size(95, 22);
+            this.ctbAmount.TabIndex = 9;
+            this.ctbAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.ctbAmount.ThousandsSeparator = true;
             // 
             // tbRemarks
             // 
@@ -416,6 +430,18 @@
             this.cbSub.Size = new System.Drawing.Size(225, 22);
             this.cbSub.TabIndex = 2;
             // 
+            // frequencyCtl
+            // 
+            this.frequencyCtl.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.frequencyCtl.Interval = 1;
+            this.frequencyCtl.IntervalDetail = "";
+            this.frequencyCtl.IntervalType = -1;
+            this.frequencyCtl.Location = new System.Drawing.Point(310, 33);
+            this.frequencyCtl.Margin = new System.Windows.Forms.Padding(0);
+            this.frequencyCtl.Name = "frequencyCtl";
+            this.frequencyCtl.Size = new System.Drawing.Size(192, 22);
+            this.frequencyCtl.TabIndex = 3;
+            // 
             // folvFixed
             // 
             this.folvFixed.AllColumns.Add(this.colFixUserName);
@@ -427,7 +453,6 @@
             this.folvFixed.AllColumns.Add(this.colFixRemarks);
             this.folvFixed.AlternateRowBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.folvFixed.CellEditActivation = BrightIdeasSoftware.ObjectListView.CellEditActivateMode.DoubleClick;
-            this.folvFixed.CheckBoxes = false;
             this.folvFixed.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.colFixUserName,
             this.colFixSub,
@@ -519,19 +544,19 @@
             this.cmsDelete.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.deleteToolStripMenuItem});
             this.cmsDelete.Name = "cmsDelete";
-            this.cmsDelete.Size = new System.Drawing.Size(104, 26);
+            this.cmsDelete.Size = new System.Drawing.Size(115, 26);
             // 
             // deleteToolStripMenuItem
             // 
             this.deleteToolStripMenuItem.Image = global::GMoney.Properties.Resources.Delete_16;
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
             this.deleteToolStripMenuItem.Text = "&Delete";
             this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
             // 
             // labelFixed
             // 
-            this.labelFixed.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.labelFixed.ForeColor = System.Drawing.Color.DodgerBlue;
             this.labelFixed.Location = new System.Drawing.Point(3, 10);
             this.labelFixed.Name = "labelFixed";
             this.labelFixed.Size = new System.Drawing.Size(378, 20);
@@ -558,7 +583,6 @@
             this.folvOptimal.AllColumns.Add(this.colOptRange);
             this.folvOptimal.AlternateRowBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(245)))), ((int)(((byte)(250)))));
             this.folvOptimal.CellEditActivation = BrightIdeasSoftware.ObjectListView.CellEditActivateMode.DoubleClick;
-            this.folvOptimal.CheckBoxes = false;
             this.folvOptimal.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.colOptSub,
             this.colOptOptimal,
@@ -610,39 +634,13 @@
             // 
             // labelOptimal
             // 
-            this.labelOptimal.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.labelOptimal.ForeColor = System.Drawing.Color.DodgerBlue;
             this.labelOptimal.Location = new System.Drawing.Point(3, 10);
             this.labelOptimal.Name = "labelOptimal";
             this.labelOptimal.Size = new System.Drawing.Size(359, 20);
             this.labelOptimal.TabIndex = 0;
             this.labelOptimal.Text = "Please set your Optimal Range of the following data.";
             this.labelOptimal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // frequencyCtl
-            // 
-            this.frequencyCtl.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.frequencyCtl.Interval = 1;
-            this.frequencyCtl.IntervalDetail = "";
-            this.frequencyCtl.IntervalType = -1;
-            this.frequencyCtl.Location = new System.Drawing.Point(310, 33);
-            this.frequencyCtl.Margin = new System.Windows.Forms.Padding(0);
-            this.frequencyCtl.Name = "frequencyCtl";
-            this.frequencyCtl.Size = new System.Drawing.Size(192, 22);
-            this.frequencyCtl.TabIndex = 3;
-            // 
-            // ctbAmount
-            // 
-            this.ctbAmount.AllowNegative = false;
-            this.ctbAmount.BackColor = System.Drawing.SystemColors.Window;
-            this.ctbAmount.Cursor = System.Windows.Forms.Cursors.Default;
-            this.ctbAmount.Location = new System.Drawing.Point(503, 33);
-            this.ctbAmount.Minimum = 0D;
-            this.ctbAmount.Name = "ctbAmount";
-            this.ctbAmount.Size = new System.Drawing.Size(95, 22);
-            this.ctbAmount.TabIndex = 4;
-            this.ctbAmount.Enter += new System.EventHandler(this.optionAcceptButtonOff);
-            this.ctbAmount.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ctbAmount_KeyDown);
-            this.ctbAmount.Leave += new System.EventHandler(this.optionAcceptButtonOn);
             // 
             // OptionForm
             // 
@@ -671,6 +669,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.folvUser)).EndInit();
             this.tpFixed.ResumeLayout(false);
             this.tpFixed.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ctbAmount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.folvFixed)).EndInit();
             this.cmsDelete.ResumeLayout(false);
             this.tpOptimal.ResumeLayout(false);
@@ -700,7 +699,6 @@
         private System.Windows.Forms.Label labelOptimal;
         private BrightIdeasSoftware.FastObjectListView folvOptimal;
         private BrightIdeasSoftware.FastObjectListView folvFixed;
-        private GMoney.control.NumericBox ctbAmount;
         private System.Windows.Forms.ComboBox cbSub;
         private System.Windows.Forms.ContextMenuStrip cmsDelete;
         private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
@@ -729,6 +727,7 @@
         private BrightIdeasSoftware.OLVColumn colOptRange;
         private BrightIdeasSoftware.OLVColumn colFixRemarks;
         private System.Windows.Forms.TextBox tbRemarks;
+        private System.Windows.Forms.NumericUpDown ctbAmount;
 
     }
 }

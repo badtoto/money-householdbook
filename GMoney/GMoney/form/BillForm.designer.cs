@@ -50,8 +50,9 @@
             this.nudMonths = new System.Windows.Forms.NumericUpDown();
             this.labelSplit = new System.Windows.Forms.Label();
             this.tbRemarks = new System.Windows.Forms.TextBox();
-            this.tbAmount = new GMoney.control.NumericBox();
+            this.tbAmount = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.nudMonths)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbAmount)).BeginInit();
             this.SuspendLayout();
             // 
             // cbMajor
@@ -171,7 +172,7 @@
             // 
             this.labelType.BackColor = System.Drawing.Color.Transparent;
             this.labelType.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelType.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.labelType.ForeColor = System.Drawing.Color.RoyalBlue;
             this.labelType.Location = new System.Drawing.Point(37, 14);
             this.labelType.Name = "labelType";
             this.labelType.Size = new System.Drawing.Size(62, 20);
@@ -247,7 +248,7 @@
             this.label3.Size = new System.Drawing.Size(407, 14);
             this.label3.TabIndex = 6;
             this.label3.Text = "---------------------------------------------------------------------------------" +
-                "-------------------";
+    "-------------------";
             // 
             // cbSplit
             // 
@@ -308,18 +309,17 @@
             // 
             // tbAmount
             // 
-            this.tbAmount.AllowNegative = false;
-            this.tbAmount.BackColor = System.Drawing.SystemColors.Window;
-            this.tbAmount.Cursor = System.Windows.Forms.Cursors.Default;
-            this.tbAmount.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.tbAmount.Location = new System.Drawing.Point(103, 158);
-            this.tbAmount.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tbAmount.Minimum = 0D;
+            this.tbAmount.Maximum = new decimal(new int[] {
+            -727379968,
+            232,
+            0,
+            0});
             this.tbAmount.Name = "tbAmount";
-            this.tbAmount.ShowPopupCalculator = true;
             this.tbAmount.Size = new System.Drawing.Size(125, 22);
             this.tbAmount.TabIndex = 11;
-            this.tbAmount.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbEnter_KeyDown);
+            this.tbAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tbAmount.ThousandsSeparator = true;
             // 
             // BillForm
             // 
@@ -327,6 +327,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(494, 278);
+            this.Controls.Add(this.tbAmount);
             this.Controls.Add(this.labelSplit);
             this.Controls.Add(this.nudMonths);
             this.Controls.Add(this.cbSplit);
@@ -345,7 +346,6 @@
             this.Controls.Add(this.labelPayment);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.tbRemarks);
-            this.Controls.Add(this.tbAmount);
             this.Controls.Add(this.cbPayment);
             this.Controls.Add(this.cbSub);
             this.Controls.Add(this.cbMajor);
@@ -360,6 +360,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Bill";
             ((System.ComponentModel.ISupportInitialize)(this.nudMonths)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbAmount)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -376,7 +377,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnCancel;
-        private GMoney.control.NumericBox tbAmount;
         private System.Windows.Forms.CheckBox cbAnnualBudget;
         private System.Windows.Forms.Label labelType;
         private System.Windows.Forms.ComboBox cbBillType;
@@ -389,5 +389,6 @@
         private System.Windows.Forms.NumericUpDown nudMonths;
         private System.Windows.Forms.Label labelSplit;
         private System.Windows.Forms.TextBox tbRemarks;
+        private System.Windows.Forms.NumericUpDown tbAmount;
     }
 }

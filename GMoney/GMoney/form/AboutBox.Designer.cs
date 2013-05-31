@@ -110,8 +110,8 @@
             // 
             this.myLabel1.BackColor = System.Drawing.Color.LimeGreen;
             this.myLabel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.myLabel1.Font = new System.Drawing.Font("Ravie", 42F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.myLabel1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.myLabel1.Font = new System.Drawing.Font("Calibri", 42F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.myLabel1.ForeColor = System.Drawing.Color.White;
             this.myLabel1.Location = new System.Drawing.Point(3, 0);
             this.myLabel1.Name = "myLabel1";
             this.myLabel1.Size = new System.Drawing.Size(418, 108);
