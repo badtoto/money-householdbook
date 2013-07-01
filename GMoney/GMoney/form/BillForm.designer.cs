@@ -163,7 +163,7 @@
             this.cbAnnualBudget.BackColor = System.Drawing.Color.Transparent;
             this.cbAnnualBudget.Location = new System.Drawing.Point(352, 192);
             this.cbAnnualBudget.Name = "cbAnnualBudget";
-            this.cbAnnualBudget.Size = new System.Drawing.Size(107, 18);
+            this.cbAnnualBudget.Size = new System.Drawing.Size(106, 18);
             this.cbAnnualBudget.TabIndex = 17;
             this.cbAnnualBudget.Text = "Annual Budget";
             this.cbAnnualBudget.UseVisualStyleBackColor = false;
@@ -292,7 +292,7 @@
             this.labelSplit.BackColor = System.Drawing.Color.Transparent;
             this.labelSplit.Location = new System.Drawing.Point(346, 161);
             this.labelSplit.Name = "labelSplit";
-            this.labelSplit.Size = new System.Drawing.Size(47, 14);
+            this.labelSplit.Size = new System.Drawing.Size(46, 14);
             this.labelSplit.TabIndex = 16;
             this.labelSplit.Text = "Months";
             // 
@@ -320,6 +320,8 @@
             this.tbAmount.TabIndex = 11;
             this.tbAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.tbAmount.ThousandsSeparator = true;
+            this.tbAmount.Enter += new System.EventHandler(this.tbAmount_Enter);
+            this.tbAmount.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbEnter_KeyDown);
             // 
             // BillForm
             // 

@@ -265,11 +265,17 @@ namespace GMoney.form
             this.Close();
         }
 
+        private void tbAmount_Enter(object sender, EventArgs e)
+        {
+            tbAmount.Select(0, tbAmount.Text.Length);
+        }
+
         private void tbEnter_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
                 AddBill();
+                tbAmount_Enter(sender, EventArgs.Empty);
             }
         }
 
@@ -284,5 +290,6 @@ namespace GMoney.form
             nudMonths.Enabled = cbSplit.Checked;
         }
         #endregion
+
     }
 }
