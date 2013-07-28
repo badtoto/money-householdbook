@@ -49,7 +49,7 @@ namespace GMoney.db
         {
             bool bRet = false;
             SQLiteConnection conn = null;
-            DbTransaction tran = null;
+            SQLiteTransaction tran = null;
             try
             {
                 conn = GetConnection();

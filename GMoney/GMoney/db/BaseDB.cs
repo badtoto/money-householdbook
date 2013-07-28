@@ -28,7 +28,7 @@ namespace GMoney.db
         public static bool CheckDB()
         {
             bool bRet = false;
-            DbTransaction tran = null;
+            SQLiteTransaction tran = null;
             SQLiteConnection conn = null;
 
             try
@@ -168,7 +168,7 @@ namespace GMoney.db
         protected static SQLiteConnection GetConnection()
         {
             SQLiteConnection cnn = new SQLiteConnection();
-            cnn.ConnectionString = @"Data Source=" + SQLiteDB;
+            cnn.ConnectionString = @"Data Source=" + SQLiteDB + ";Version=3;Pooling=True;Max Pool Size=100;";
 #if !DEBUG // when debug , not need password
             cnn.SetPassword(DB_PWD);
 #endif

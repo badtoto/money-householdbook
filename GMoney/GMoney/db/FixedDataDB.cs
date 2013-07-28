@@ -23,7 +23,7 @@ namespace GMoney.db
         {
             bool bRet = false;
             SQLiteConnection conn = null;
-            DbTransaction tran = null;
+            SQLiteTransaction tran = null;
             try
             {
                 conn = GetConnection();
@@ -80,7 +80,7 @@ namespace GMoney.db
         {
             bool bRet = false;
             SQLiteConnection conn = null;
-            DbTransaction tran = null;
+            SQLiteTransaction tran = null;
             SQLiteCommand cmd = null;
             try
             {
@@ -141,7 +141,7 @@ namespace GMoney.db
         {
             bool bRet = false;
             SQLiteConnection conn = null;
-            DbTransaction tran = null;
+            SQLiteTransaction tran = null;
             try
             {
                 conn = GetConnection();

@@ -413,7 +413,7 @@ namespace GMoney.db
         {
             bool bRet = false;
             SQLiteConnection conn = null;
-            DbTransaction tran = null;
+            SQLiteTransaction tran = null;
             SQLiteCommand cmd = null;
             try
             {
@@ -511,7 +511,7 @@ namespace GMoney.db
         {
             int bRet = -1;
             SQLiteConnection conn = null;
-            DbTransaction tran = null;
+            SQLiteTransaction tran = null;
             SQLiteCommand cmd = null;
             SQLiteDataReader reader = null;
 
@@ -576,7 +576,7 @@ namespace GMoney.db
         {
             bool bRet = false;
             SQLiteConnection conn = null;
-            DbTransaction tran = null;
+            SQLiteTransaction tran = null;
             SQLiteCommand cmd = null;
             try
             {

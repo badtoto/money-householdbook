@@ -24,7 +24,7 @@ namespace GMoney.db
         {
             bool bRet = false;
             SQLiteConnection conn = null;
-            DbTransaction tran = null;
+            SQLiteTransaction tran = null;
             SQLiteCommand cmd = null;
 
             try
@@ -37,6 +37,7 @@ namespace GMoney.db
                 for (int i = 0; i < tbl.SplitMonths; i++)
                 {
                     cmd = conn.CreateCommand();
+                    cmd.Transaction = tran;
                     cmd.CommandText = "insert into d_bill (id, bill_date, user_id, sub_id, payment_id, annual_budget, amount, remarks, create_date, update_date) values (null, @bill_date, @user_id, @sub_id, @payment_id, @annual_budget, @amount, @remarks, @create_date, @update_date);";
                     cmd.Parameters.AddWithValue("bill_date", tbl.Date.AddMonths(i).ToShortDateString());
                     cmd.Parameters.AddWithValue("user_id", tbl.UserId);
@@ -54,10 +55,13 @@ namespace GMoney.db
 
                 cmd = conn.CreateCommand();
                 cmd.CommandText = "SELECT last_insert_rowid() ";
-                SQLiteDataReader reader = cmd.ExecuteReader();
-                if (reader.Read())
+                using (SQLiteDataReader reader = cmd.ExecuteReader())
                 {
-                    tbl.ID = Int32.Parse(reader[0].ToString());
+                    if (reader.Read())
+                    {
+                        tbl.ID = Int32.Parse(reader[0].ToString());
+                    }
+                    reader.Close();
                 }
 
                 bRet = true;
@@ -72,14 +76,14 @@ namespace GMoney.db
             }
             finally
             {
-                if (conn != null)
+                  if (conn != null)
                 {
                     try
                     {
                         conn.Close();
                     }
                     catch { }
-                    conn = null;
+                    conn.Dispose();
                 }
             }
             return bRet;
@@ -94,7 +98,7 @@ namespace GMoney.db
         {
             bool bRet = false;
             SQLiteConnection conn = null;
-            DbTransaction tran = null;
+            SQLiteTransaction tran = null;
             try
             {
                 conn = GetConnection();
@@ -225,7 +229,7 @@ namespace GMoney.db
         {
             bool bRet = false;
             SQLiteConnection conn = null;
-            DbTransaction tran = null;
+            SQLiteTransaction tran = null;
             try
             {
                 conn = GetConnection();
