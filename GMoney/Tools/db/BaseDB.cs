@@ -186,7 +186,7 @@ namespace Money.db
         {
             bool bRet = false;
             SQLiteConnection conn = null;
-            DbTransaction tran = null;
+            SQLiteTransaction tran = null;
             SQLiteCommand cmd = null;
             Random random = null;
 
