@@ -11,7 +11,6 @@ namespace GMoney.instance
         private int interval;
         private int intervalType;
         private string intervalDetail;
-        private string remarks;
         DateTime startDate;
         DateTime endDate;
 
