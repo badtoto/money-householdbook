@@ -91,8 +91,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Data.SQLite, Version=1.0.61.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=x86">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="System.Data.SQLite">
       <HintPath>dll\System.Data.SQLite.DLL</HintPath>
     </Reference>
     <Reference Include="System.Deployment" />
@@ -289,9 +288,9 @@
     <None Include="Resources\Status_16.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\demo\ObjectListViewDemo20\ObjectListView\ObjectListView2010.csproj">
-      <Project>{18FEDA0C-D147-4286-B39A-01204808106A}</Project>
-      <Name>ObjectListView2010</Name>
+    <ProjectReference Include="..\..\..\demo\ObjectListViewDemo\ObjectListView\ObjectListView2012.csproj">
+      <Project>{18feda0c-d147-4286-b39a-01204808106a}</Project>
+      <Name>ObjectListView2012</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
