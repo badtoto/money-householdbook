@@ -289,7 +289,7 @@
     <None Include="Resources\Status_16.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\demo\ObjectListViewDemo\ObjectListView\ObjectListView2012.csproj">
+    <ProjectReference Include="..\..\..\..\demo\ObjectListViewDemo\ObjectListView\ObjectListView2012.csproj">
       <Project>{18feda0c-d147-4286-b39a-01204808106a}</Project>
       <Name>ObjectListView2012</Name>
     </ProjectReference>

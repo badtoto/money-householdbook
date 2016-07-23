@@ -16,60 +16,67 @@ namespace GMoney
         [STAThread]
         static void Main()
         {
-            if (!MyProcess.ShowPrevProcess())
+            try
             {
-                #region Check Database
-                if (!BaseDB.CheckDB())
+                if (!MyProcess.ShowPrevProcess())
                 {
-                    CommonUtils.ShowError(Properties.Resources.MSG_INI_0002);
-                    return;
-                }
-                #endregion
-
-                #region Initialize Form Style
-                Application.EnableVisualStyles();
-                Application.SetCompatibleTextRenderingDefault(false);
-                #endregion
-
-                #region Login Check
-                SystemDB sys = new SystemDB();
-                if (!string.IsNullOrEmpty(sys.GetLoginPassword()))
-                {
-                    PasswordForm login = new PasswordForm();
-                    if (login.ShowDialog() != DialogResult.OK)
+                    #region Check Database
+                    if (!BaseDB.CheckDB())
                     {
+                        CommonUtils.ShowError(Properties.Resources.MSG_INI_0002);
                         return;
                     }
-                    login.Dispose();
-                }
-                #endregion
+                    #endregion
 
-                #region Vacuum Check
-                string lastVacuumDate = sys.GetLastVacuumDate();
-                if (string.IsNullOrEmpty(lastVacuumDate))
-                {
-                    sys.ChangeLastVacuumDate(DateTime.Now.ToShortDateString());
-                }
-                else
-                {
-                    string oneMonthAgo = DateTime.Now.AddMonths(-1).ToShortDateString();
-                    if (oneMonthAgo.CompareTo(lastVacuumDate) > 0)
+                    #region Initialize Form Style
+                    Application.EnableVisualStyles();
+                    Application.SetCompatibleTextRenderingDefault(false);
+                    #endregion
+
+                    #region Login Check
+                    SystemDB sys = new SystemDB();
+                    if (!string.IsNullOrEmpty(sys.GetLoginPassword()))
                     {
-                        if (CommonUtils.ShowWarningWithCancel(Properties.Resources.MSG_VACUUM_CHECK.Replace("\\r\\n", "\r\n")) == DialogResult.OK)
+                        PasswordForm login = new PasswordForm();
+                        if (login.ShowDialog() != DialogResult.OK)
                         {
-                            if (BaseDB.DoVacuum())
+                            return;
+                        }
+                        login.Dispose();
+                    }
+                    #endregion
+
+                    #region Vacuum Check
+                    string lastVacuumDate = sys.GetLastVacuumDate();
+                    if (string.IsNullOrEmpty(lastVacuumDate))
+                    {
+                        sys.ChangeLastVacuumDate(DateTime.Now.ToShortDateString());
+                    }
+                    else
+                    {
+                        string oneMonthAgo = DateTime.Now.AddMonths(-1).ToShortDateString();
+                        if (oneMonthAgo.CompareTo(lastVacuumDate) > 0)
+                        {
+                            if (CommonUtils.ShowWarningWithCancel(Properties.Resources.MSG_VACUUM_CHECK.Replace("\\r\\n", "\r\n")) == DialogResult.OK)
                             {
-                                sys.ChangeLastVacuumDate(DateTime.Now.ToShortDateString());
-                                CommonUtils.ShowSuccess(Properties.Resources.MSG_VACUUM);
+                                if (BaseDB.DoVacuum())
+                                {
+                                    sys.ChangeLastVacuumDate(DateTime.Now.ToShortDateString());
+                                    CommonUtils.ShowSuccess(Properties.Resources.MSG_VACUUM);
+                                }
                             }
                         }
                     }
-                }
-                #endregion
+                    #endregion
 
-                #region Run Main Form
-                Application.Run(new MoneyForm());
-                #endregion
+                    #region Run Main Form
+                    Application.Run(new MoneyForm());
+                    #endregion
+                }
+            }
+            catch (Exception e)
+            {
+                CommonUtils.ShowError(e.ToString());
             }
         }
     }

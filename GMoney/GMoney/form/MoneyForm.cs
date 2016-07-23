@@ -1039,6 +1039,11 @@ namespace GMoney.form
                     inAddYearItems = true;
                     BillDB bdb = new BillDB();
                     DateTime[] dateRange = bdb.GetBillDateRange();
+                    if (dateRange[1]>DateTime.Now)
+                    {
+                        dateRange[1] = DateTime.Now;
+                    }
+
                     tcbChartStartYear.Items.Clear();
                     tcbChartEndYear.Items.Clear();
                     for (int i = dateRange[0].Year; i <= dateRange[1].Year; i++)
