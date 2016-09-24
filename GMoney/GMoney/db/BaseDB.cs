@@ -173,7 +173,7 @@ namespace GMoney.db
             cnn.SetPassword(DB_PWD);
 #endif
             cnn.Open();
-//            cnn.ChangePassword("");
+//           cnn.ChangePassword("");
             return cnn;
         }
         #endregion
